@@ -1,0 +1,438 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1020;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00F8B4, #00C4FF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00C4FF, #00F8B4);
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Reduce animation intensity on mobile */
+  .animate-pulse {
+    animation-duration: 2s;
+  }
+  
+  /* Optimize hover effects for touch devices */
+  .hover\:scale-105:hover {
+    transform: scale(1.02);
+  }
+  
+  .hover\:scale-110:hover {
+    transform: scale(1.05);
+  }
+}
+
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap');
+
+/* Base Styles */
+@layer base {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Sora', 'Plus Jakarta Sans', 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  
+  h1 {
+    @apply text-display font-bold;
+  }
+  
+  h2 {
+    @apply text-display-sm font-bold;
+  }
+  
+  h3 {
+    @apply text-3xl font-semibold;
+  }
+  
+  h4 {
+    @apply text-2xl font-semibold;
+  }
+  
+  h5 {
+    @apply text-xl font-semibold;
+  }
+  
+  h6 {
+    @apply text-lg font-semibold;
+  }
+  
+  p {
+    @apply text-body-lg leading-relaxed;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Button Components */
+  .btn-primary {
+    @apply bg-gradient-brand text-white font-semibold px-8 py-4 rounded-xl 
+           shadow-soft hover:shadow-glow transition-all duration-300 
+           hover:scale-[1.02] focus:outline-none focus:ring-4 focus:ring-brand-teal/30;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-brand-teal text-brand-teal font-semibold 
+           px-8 py-4 rounded-xl hover:bg-brand-teal hover:text-white 
+           transition-all duration-300 hover:scale-[1.02] focus:outline-none 
+           focus:ring-4 focus:ring-brand-teal/30;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent text-brand-teal font-semibold px-8 py-4 rounded-xl 
+           hover:bg-brand-teal/10 transition-all duration-300 hover:scale-[1.02] 
+           focus:outline-none focus:ring-4 focus:ring-brand-teal/30;
+  }
+  
+  /* Card Components */
+  .card {
+    @apply bg-white rounded-2xl shadow-soft border border-gray-100 
+           transition-all duration-300 hover:shadow-glow hover:scale-[1.02];
+  }
+  
+  .card-dark {
+    @apply bg-brand-card rounded-2xl shadow-soft border border-gray-800 
+           transition-all duration-300 hover:shadow-glow hover:scale-[1.02];
+  }
+  
+  /* Section Components */
+  .section-padding {
+    @apply py-20 lg:py-24;
+  }
+  
+  .container-padding {
+    @apply px-6 lg:px-8;
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-brand bg-clip-text text-transparent;
+  }
+  
+  .gradient-text-reverse {
+    @apply bg-gradient-brand-reverse bg-clip-text text-transparent;
+  }
+  
+  /* Glass Morphism */
+  .glass {
+    @apply bg-white/10 backdrop-blur-xl border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-brand-card/80 backdrop-blur-xl border border-gray-700/50;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .bg-gradient-brand-reverse {
+    background-image: linear-gradient(to right, #00C4FF, rgb(4, 216, 159));
+  }
+  
+  /* Animation Utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+  
+  .animate-slideInFromTop {
+    animation: slideInFromTop 0.3s ease-out forwards;
+  }
+  
+  .animate-slideInUp {
+    animation: slideInUp 0.6s ease-out forwards;
+  }
+  
+  .animate-slideInLeft {
+    animation: slideInLeft 0.3s ease-out forwards;
+  }
+  
+  .animate-slideInRight {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+  
+  .animate-mobileMenuSlideIn {
+    animation: mobileMenuSlideIn 0.3s ease-out forwards;
+  }
+  
+  .animate-mobileMenuSlideOut {
+    animation: mobileMenuSlideOut 0.3s ease-out forwards;
+  }
+  
+  .animate-mobileBackdropFadeIn {
+    animation: mobileBackdropFadeIn 0.3s ease-out forwards;
+  }
+  
+  .animate-mobileBackdropFadeOut {
+    animation: mobileBackdropFadeOut 0.3s ease-out forwards;
+  }
+  
+  .animate-fadeInUp {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  /* Floating particles */
+  .animate-float-slow {
+    animation: float 10s ease-in-out infinite;
+  }
+  .animate-float-slower {
+    animation: float 14s ease-in-out infinite;
+  }
+}
+
+/* Enhanced Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B1020;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #00F8B4, #00C4FF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #00C4FF, #00F8B4);
+}
+
+/* Selection Styles */
+::selection {
+  background: rgba(0, 196, 255, 0.2);
+  color: white;
+}
+
+/* Focus States */
+.focus-visible\:ring-4:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0, 196, 255, 0.3);
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile Menu Specific Animations */
+@keyframes mobileMenuSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes mobileMenuSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes mobileBackdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mobileBackdropFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating keyframes */
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-8px) translateX(4px); }
+  50% { transform: translateY(0) translateX(0); }
+  75% { transform: translateY(8px) translateX(-4px); }
+  100% { transform: translateY(0) translateX(0); }
+}
