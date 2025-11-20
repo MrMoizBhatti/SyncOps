@@ -117,9 +117,14 @@ export default function Home() {
 					<div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-aqua/20 to-transparent"></div>
 				</section>
 
-				<section data-gsap-section className="bg-brand-navy text-white py-20">
+				{/* <section data-gsap-section className="bg-brand-navy text-white py-20">
 					<div data-gsap-stagger>
 						<InHouseProducts />
+					</div>
+				</section> */}
+				<section data-gsap-section className="bg-brand-navy text-white py-20">
+					<div data-gsap-stagger>
+						<CaseStudies />
 					</div>
 				</section>
 
@@ -129,7 +134,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section data-gsap-section className="bg-brand-navy text-white py-20">
+				<section data-gsap-section className=" text-white">
 					<div data-gsap-stagger>
 						<WhyChooseUs />
 					</div>
@@ -141,7 +146,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section data-gsap-section className="bg-brand-navy text-white py-20">
+				<section data-gsap-section className=" text-white">
 					<div data-gsap-stagger>
 						<Testimonials />
 					</div>
@@ -153,11 +158,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section data-gsap-section className="bg-brand-navy text-white py-20">
-					<div data-gsap-stagger>
-						<CaseStudies />
-					</div>
-				</section>
+				
 
 				<section data-gsap-section>
 					<div data-gsap-stagger>
@@ -171,7 +172,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section data-gsap-section className="bg-brand-navy py-20">
+				<section data-gsap-section >
 					<FinalCTA />
 				</section>
 

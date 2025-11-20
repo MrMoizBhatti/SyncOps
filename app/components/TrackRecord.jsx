@@ -3,14 +3,14 @@ import { TrendingUp, Users, Clock, Star } from 'lucide-react';
 
 const metrics = [
   {
-    value: "500+",
+    value: "0+",
     label: "Projects Delivered",
     description: "Successfully completed projects across various industries",
     icon: TrendingUp,
     color: "from-[#00F8B4] to-[#00C4FF]"
   },
   {
-    value: "99.9%",
+    value: "99.5%",
     label: "Uptime Guarantee",
     description: "Reliable infrastructure with enterprise-grade SLA",
     icon: Clock,
@@ -24,7 +24,7 @@ const metrics = [
     color: "from-[#00F8B4] to-[#00C4FF]"
   },
   {
-    value: "9.2",
+    value: "9.8",
     label: "Average NPS",
     description: "Client satisfaction score from hundreds of projects",
     icon: Star,
