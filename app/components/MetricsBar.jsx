@@ -3,13 +3,13 @@ import { Rocket, Shield, Zap, Star } from 'lucide-react';
 
 const metrics = [
   {
-    value: "500+",
+    value: "50+",
     label: "Projects",
     icon: Rocket,
     color: "from-brand-aqua to-brand-teal"
   },
   {
-    value: "99.8%",
+    value: "99.5%",
     label: "Uptime",
     icon: Shield,
     color: "from-brand-teal to-brand-aqua"
@@ -21,7 +21,7 @@ const metrics = [
     color: "from-brand-aqua to-brand-teal"
   },
   {
-    value: "9.2/10",
+    value: "9.8/10",
     label: "Client Rating",
     icon: Star,
     color: "from-brand-teal to-brand-aqua"

@@ -102,7 +102,7 @@ export default function Home() {
 					<div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-aqua/20 to-transparent"></div>
 					<div data-gsap-stagger className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
 						<p className="text-body-xl text-gray-800 font-semibold leading-relaxed">
-							We empower startups, enterprises, and visionary founders to build scalable digital products that shape tomorrow.
+							We partner with startups, enterprises, and visionary founders to turn bold ideas into resilient, scalable digital products—backed by 50+ launches and 99.5% uptime.
 						</p>
 					</div>
 					<div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-teal/20 to-transparent"></div>

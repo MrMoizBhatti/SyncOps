@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Menu,
@@ -16,12 +17,7 @@ import {
   Sparkles,
 } from "lucide-react";
 
-interface MobileSidebarProps {
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
+const MobileSidebar = ({ isOpen, onClose }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -44,7 +40,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
   // Close with Escape key
   useEffect(() => {
     if (!isOpen) return;
-    const onKey = (e: KeyboardEvent) => {
+    const onKey = (e) => {
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", onKey);
@@ -104,7 +100,7 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
         duration: 0.2,
       },
     },
-    open: (i: number) => ({
+    open: (i = 0) => ({
       opacity: 1,
       x: 0,
       transition: {
@@ -268,6 +264,11 @@ const MobileSidebar: React.FC<MobileSidebarProps> = ({ isOpen, onClose }) => {
       )}
     </AnimatePresence>
   );
+};
+
+MobileSidebar.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default MobileSidebar;

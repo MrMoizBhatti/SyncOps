@@ -4,6 +4,9 @@ import AuthorProfile from "../_components/AuthorProfile";
 import BlogNav from "../_components/BlogNav";
 import RelatedPosts from "../_components/RelatedPosts";
 
+// Force dynamic rendering to avoid React version mismatch during prerendering
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({ params }) {
   const post = getPostBySlug(params.slug);
   return {

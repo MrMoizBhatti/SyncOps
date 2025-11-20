@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/app/utils/blogUtils";
+import { getAllPosts } from "../../utils/blogUtils";
 import SafeLink from "../../components/ui/SafeLink";
 import { ArrowRight } from "lucide-react";
 
