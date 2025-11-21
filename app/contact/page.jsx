@@ -2,7 +2,7 @@ import React from "react";
 import ContactForm from "./_components/ContactForm";
 import ContactHero from "./_components/ContactHero";
 import Testimonial from "../components/Testimonial";
-import CallToAction from "../services/_components/CallToAction";
+import FinalCTA from "../components/FinalCTA";
 
 export const generateMetadata = () => {
   return {
@@ -22,7 +22,7 @@ const page = () => {
       <ContactHero />
       <ContactForm />
       <Testimonial />
-      <CallToAction />
+      <FinalCTA/>
     </div>
   );
 };

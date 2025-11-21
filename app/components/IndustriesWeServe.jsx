@@ -23,21 +23,23 @@ export default function IndustriesWeServe() {
         </p>
       </div>
       
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-8 justify-items-center">
         {industries.map((industry, idx) => (
-                      <div
-              key={industry.name}
-              className="group bg-white rounded-md shadow-sm p-4 border border-gray-100 hover:border-[#00F8B4]/30 transition-all duration-300 hover:scale-105 hover:shadow-xl min-w-[200px] text-center"
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
-            >
-              <div className={`w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-r ${industry.color} text-white shadow-md mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
-                {industry.icon}
-              </div>
-              <h3 className="text-sm font-medium text-[#222222] group-hover:text-[#00F8B4] transition-colors duration-300">
-                {industry.name}
-              </h3>
+          <div
+            key={industry.name}
+            className={`group bg-white rounded-md shadow-sm p-4 border border-gray-100 hover:border-[#00F8B4]/30 transition-all duration-300 hover:scale-105 hover:shadow-xl w-full max-w-[200px] text-center ${
+              idx === industries.length - 1 && industries.length % 2 !== 0 ? 'col-span-2 md:col-span-1 lg:col-span-1' : ''
+            }`}
+            data-aos="fade-up"
+            data-aos-delay={idx * 100}
+          >
+            <div className={`w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-r ${industry.color} text-white shadow-md mx-auto mb-3 group-hover:scale-110 transition-transform duration-300`}>
+              {industry.icon}
             </div>
+            <h3 className="text-sm font-medium text-[#222222] group-hover:text-[#00F8B4] transition-colors duration-300">
+              {industry.name}
+            </h3>
+          </div>
         ))}
       </div>
     </div>

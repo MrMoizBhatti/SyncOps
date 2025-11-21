@@ -151,17 +151,17 @@ export default function TechnologiesWeUse() {
       </motion.div>
       
       {/* Enhanced CTA Section */}
-      <div className="text-center">
-        <div className="bg-gradient-to-r from-[#00F8B4]/5 to-[#00C4FF]/5 rounded-2xl p-8 border border-[#00F8B4]/20">
-          <h3 className="text-2xl font-bold text-[#1F2937] mb-4">
+      <div className="text-center mt-8 sm:mt-12 md:mt-16">
+        <div className="bg-gradient-to-r from-[#00F8B4]/5 to-[#00C4FF]/5 rounded-2xl p-4 sm:p-6 md:p-8 border border-[#00F8B4]/20">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#1F2937] mb-3 sm:mb-4">
             Need a Custom Tech Stack?
           </h3>
-          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto px-2 sm:px-0">
             Our team can recommend and implement the perfect technology combination for your specific project requirements.
           </p>
           <SafeLink
             href="/contact"
-            className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-white font-semibold text-lg bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 hover:scale-105 transition-all duration-300 focus-visible:ring-4 focus-visible:ring-[#00C4FF]/30 focus-visible:outline-none"
+            className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-white font-semibold text-base sm:text-lg bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] shadow-lg hover:shadow-xl hover:shadow-cyan-500/20 hover:scale-105 transition-all duration-300 focus-visible:ring-4 focus-visible:ring-[#00C4FF]/30 focus-visible:outline-none"
           >
             Get Tech Consultation
           </SafeLink>

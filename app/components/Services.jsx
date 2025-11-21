@@ -3,7 +3,6 @@ import { CheckCircle, ArrowRight } from 'lucide-react';
 import SafeLink from './ui/SafeLink';
 import { motion } from 'framer-motion';
 import { stagger, fadeUp, springSoft, slideFromLeft, slideFromRight } from '../../lib/motionConfig';
-import { use3DHover } from '../../hooks/use3DHover';
 
 const serviceGroups = [
   {
@@ -139,7 +138,6 @@ export default function Services() {
                 <div className="grid md:grid-cols-3 gap-6">
                   {group.services.map((service, serviceIndex) => {
                     const IconComponent = service.icon;
-                    const tilt = use3DHover(10);
                     // Alternate between left and right animations
                     const isLeft = serviceIndex % 2 === 0;
                     const baseVariant = isLeft ? slideFromLeft(40) : slideFromRight(40);
@@ -159,15 +157,11 @@ export default function Services() {
                     return (
                       <motion.div
                         key={service.title}
-                        className="group card hover:shadow-glow transition-all duration-300 will-change-transform"
+                        className="group card hover:shadow-glow transition-all duration-300"
                         initial="initial"
                         whileInView="animate"
                         viewport={{ once: true, amount: 0.2 }}
                         variants={customVariant}
-                        ref={tilt.ref}
-                        onMouseMove={tilt.onMouseMove}
-                        onMouseLeave={tilt.onMouseLeave}
-                        style={{ rotateX: tilt.rotateX, rotateY: tilt.rotateY, transformStyle: 'preserve-3d' }}
                       >
                         <SafeLink href={service.href} className="block h-full">
                           <div className="p-6 h-full">

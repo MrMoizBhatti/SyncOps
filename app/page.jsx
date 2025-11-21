@@ -4,11 +4,10 @@ import ClientFloatingCTA from './components/ClientFloatingCTA';
 import Hero from './components/Hero';
 import MetricsBar from './components/MetricsBar';
 import Services from './components/Services';
-import InHouseProducts from './components/InHouseProducts';
 import IndustriesWeServe from './components/IndustriesWeServe';
 import WhyChooseUs from './components/WhyChooseUs';
 import TrackRecord from './components/TrackRecord';
-import Testimonials from './components/Testimonials';
+import Testimonial from './components/Testimonial';
 import TechnologiesWeUse from './components/TechnologiesWeUse';
 import CaseStudies from './components/CaseStudies';
 import LeadershipSection from './components/LeadershipSection';
@@ -148,7 +147,7 @@ export default function Home() {
 
 				<section data-gsap-section className=" text-white">
 					<div data-gsap-stagger>
-						<Testimonials />
+						<Testimonial />
 					</div>
 				</section>
 

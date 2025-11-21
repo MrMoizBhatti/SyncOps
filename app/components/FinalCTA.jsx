@@ -59,9 +59,9 @@ export default function FinalCTA() {
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
   return (
-    <section className="bg-brand-navy py-20 px-6 text-center relative overflow-hidden">
+    <section className="bg-gradient-to-br from-gray-50 via-white to-gray-100 py-20 px-6 text-center relative overflow-hidden">
       {/* Background Effects - Matching Homepage */}
-      <div className="absolute inset-0 bg-gradient-to-r from-brand-aqua/5 to-brand-teal/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 via-transparent to-[#00C4FF]/5"></div>
       
       {/* Enhanced Animated Gradient Background */}
       <motion.div 
@@ -155,34 +155,33 @@ export default function FinalCTA() {
       />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <motion.h2 
-          className="text-white text-4xl md:text-5xl font-bold leading-tight mb-6"
-          initial={{ opacity: 0, y: 30, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          viewport={{ once: true }}
-        >
-          Ready to <motion.span 
-            className="gradient-text"
-            animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            style={{
-              backgroundSize: "200% 200%",
-              textShadow: "0 0 30px rgba(0, 248, 180, 0.5)"
-            }}
-          >
-            Transform
-          </motion.span> Your Business?
-        </motion.h2>
-        
-        <motion.p 
-          className="text-gray-300 text-xl mt-2 mb-12 max-w-3xl mx-auto leading-relaxed"
+         <motion.h2 
+           className="text-gray-900 text-4xl md:text-5xl font-bold leading-tight mb-6"
+           initial={{ opacity: 0, y: 30, scale: 0.95 }}
+           whileInView={{ opacity: 1, y: 0, scale: 1 }}
+           transition={{ duration: 0.8, ease: "easeOut" }}
+           viewport={{ once: true }}
+         >
+           Ready to <motion.span 
+             className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent"
+             animate={{
+               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+             }}
+             transition={{
+               duration: 3,
+               repeat: Infinity,
+               ease: "easeInOut"
+             }}
+             style={{
+               backgroundSize: "200% 200%",
+             }}
+           >
+             Transform
+           </motion.span> Your Business?
+         </motion.h2>
+         
+         <motion.p 
+           className="text-gray-500 text-lg md:text-xl mt-2 mb-12 max-w-3xl mx-auto leading-relaxed"
           initial={{ opacity: 0, y: 20, scale: 0.98 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

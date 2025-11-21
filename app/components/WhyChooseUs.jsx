@@ -73,32 +73,32 @@ export default function WhyChooseUs() {
       
         {/* Main Benefits Grid */}
         <Parallax translateY={[10, -10]}>
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16" initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.08)}>
+          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 mb-16" initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.08)}>
           {benefits.map((benefit) => {
             const IconComponent = benefit.icon;
             return (
               <motion.div
                 key={benefit.title}
-                className="group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#00F8B4]/10 relative overflow-hidden"
+                className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#00F8B4]/10 relative overflow-hidden"
                 variants={fadeUp(18)}
           >
             {/* Background Gradient on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 to-[#00C4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
             
             <div className="relative z-10">
-              <div className="w-20 h-20 flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white shadow-lg mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    {IconComponent && <IconComponent size={32} />}
+              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white shadow-lg mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {IconComponent && <IconComponent size={28} className="md:w-8 md:h-8" />}
               </div>
               
-                  <h3 className="text-xl font-bold text-white mb-4 group-hover:text-[#00F8B4] transition-colors duration-300 text-center">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 group-hover:text-[#00F8B4] transition-colors duration-300 text-center">
                     {benefit.title}
               </h3>
               
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4 text-center">
+                  <p className="text-gray-300 text-sm leading-relaxed mb-3 md:mb-4 text-center">
                     {benefit.description}
               </p>
               
-                  <div className="text-[#00F8B4] font-bold text-lg text-center">
+                  <div className="text-[#00F8B4] font-bold text-base md:text-lg text-center">
                     {benefit.stat}
               </div>
             </div>

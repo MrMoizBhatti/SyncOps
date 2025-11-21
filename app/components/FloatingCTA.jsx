@@ -109,16 +109,18 @@ const FloatingCTA = () => {
   return (
     <>
       {/* Floating CTA Button */}
-      <button
-        onClick={() => setIsOpen(true)}
-        className="fixed top-1/3 right-0 z-[9999] w-[56px] h-[160px] bg-gradient-to-b from-teal-400 to-cyan-500 rounded-l-xl shadow-lg cursor-pointer hover:brightness-110 transition duration-300 ease-in-out flex items-center justify-center"
-        aria-label="Open Contact Form"
-        style={{ transform: 'translateZ(0)' }}
-      >
-        <span className="block rotate-90 text-white font-semibold text-sm tracking-wide whitespace-nowrap pointer-events-none select-none">
-          Let&apos;s Talk Business
-        </span>
-      </button>
+      {!isOpen && (
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed top-1/3 right-0 z-[9999] w-[56px] h-[160px] bg-gradient-to-b from-teal-400 to-cyan-500 rounded-l-xl shadow-lg cursor-pointer hover:brightness-110 transition duration-300 ease-in-out flex items-center justify-center"
+          aria-label="Open Contact Form"
+          style={{ transform: 'translateZ(0)' }}
+        >
+          <span className="block rotate-90 text-white font-semibold text-sm tracking-wide whitespace-nowrap pointer-events-none select-none">
+            Let&apos;s Talk Business
+          </span>
+        </button>
+      )}
 
       {/* Backdrop */}
       {isOpen && (

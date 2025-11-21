@@ -1,7 +1,6 @@
 "use client";
 import { motion } from 'framer-motion';
 import { fadeUp, stagger, springSoft, viewport } from '../../../lib/motionConfig';
-import { use3DHover } from '../../../hooks/use3DHover';
 import SafeLink from '../../components/ui/SafeLink';
 import { Brain, Zap, TrendingUp, Users, Shield, BarChart3, Rocket, Database } from 'lucide-react';
 
@@ -66,19 +65,14 @@ export default function AIOfferings() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {offerings.map((offering, index) => {
           const IconComponent = offering.icon;
-          const tilt = use3DHover(8);
           return (
             <motion.div
               key={offering.title}
-              className="group card hover:shadow-glow transition-all duration-300 will-change-transform"
+              className="group card hover:shadow-glow transition-all duration-300"
               initial="initial"
               whileInView="animate"
               viewport={viewport}
               variants={fadeUp(16 + index * 2)}
-              ref={tilt.ref}
-              onMouseMove={tilt.onMouseMove}
-              onMouseLeave={tilt.onMouseLeave}
-              style={{ rotateX: tilt.rotateX, rotateY: tilt.rotateY, transformStyle: 'preserve-3d' }}
               transition={springSoft}
             >
               <div className="p-8 h-full">

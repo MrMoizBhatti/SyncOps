@@ -45,20 +45,20 @@ const cSuite = [
     role: "Chief Operating Officer (COO)",
     experienceBadge: "10+ years' experience",
     blurb: "Oversees daily operations, resource management, and execution of business strategies.",
-    photo: "https://i.pravatar.cc/300?img=5",
+    photo: "/images/leadership/Ahmer-Mairaj.jpg",
   },
   {
     name: "Abu Sufian",
-    role: "Chief Business Development Officer (CBDO)",
+    role: "Chief Marketing Officer (CMO)",
     experienceBadge: "15+ years' experience",
-    blurb: "Secures partnerships, expands market reach, and drives revenue growth.",
-    photo: "https://i.pravatar.cc/300?img=12",
+    blurb: "Manages brand strategy, marketing campaigns, and global visibility.",
+    photo: "/images/leadership/Abu-Sufian.jpg",
   },
   {
     name: "Nida Naeem",
-    role: "Chief Marketing Officer (CMO)",
+    role: "Chief Business Development Officer (CBDO) ",
     experienceBadge: "8+ years' experience",
-    blurb: "Manages brand strategy, marketing campaigns, and global visibility.",
+    blurb: "Secures partnerships, expands market reach, and drives revenue growth.",
     photo: "/images/leadership/NidaNaeemCMO.jpeg",
   },
 ];
@@ -312,7 +312,7 @@ const LeadershipSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % allLeadership.length);
-    }, 5000);
+    }, 20000);
     return () => clearInterval(interval);
   }, []);
 
@@ -358,10 +358,10 @@ const LeadershipSection = () => {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Buttons - Positioned on edges */}
+          {/* Navigation Buttons - Hidden on mobile, visible on tablet and desktop */}
           <button
             onClick={prevSlide}
-            className="absolute left-1 z-10 p-3 rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl hover:shadow-[#00C4FF]/20 transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#00C4FF]/50 border border-gray-100 hover:border-[#00C4FF]/30"
+            className="hidden md:flex absolute left-1 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/95 backdrop-blur-sm shadow-lg hover:shadow-xl hover:shadow-[#00C4FF]/20 transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#00C4FF]/50 border border-gray-200 hover:border-[#00C4FF]/30 items-center justify-center"
             aria-label="Previous"
           >
             <ChevronLeft size={24} className="text-slate-700 hover:text-[#00C4FF] transition-colors" />
@@ -369,7 +369,7 @@ const LeadershipSection = () => {
           
           <button
             onClick={nextSlide}
-            className="absolute right-1 z-10 p-3 rounded-full bg-white/90 backdrop-blur-sm shadow-lg hover:shadow-xl hover:shadow-[#00C4FF]/20 transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#00C4FF]/50 border border-gray-100 hover:border-[#00C4FF]/30"
+            className="hidden md:flex absolute right-1 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/95 backdrop-blur-sm shadow-lg hover:shadow-xl hover:shadow-[#00C4FF]/20 transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#00C4FF]/50 border border-gray-200 hover:border-[#00C4FF]/30 items-center justify-center"
             aria-label="Next"
           >
             <ChevronRight size={24} className="text-slate-700 hover:text-[#00C4FF] transition-colors" />

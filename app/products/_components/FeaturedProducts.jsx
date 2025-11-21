@@ -1,7 +1,6 @@
 "use client";
 import { motion, AnimatePresence } from 'framer-motion';
 import { fadeUp, stagger, springSoft, viewport } from '../../../lib/motionConfig';
-import { use3DHover } from '../../../hooks/use3DHover';
 import SafeLink from '../../components/ui/SafeLink';
 import { ArrowRight, Zap, RefreshCw, Shield, CheckCircle2, TrendingUp, Clock, Star, Sparkles } from 'lucide-react';
 import { useState } from 'react';
@@ -88,22 +87,17 @@ export default function FeaturedProducts() {
 
       <div className="grid md:grid-cols-3 gap-8">
         {products.map((p, i) => {
-          const tilt = use3DHover(8);
           const IconComponent = p.icon;
           const isExpanded = expandedCard === p.title;
 
           return (
             <motion.div
               key={p.title}
-              className="group card will-change-transform relative overflow-hidden"
+              className="group card relative overflow-hidden"
               initial="initial"
               whileInView="animate"
               viewport={viewport}
               variants={fadeUp(16 + i * 2)}
-              ref={tilt.ref}
-              onMouseMove={tilt.onMouseMove}
-              onMouseLeave={tilt.onMouseLeave}
-              style={{ rotateX: tilt.rotateX, rotateY: tilt.rotateY, transformStyle: 'preserve-3d' }}
               transition={springSoft}
             >
               {/* Badge */}
