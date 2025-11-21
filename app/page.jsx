@@ -42,7 +42,7 @@ export default function Home() {
 						delay,
 						scrollTrigger: {
 							trigger: section,
-							start: 'top 80%',
+							start: 'top 95%',
 							end: 'bottom 20%',
 							toggleActions: 'play none none reverse'
 						}
@@ -50,7 +50,7 @@ export default function Home() {
 				});
 
 				ScrollTrigger.batch('[data-gsap-stagger]', {
-					start: 'top 85%',
+					start: 'top 95%',
 					onEnter: (batch) =>
 						gsap.to(batch, {
 							autoAlpha: 1,
@@ -152,7 +152,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section data-gsap-section className="bg-gray-50 py-20">
+				<section data-gsap-section className="bg-gray-50">
 					<div data-gsap-stagger>
 						<TechnologiesWeUse />
 					</div>

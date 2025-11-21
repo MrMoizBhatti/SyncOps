@@ -151,7 +151,7 @@ export default function TechnologiesWeUse() {
       </motion.div>
       
       {/* Enhanced CTA Section */}
-      <div className="mt-16 text-center">
+      <div className="text-center">
         <div className="bg-gradient-to-r from-[#00F8B4]/5 to-[#00C4FF]/5 rounded-2xl p-8 border border-[#00F8B4]/20">
           <h3 className="text-2xl font-bold text-[#1F2937] mb-4">
             Need a Custom Tech Stack?

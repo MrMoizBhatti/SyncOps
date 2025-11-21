@@ -251,6 +251,12 @@ body {
   .animate-float-slower {
     animation: float 14s ease-in-out infinite;
   }
+  
+  /* Gradient animation */
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+    background-size: 200% auto;
+  }
 }
 
 /* Enhanced Scrollbar */
@@ -435,4 +441,17 @@ body {
   50% { transform: translateY(0) translateX(0); }
   75% { transform: translateY(8px) translateX(-4px); }
   100% { transform: translateY(0) translateX(0); }
+}
+
+/* Gradient animation keyframes */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

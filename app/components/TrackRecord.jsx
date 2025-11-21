@@ -3,7 +3,7 @@ import { TrendingUp, Users, Clock, Star } from 'lucide-react';
 
 const metrics = [
   {
-    value: "0+",
+    value: "50+",
     label: "Projects Delivered",
     description: "Successfully completed projects across various industries",
     icon: TrendingUp,
@@ -34,7 +34,7 @@ const metrics = [
 
 export default function TrackRecord() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1F2937] mb-6">
