@@ -9,10 +9,10 @@ import WhyChooseUs from './components/WhyChooseUs';
 import TrackRecord from './components/TrackRecord';
 import Testimonial from './components/Testimonial';
 import TechnologiesWeUse from './components/TechnologiesWeUse';
-import CaseStudies from './components/CaseStudies';
 import LeadershipSection from './components/LeadershipSection';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
+import CaseStudies from './components/CaseStudies';
 import MobileStickyCTA from './components/MobileStickyCTA';
 import ScrollToTop from './components/ScrollToTop';
 import { ParallaxProvider } from 'react-scroll-parallax';
@@ -121,9 +121,9 @@ export default function Home() {
 						<InHouseProducts />
 					</div>
 				</section> */}
-				<section data-gsap-section className="bg-brand-navy text-white py-20">
+				<section data-gsap-section>
 					<div data-gsap-stagger>
-						<CaseStudies />
+					<CaseStudies />
 					</div>
 				</section>
 
@@ -151,6 +151,7 @@ export default function Home() {
 					</div>
 				</section>
 
+			
 				<section data-gsap-section className="bg-gray-50">
 					<div data-gsap-stagger>
 						<TechnologiesWeUse />

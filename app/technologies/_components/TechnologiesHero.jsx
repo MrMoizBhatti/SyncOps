@@ -35,22 +35,22 @@ const TechnologiesHero = () => {
   ];
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0B0A1C] py-16">
+    <section className="relative overflow-hidden bg-[#0B0A1C] py-12 lg:py-16">
       {/* Background Effects - Matching Landing Page */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 opacity-30"></div>
       <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 py-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4]/20 to-[#00C4FF]/20 border border-[#00F8B4]/30 rounded-full px-4 py-2 mb-8">
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4]/20 to-[#00C4FF]/20 border border-[#00F8B4]/30 rounded-full px-4 py-2 mb-6">
               <div className="w-2 h-2 bg-[#00F8B4] rounded-full animate-pulse"></div>
               <span className="text-sm font-medium text-[#00F8B4]">Future-Ready Technology</span>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl font-bold leading-snug mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-snug mb-4">
               <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">
                 Powering Innovation
               </span>
@@ -60,7 +60,7 @@ const TechnologiesHero = () => {
               <span className="text-white">Technology Stack</span>
             </h1>
             
-            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Discover our comprehensive suite of cutting-edge technologies that drive modern software solutions and empower businesses to achieve their digital transformation goals with unmatched performance and reliability.
             </p>
             

@@ -3,7 +3,7 @@ import ServicesHero from "./_components/ServicesHero";
 import Services from "./_components/Services";
 import ProcessTimeline from "./_components/ProcessTimeline";
 import Testimonial from "../components/Testimonial";
-import CallToAction from "./_components/CallToAction";
+
 import InViewWrapper from "../components/InViewWrapper";
 
 export const generateMetadata = () => {
@@ -29,9 +29,6 @@ const page = () => {
       </InViewWrapper>
       <InViewWrapper>
         <Testimonial />
-      </InViewWrapper>
-      <InViewWrapper>
-        <CallToAction />
       </InViewWrapper>
     </>
   );

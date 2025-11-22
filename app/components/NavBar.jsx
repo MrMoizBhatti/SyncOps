@@ -462,51 +462,6 @@ export default function NavBar() {
                       transition={{ duration: 0.3 }}
                     />
                   </SafeLink>
-
-                  {/* Primary CTA with Premium Effects */}
-                  <SafeLink
-                    href="/contact"
-                    className="group relative bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-[#0A0A1F] font-black 
-                             text-2xl px-8 py-6 rounded-3xl shadow-2xl hover:shadow-[#00F8B4]/60 hover:shadow-[0_20px_60px_rgba(0,248,180,0.4)]
-                             hover:scale-[1.04] hover:-translate-y-2 transition-all duration-300 
-                             flex items-center justify-center gap-4 min-h-[72px]
-                             border-2 border-[#00F8B4]/40 focus:outline-none focus:ring-4 focus:ring-[#00F8B4]/50 overflow-hidden"
-                    onClick={() => setIsMenuOpen(false)}
-                    aria-label="Get Your Free AI Audit Now"
-                  >
-                    <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] opacity-0 group-hover:opacity-100"
-                      transition={{ duration: 0.3 }}
-                    />
-                    <MessageCircle size={28} className="relative z-10 drop-shadow-lg" />
-                    <span className="relative z-10 tracking-tight">Get Your Free AI Audit Now</span>
-
-                    {/* Animated Background Particles */}
-                    <motion.div
-                      className="absolute inset-0 opacity-20"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 0.2 }}
-                      transition={{ delay: 0.8, duration: 0.5 }}
-                    >
-                      {[...Array(5)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          className="absolute w-2 h-2 bg-white rounded-full"
-                          initial={{ x: `${Math.random() * 100}%`, y: `${Math.random() * 100}%` }}
-                          animate={{
-                            x: `${Math.random() * 100}%`,
-                            y: `${Math.random() * 100}%`,
-                            scale: [1, 1.5, 1],
-                          }}
-                          transition={{
-                            duration: 3,
-                            repeat: Infinity,
-                            delay: i * 0.5,
-                          }}
-                        />
-                      ))}
-                    </motion.div>
-                  </SafeLink>
                 </motion.div>
               </nav>
             </motion.div>

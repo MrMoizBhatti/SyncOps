@@ -1,54 +1,13 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import SafeLink from "../components/ui/SafeLink";
 import Image from "next/image";
 import { ArrowRight, Briefcase, TrendingUp, Users, Zap, Star, Award, Target, Clock, CheckCircle, Quote } from "lucide-react";
+import Testimonial from "../components/Testimonial";
+import { motion } from "framer-motion";
 
-// SEO Metadata
-export const metadata = {
-  title: "Case Studies - Success Stories | SyncOps Software Development",
-  description:
-    "Explore SyncOps case studies showcasing successful AI-powered software solutions across healthcare, HR management, real estate, and more. See how we've helped businesses transform their operations with cutting-edge technology.",
-  keywords: [
-    "case studies",
-    "software development case studies",
-    "AI solutions case studies",
-    "healthcare software",
-    "HR management software",
-    "real estate technology",
-    "SyncOps success stories",
-    "software development portfolio",
-    "enterprise software solutions",
-    "digital transformation",
-  ].join(", "),
-  openGraph: {
-    title: "Case Studies - Success Stories | SyncOps",
-    description:
-      "Explore SyncOps case studies showcasing successful AI-powered software solutions. See how we've helped businesses transform their operations.",
-    type: "website",
-    url: "https://syncops.tech/case-studies",
-    siteName: "SyncOps",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Case Studies - Success Stories | SyncOps",
-    description:
-      "Explore SyncOps case studies showcasing successful AI-powered software solutions.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: "https://syncops.tech/case-studies",
-  },
-};
+// SEO Metadata - Note: In Next.js 15, metadata must be in a separate file or use generateMetadata
+// For client components, we'll add structured data via script tags
 
 // This would typically come from a CMS or API
 const caseStudies = [
@@ -150,11 +109,67 @@ const caseStudies = [
   },
 ];
 
+// Generate structured data for SEO
+function generateStructuredData() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Case Studies - Success Stories | SyncOps",
+    "description": "Explore SyncOps case studies showcasing successful AI-powered software solutions across healthcare, HR management, real estate, and more.",
+    "url": "https://syncops.tech/case-studies",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": caseStudies.map((study, index) => ({
+        "@type": "ListItem",
+        "position": index + 1,
+        "item": {
+          "@type": "CreativeWork",
+          "@id": `https://syncops.tech/case-studies/${study.id}`,
+          "name": study.title,
+          "description": study.description,
+          "image": `https://syncops.tech${study.image}`,
+          "about": {
+            "@type": "Thing",
+            "name": study.industry
+          }
+        }
+      }))
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "SyncOps",
+      "url": "https://syncops.tech",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://syncops.tech/images/logo.png"
+      }
+    }
+  };
+}
+
+
 export default function CaseStudiesPage() {
+  useEffect(() => {
+    // Add structured data to page
+    const structuredDataScript = document.createElement('script');
+    structuredDataScript.type = 'application/ld+json';
+    structuredDataScript.text = JSON.stringify(generateStructuredData());
+    structuredDataScript.id = 'case-studies-structured-data';
+    
+    if (!document.getElementById('case-studies-structured-data')) {
+      document.head.appendChild(structuredDataScript);
+    }
+    
+    return () => {
+      const existingStructured = document.getElementById('case-studies-structured-data');
+      if (existingStructured) existingStructured.remove();
+    };
+  }, []);
+
   return (
     <div className="bg-gradient-to-br from-brand-navy via-brand-card to-brand-navy min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section className="relative overflow-hidden" aria-labelledby="case-studies-heading">
         {/* Enhanced Background Elements */}
         <div className="absolute inset-0 bg-gradient-to-r from-brand-teal/5 to-brand-aqua/5"></div>
         <div className="absolute top-0 left-0 w-full h-full">
@@ -175,7 +190,10 @@ export default function CaseStudiesPage() {
               Success Stories
             </div>
             
-            <h1 className="text-display font-bold text-white mb-6 animate-fade-up stagger-1 gradient-text">
+            <h1 
+              id="case-studies-heading"
+              className="text-display font-bold text-white mb-6 animate-fade-up stagger-1 gradient-text"
+            >
               Stories of Our Transformations
             </h1>
             
@@ -203,10 +221,10 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Premium Metrics Section */}
-      <section className="relative py-20 bg-white">
+      <section className="relative py-20 bg-white" aria-labelledby="metrics-heading">
         <div className="container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-display-sm font-bold text-brand-navy mb-4">
+            <h2 id="metrics-heading" className="text-display-sm font-bold text-brand-navy mb-4">
               Proven Track Record
             </h2>
             <p className="text-body-lg text-gray-600 max-w-2xl mx-auto">
@@ -214,22 +232,33 @@ export default function CaseStudiesPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8" role="list">
             {[
-              { icon: Target, value: "500+", label: "Projects Completed", color: "from-emerald-500 to-teal-600" },
-              { icon: Star, value: "99.0%", label: "Customer Satisfaction", color: "from-blue-500 to-cyan-600" },
-              { icon: Users, value: "50+", label: "Global Presence", color: "from-purple-500 to-pink-600" },
-              { icon: Award, value: "9.2", label: "Industry Rating", color: "from-orange-500 to-red-600" }
+              { icon: Target, value: "50+", label: "Projects Completed", color: "from-emerald-500 to-teal-600", ariaLabel: "500 plus projects completed" },
+              { icon: Star, value: "99.5%", label: "Customer Satisfaction", color: "from-blue-500 to-cyan-600", ariaLabel: "99 percent customer satisfaction" },
+              { icon: Users, value: "50+", label: "Global Presence", color: "from-purple-500 to-pink-600", ariaLabel: "50 plus global presence" },
+              { icon: Award, value: "9.8", label: "Industry Rating", color: "from-orange-500 to-red-600", ariaLabel: "9.8 industry rating" }
             ].map((metric, index) => {
               const IconComponent = metric.icon;
               return (
-                <div key={index} className="text-center group">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${metric.color} rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <IconComponent className="w-8 h-8 text-white" />
+                <motion.div 
+                  key={index} 
+                  className="text-center group"
+                  role="listitem"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <div 
+                    className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${metric.color} rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
+                    aria-label={metric.ariaLabel}
+                  >
+                    <IconComponent className="w-8 h-8 text-white" aria-hidden="true" />
                   </div>
-                  <div className="text-3xl font-bold text-brand-navy mb-2">{metric.value}</div>
+                  <div className="text-3xl font-bold text-brand-navy mb-2" aria-label={metric.value}>{metric.value}</div>
                   <div className="text-gray-600 text-sm font-medium">{metric.label}</div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -237,9 +266,9 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Case Studies Grid */}
-      <section className="relative py-24 bg-gradient-to-br from-brand-navy via-brand-card to-brand-navy">
+      <section className="relative py-24 bg-gradient-to-br from-brand-navy via-brand-card to-brand-navy" aria-labelledby="case-studies-grid-heading">
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 opacity-5" aria-hidden="true">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-brand-teal/10 to-brand-aqua/10"></div>
           <div className="absolute top-20 left-20 w-32 h-32 border border-brand-teal/20 rotate-45"></div>
           <div className="absolute bottom-20 right-20 w-24 h-24 border border-brand-aqua/20 rounded-full"></div>
@@ -248,82 +277,91 @@ export default function CaseStudiesPage() {
         
         <div className="relative container mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-display-sm font-bold text-white mb-4">
-          Our Case Studies
+            <h2 id="case-studies-grid-heading" className="text-display-sm font-bold text-white mb-4">
+              Our Case Studies
             </h2>
             <p className="text-body-lg text-gray-300 max-w-3xl mx-auto">
               Explore detailed success stories from our portfolio of transformative projects
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-10" role="list">
             {caseStudies.map((study, index) => {
               const IconComponent = study.icon;
               return (
-            <SafeLink
-              href={`/case-studies/${study.id || "default"}`}
-              key={study.id}
-              className="block group"
-            >
-                  <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl overflow-hidden transition-all duration-700 transform group-hover:scale-[1.03] group-hover:shadow-glow-xl border border-white/10 h-full flex flex-col animate-fade-up hover:border-brand-aqua/30"
-                       style={{ animationDelay: `${index * 0.1}s` }}>
-                    
-                    {/* Image Section */}
-                    <div className="relative h-72 overflow-hidden">
-                  <Image
-                    src={study.image}
-                    alt={`${study.title} - ${study.industry} case study by SyncOps. ${study.description}`}
-                        width={400}
-                        height={288}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        style={{ objectPosition: 'center 20%' }}
-                        loading={index < 6 ? "eager" : "lazy"}
-                      />
+                <motion.article
+                  key={study.id}
+                  role="listitem"
+                  className="h-full"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <SafeLink
+                    href={`/case-studies/${study.id || "default"}`}
+                    className="block group h-full"
+                    aria-label={`Read case study: ${study.title}`}
+                  >
+                    <div className="relative bg-white/5 backdrop-blur-xl rounded-3xl overflow-hidden transition-all duration-700 transform group-hover:scale-[1.03] group-hover:shadow-glow-xl border border-white/10 h-full flex flex-col hover:border-brand-aqua/30">
                       
-                      {/* Enhanced Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                      
-                      {/* Industry Badge */}
-                      <div className="absolute top-6 left-6">
-                        <span className={`inline-flex items-center bg-gradient-to-r ${study.gradient} text-white text-xs font-bold px-4 py-2 rounded-full shadow-xl backdrop-blur-sm`}>
-                          <IconComponent className="w-4 h-4 mr-2" />
-                    {study.industry}
-                  </span>
-                </div>
-                      
-                      {/* Hover Overlay */}
-                      <div className="absolute inset-0 bg-gradient-brand opacity-0 group-hover:opacity-25 transition-opacity duration-500"></div>
-                    </div>
-                    
-                    {/* Content Section */}
-                    <div className="p-8 flex flex-col flex-grow">
-                      <h3 className="text-xl font-bold text-white mb-4 group-hover:text-brand-aqua transition-colors duration-300 leading-tight">
-                    {study.title}
-                      </h3>
-                      
-                      <p className="text-gray-300 flex-grow leading-relaxed mb-6 text-sm">
-                        {study.description}
-                      </p>
-                      
-                      {/* Enhanced CTA */}
-                      <div className="flex items-center justify-between">
-                        <span className="inline-flex items-center text-brand-aqua group-hover:text-white transition-colors duration-300 font-semibold text-sm">
-                          Read Case Study
-                          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        </span>
+                      {/* Image Section */}
+                      <div className="relative h-72 overflow-hidden flex-shrink-0">
+                        <Image
+                          src={study.image}
+                          alt={`${study.title} - ${study.industry} case study by SyncOps. ${study.description}`}
+                          width={400}
+                          height={288}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          style={{ objectPosition: 'center 20%' }}
+                          loading={index < 6 ? "eager" : "lazy"}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
                         
-                        <div className="w-10 h-10 rounded-full bg-gradient-brand flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 shadow-lg">
-                          <ArrowRight className="w-5 h-5 text-white" />
+                        {/* Enhanced Gradient Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" aria-hidden="true"></div>
+                        
+                        {/* Industry Badge */}
+                        <div className="absolute top-6 left-6">
+                          <span className={`inline-flex items-center bg-gradient-to-r ${study.gradient} text-white text-xs font-bold px-4 py-2 rounded-full shadow-xl backdrop-blur-sm`}>
+                            <IconComponent className="w-4 h-4 mr-2" aria-hidden="true" />
+                            {study.industry}
+                          </span>
+                        </div>
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-gradient-brand opacity-0 group-hover:opacity-25 transition-opacity duration-500" aria-hidden="true"></div>
+                      </div>
+                      
+                      {/* Content Section */}
+                      <div className="p-8 flex flex-col flex-grow min-h-0">
+                        <h3 className="text-xl font-bold text-white mb-4 group-hover:text-brand-aqua transition-colors duration-300 leading-tight line-clamp-2">
+                          {study.title}
+                        </h3>
+                        
+                        <p className="text-gray-300 flex-grow leading-relaxed mb-6 text-sm line-clamp-3">
+                          {study.description}
+                        </p>
+                        
+                        {/* Enhanced CTA */}
+                        <div className="flex items-center justify-between mt-auto">
+                          <span className="inline-flex items-center text-brand-aqua group-hover:text-white transition-colors duration-300 font-semibold text-sm">
+                            Read Case Study
+                            <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" aria-hidden="true" />
+                          </span>
+                          
+                          <div className="w-10 h-10 rounded-full bg-gradient-brand flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:scale-110 shadow-lg" aria-hidden="true">
+                            <ArrowRight className="w-5 h-5 text-white" />
+                          </div>
                         </div>
                       </div>
+                      
+                      {/* Enhanced Decorative Elements */}
+                      <div className="absolute -top-3 -right-3 w-20 h-20 bg-gradient-brand rounded-full opacity-10 group-hover:opacity-25 transition-opacity duration-500 blur-sm" aria-hidden="true"></div>
+                      <div className="absolute -bottom-3 -left-3 w-16 h-16 bg-brand-aqua rounded-full opacity-10 group-hover:opacity-25 transition-opacity duration-500 blur-sm" aria-hidden="true"></div>
+                      <div className="absolute top-1/2 -right-2 w-8 h-8 bg-brand-teal rounded-full opacity-5 group-hover:opacity-15 transition-opacity duration-500" aria-hidden="true"></div>
                     </div>
-                    
-                    {/* Enhanced Decorative Elements */}
-                    <div className="absolute -top-3 -right-3 w-20 h-20 bg-gradient-brand rounded-full opacity-10 group-hover:opacity-25 transition-opacity duration-500 blur-sm"></div>
-                    <div className="absolute -bottom-3 -left-3 w-16 h-16 bg-brand-aqua rounded-full opacity-10 group-hover:opacity-25 transition-opacity duration-500 blur-sm"></div>
-                    <div className="absolute top-1/2 -right-2 w-8 h-8 bg-brand-teal rounded-full opacity-5 group-hover:opacity-15 transition-opacity duration-500"></div>
-                  </div>
-                </SafeLink>
+                  </SafeLink>
+                </motion.article>
               );
             })}
           </div>
@@ -331,88 +369,78 @@ export default function CaseStudiesPage() {
       </section>
 
       {/* Luxury Testimonials Section */}
-      <section className="relative py-24 bg-white">
-        <div className="container mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-display-sm font-bold text-brand-navy mb-4">
-              What Our Clients Say
-                  </h2>
-            <p className="text-body-lg text-gray-600 max-w-2xl mx-auto">
-              Hear from the leaders who trusted us with their digital transformation
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-brand-navy to-brand-card rounded-3xl p-12 relative overflow-hidden">
-              {/* Background Elements */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-brand-teal/10 rounded-full blur-2xl"></div>
-              <div className="absolute bottom-0 left-0 w-24 h-24 bg-brand-aqua/10 rounded-full blur-2xl"></div>
-              
-              <div className="relative z-10">
-                <Quote className="w-12 h-12 text-brand-aqua mb-6" />
-                <blockquote className="text-xl text-white leading-relaxed mb-8 font-medium">
-                  "SyncOps transformed our entire digital infrastructure. Their AI-powered solutions 
-                  increased our operational efficiency by 300% and reduced costs by 40%. The team's 
-                  expertise and dedication exceeded all our expectations."
-                </blockquote>
-                <div className="flex items-center">
-                  <div className="w-16 h-16 bg-gradient-brand rounded-full flex items-center justify-center mr-4">
-                    <span className="text-white font-bold text-lg">JS</span>
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold text-lg">John Smith</div>
-                    <div className="text-gray-300">CEO, TechCorp Solutions</div>
-                  </div>
-                </div>
-              </div>
-                  </div>
-                </div>
-              </div>
-      </section>
+      {/* <section className="relative">
+       <div>
+        <Testimonial />
+       </div>
+      </section> */}
 
       {/* Final Luxury CTA Section */}
-      <section className="relative py-24 bg-gradient-to-r from-brand-navy via-brand-card to-brand-navy overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-brand-teal/10 to-brand-aqua/10"></div>
-          <div className="absolute top-20 left-20 w-64 h-64 bg-brand-teal/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-80 h-80 bg-brand-aqua/5 rounded-full blur-3xl"></div>
-        </div>
+      <section className="relative py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden" aria-labelledby="cta-heading">
+        {/* Background Effects - Matching FinalCTA Component */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 via-transparent to-[#00C4FF]/5" aria-hidden="true"></div>
         
-        <div className="relative container mx-auto px-6 lg:px-8 text-center">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-display-sm font-bold text-white mb-6">
-              Ready to Transform Your Business?
+        {/* Enhanced Animated Gradient Background */}
+        <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-brand-aqua to-brand-teal rounded-full filter blur-3xl opacity-10 animate-pulse" aria-hidden="true"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-brand-teal to-brand-aqua rounded-full filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: '2s' }} aria-hidden="true"></div>
+        
+        {/* Rotating Gradient Animation */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-brand-aqua/3 to-brand-teal/3 rounded-full filter blur-3xl" aria-hidden="true"></div>
+        
+        {/* Floating Elements */}
+        <div className="absolute top-1/4 left-10 w-4 h-4 bg-brand-aqua rounded-full opacity-60 animate-bounce" aria-hidden="true"></div>
+        <div className="absolute top-1/2 right-20 w-3 h-3 bg-brand-teal rounded-full opacity-50 animate-bounce" style={{ animationDelay: '0.5s' }} aria-hidden="true"></div>
+        <div className="absolute bottom-1/4 left-20 w-2 h-2 bg-brand-aqua rounded-full opacity-40 animate-bounce" style={{ animationDelay: '1s' }} aria-hidden="true"></div>
+        <div className="absolute bottom-1/3 right-10 w-3 h-3 bg-brand-teal rounded-full opacity-50 animate-bounce" style={{ animationDelay: '1.5s' }} aria-hidden="true"></div>
+        
+        <div className="relative container mx-auto px-6 lg:px-8 text-center z-10">
+          <motion.div 
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 id="cta-heading" className="text-display-sm font-bold text-gray-900 mb-6">
+              Ready to <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Transform</span> Your Business?
             </h2>
-            <p className="text-body-xl text-gray-300 mb-12 leading-relaxed">
+            <p className="text-body-xl text-gray-500 mb-12 leading-relaxed">
               Join the ranks of successful companies that have revolutionized their operations 
               with our AI-powered solutions. Let's create your success story together.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <SafeLink href="/contact" className="btn-primary text-lg px-12 py-4">
+              <SafeLink 
+                href="/contact" 
+                className="btn-primary text-lg px-12 py-4"
+                aria-label="Get started today - Contact us"
+              >
                 Get Started Today
               </SafeLink>
-              <SafeLink href="/services" className="btn-secondary text-lg px-12 py-4">
+              <SafeLink 
+                href="/services" 
+                className="btn-secondary text-lg px-12 py-4"
+                aria-label="Explore our services"
+              >
                 Explore Services
-            </SafeLink>
+              </SafeLink>
             </div>
             
-            <div className="mt-12 flex flex-wrap justify-center gap-8 text-white/80">
-              <div className="flex items-center">
-                <Clock className="w-5 h-5 mr-2 text-brand-aqua" />
+            <div className="mt-12 flex flex-wrap justify-center gap-8 text-gray-600" role="list">
+              <div className="flex items-center" role="listitem">
+                <Clock className="w-5 h-5 mr-2 text-brand-aqua" aria-hidden="true" />
                 <span className="text-sm">Quick Setup</span>
               </div>
-              <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 mr-2 text-brand-aqua" />
+              <div className="flex items-center" role="listitem">
+                <CheckCircle className="w-5 h-5 mr-2 text-brand-aqua" aria-hidden="true" />
                 <span className="text-sm">Proven Results</span>
               </div>
-              <div className="flex items-center">
-                <Star className="w-5 h-5 mr-2 text-brand-aqua" />
+              <div className="flex items-center" role="listitem">
+                <Star className="w-5 h-5 mr-2 text-brand-aqua" aria-hidden="true" />
                 <span className="text-sm">Expert Support</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
     </div>

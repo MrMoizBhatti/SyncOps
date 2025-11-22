@@ -4,17 +4,17 @@ import SafeLink from "../../components/ui/SafeLink";
 
 const AboutHero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[#0B0A1C] py-16">
+    <section className="relative overflow-hidden bg-[#0B0A1C] py-12 lg:py-16">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 opacity-30"></div>
       <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
       <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full filter blur-3xl opacity-20 animate-pulse delay-1000"></div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 py-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <div className="text-center lg:text-left">
-            <h1 className="text-4xl lg:text-6xl font-bold leading-snug mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold leading-snug mb-4">
               <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">
                 Empowering the Future
               </span>
@@ -24,7 +24,7 @@ const AboutHero = () => {
               <span className="text-white">Innovation</span>
             </h1>
             
-            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-6 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               At SyncOps, we transform businesses through technology, people, and purpose.
             </p>
             

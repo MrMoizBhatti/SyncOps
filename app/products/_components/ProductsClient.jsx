@@ -75,7 +75,7 @@ export default function ProductsClient() {
         </section>
 
         {/* Final CTA (brand gradient) */}
-        <section className="bg-gradient-to-br from-brand-navy via-gray-900 to-brand-navy py-20">
+        <section>
           <motion.div initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.08)}>
             <FinalCTA />
           </motion.div>
