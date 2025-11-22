@@ -12,9 +12,6 @@ import {
   Sparkles,
   Shield,
   Clock,
-  Building,
-  Globe,
-  DollarSign,
   MapPin,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
@@ -29,9 +26,6 @@ const ContactForm = () => {
     lastName: "",
     email: "",
     phone: "",
-    companyName: "",
-    companyUrl: "",
-    budget: "",
     region: "",
     services: [],
   });
@@ -39,14 +33,6 @@ const ContactForm = () => {
   const [captchaVerified, setCaptchaVerified] = useState(false);
   const [toast, setToast] = useState({ show: false, message: "", type: "" });
 
-  const budgetOptions = [
-    { value: "", label: "Select Budget Range" },
-    { value: "5k-10k", label: "$5,000 - $10,000" },
-    { value: "10k-25k", label: "$10,000 - $25,000" },
-    { value: "25k-50k", label: "$25,000 - $50,000" },
-    { value: "50k-100k", label: "$50,000 - $100,000" },
-    { value: "100k+", label: "$100,000+" }
-  ];
 
   const regionOptions = [
     { value: "", label: "Select Region" },
@@ -109,9 +95,6 @@ const ContactForm = () => {
       last_name: formData.lastName,
       user_email: formData.email,
       phone_number: formData.phone,
-      company_name: formData.companyName,
-      company_url: formData.companyUrl,
-      budget: formData.budget,
       region: formData.region,
       services: formData.services.join(", "),
     };
@@ -136,9 +119,6 @@ const ContactForm = () => {
             lastName: "",
             email: "",
             phone: "",
-            companyName: "",
-            companyUrl: "",
-            budget: "",
             region: "",
             services: [],
           });
@@ -350,71 +330,6 @@ const ContactForm = () => {
                     disabled={loading}
                     className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/20 focus:border-[#00F8B4] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                   />
-                </div>
-              </div>
-
-              {/* Company Name */}
-              <div>
-                <label htmlFor="companyName" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
-                  Company Name *
-                </label>
-                <div className="relative">
-                  <Building className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 z-10" size={20} />
-                  <input
-                    type="text"
-                    id="companyName"
-                    name="companyName"
-                    value={formData.companyName}
-                    onChange={handleChange}
-                    placeholder="Enter company name"
-                    required
-                    disabled={loading}
-                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/20 focus:border-[#00F8B4] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
-                  />
-                </div>
-              </div>
-
-              {/* Company URL */}
-              <div>
-                <label htmlFor="companyUrl" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
-                  Company Website
-                </label>
-                <div className="relative">
-                  <Globe className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 z-10" size={20} />
-                  <input
-                    type="url"
-                    id="companyUrl"
-                    name="companyUrl"
-                    value={formData.companyUrl}
-                    onChange={handleChange}
-                    placeholder="https://yourcompany.com"
-                    disabled={loading}
-                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/20 focus:border-[#00F8B4] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
-                  />
-                </div>
-              </div>
-
-              {/* Budget */}
-              <div>
-                <label htmlFor="budget" className="block text-xs sm:text-sm font-medium text-gray-700 mb-2">
-                  Budget Range
-                </label>
-                <div className="relative">
-                  <DollarSign className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 z-10 pointer-events-none" size={20} />
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleChange}
-                    disabled={loading}
-                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/20 focus:border-[#00F8B4] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 text-sm sm:text-base appearance-none"
-                  >
-                    {budgetOptions.map(option => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
                 </div>
               </div>
 

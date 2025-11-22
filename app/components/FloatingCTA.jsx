@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { X, Phone, Mail, User, Building, Globe, DollarSign, MapPin } from "lucide-react";
+import { X, Phone, Mail, User, MapPin } from "lucide-react";
 
 const FloatingCTA = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,21 +9,10 @@ const FloatingCTA = () => {
     lastName: "",
     email: "",
     phone: "",
-    budget: "",
-    companyName: "",
-    companyUrl: "",
     region: "",
     services: []
   });
 
-  const budgetOptions = [
-    { value: "", label: "Select Budget Range" },
-    { value: "5k-10k", label: "$5,000 - $10,000" },
-    { value: "10k-25k", label: "$10,000 - $25,000" },
-    { value: "25k-50k", label: "$25,000 - $50,000" },
-    { value: "50k-100k", label: "$50,000 - $100,000" },
-    { value: "100k+", label: "$100,000+" }
-  ];
 
   const regionOptions = [
     { value: "", label: "Select Region" },
@@ -231,68 +220,6 @@ const FloatingCTA = () => {
                     className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all duration-200"
                     placeholder="Enter phone number"
                   />
-                </div>
-              </div>
-
-              {/* Company Name */}
-              <div>
-                <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-2">
-                  Company Name *
-                </label>
-                <div className="relative">
-                  <Building className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                  <input
-                    type="text"
-                    id="companyName"
-                    name="companyName"
-                    required
-                    value={formData.companyName}
-                    onChange={handleInputChange}
-                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all duration-200"
-                    placeholder="Enter company name"
-                  />
-                </div>
-              </div>
-
-              {/* Company URL */}
-              <div>
-                <label htmlFor="companyUrl" className="block text-sm font-medium text-gray-700 mb-2">
-                  Company Website
-                </label>
-                <div className="relative">
-                  <Globe className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                  <input
-                    type="url"
-                    id="companyUrl"
-                    name="companyUrl"
-                    value={formData.companyUrl}
-                    onChange={handleInputChange}
-                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all duration-200"
-                    placeholder="https://yourcompany.com"
-                  />
-                </div>
-              </div>
-
-              {/* Budget */}
-              <div>
-                <label htmlFor="budget" className="block text-sm font-medium text-gray-700 mb-2">
-                  Budget Range
-                </label>
-                <div className="relative">
-                  <DollarSign className="absolute left-3 top-3 w-5 h-5 text-gray-400" />
-                  <select
-                    id="budget"
-                    name="budget"
-                    value={formData.budget}
-                    onChange={handleInputChange}
-                    className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-400 focus:border-transparent transition-all duration-200 appearance-none bg-white"
-                  >
-                    {budgetOptions.map(option => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </select>
                 </div>
               </div>
 

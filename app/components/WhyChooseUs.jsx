@@ -1,7 +1,6 @@
 "use client";
 import { Users, Settings, Rocket, Handshake, CheckCircle, Clock, Shield, TrendingUp } from 'lucide-react';
 import SafeLink from './ui/SafeLink';
-import { Parallax } from 'react-scroll-parallax';
 import { motion } from 'framer-motion';
 import { stagger, fadeUp, viewport } from '../../lib/motionConfig';
 
@@ -72,8 +71,7 @@ export default function WhyChooseUs() {
       </motion.div>
       
         {/* Main Benefits Grid */}
-        <Parallax translateY={[10, -10]}>
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 mb-16" initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.08)}>
+        <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 mb-16" initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.08)}>
           {benefits.map((benefit) => {
             const IconComponent = benefit.icon;
             return (
@@ -105,8 +103,7 @@ export default function WhyChooseUs() {
           </motion.div>
             );
           })}
-          </motion.div>
-        </Parallax>
+        </motion.div>
 
         {/* Mid-Section CTA */}
         <div className="text-center mb-16">

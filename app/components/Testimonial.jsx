@@ -8,31 +8,31 @@ const testimonials = [
   {
     text: "The team delivered outstanding results for our project. Their innovative approach and technical expertise exceeded our expectations.",
     name: "John Doe",
-    position: "CEO, TechCorp",
+    position: "CEO, United States",
     imageUrl: "https://avatar.iran.liara.run/public/20",
   },
   {
     text: "Their expertise in cloud solutions helped our business scale efficiently. The seamless integration and support were invaluable to our growth.",
     name: "Jane Smith",
-    position: "CTO, FinTech Innovations",
+    position: "CTO, United Kingdom",
     imageUrl: "https://avatar.iran.liara.run/public/30",
   },
   {
     text: "Their solutions empowered us to automate and optimize our workflows, saving us significant time and resources.",
     name: "Alice Brown",
-    position: "Operations Manager, RetailPro",
+    position: "Operations Manager, Canada",
     imageUrl: "https://avatar.iran.liara.run/public/40",
   },
   {
     text: "An exceptional team to work with. They consistently delivered beyond expectations and ensured the project was completed on time.",
     name: "Michael Lee",
-    position: "Product Manager, InnovateX",
+    position: "Product Manager, Australia",
     imageUrl: "https://avatar.iran.liara.run/public/50",
   },
   {
     text: "The innovative solutions provided by the team have significantly improved our operational efficiency and customer satisfaction.",
     name: "Emily Chen",
-    position: "Director of Operations, GlobalTech",
+    position: "Director of Operations, Singapore",
     imageUrl: "https://avatar.iran.liara.run/public/60",
   },
 ];

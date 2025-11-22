@@ -53,7 +53,7 @@ const ClientTestimonial = () => {
               </div>
               <div className="text-center lg:text-left">
                 <h4 className="text-xl font-bold text-[#2D2D2D]">Sarah Chen</h4>
-                <p className="text-gray-600">CTO, TechCorp Solutions</p>
+                <p className="text-gray-600">CTO, United States</p>
               </div>
             </div>
           </div>
