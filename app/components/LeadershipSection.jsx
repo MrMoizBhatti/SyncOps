@@ -34,13 +34,6 @@ const founder = [
 
 const cSuite = [
   {
-    name: "Rimsha Imran",
-    role: "Chief Technology Officer (CTO)",
-    experienceBadge: "5+ years' experience",
-    blurb: "Leads product development, technology roadmap, and innovation strategy.",
-    photo: "/images/leadership/RimshaimranCTO.jpeg",
-  },
-  {
     name: "Ahmer Mairaj",
     role: "Chief Operating Officer (COO)",
     experienceBadge: "10+ years' experience",
@@ -48,11 +41,11 @@ const cSuite = [
     photo: "/images/leadership/Ahmer-Mairaj.jpg",
   },
   {
-    name: "Abu Sufian",
-    role: "Chief Marketing Officer (CMO)",
-    experienceBadge: "15+ years' experience",
-    blurb: "Manages brand strategy, marketing campaigns, and global visibility.",
-    photo: "/images/leadership/Abu-Sufian.jpg",
+    name: "Rimsha Imran",
+    role: "Chief Technology Officer (CTO)",
+    experienceBadge: "5+ years' experience",
+    blurb: "Leads product development, technology roadmap, and innovation strategy.",
+    photo: "/images/leadership/RimshaimranCTO.jpeg",
   },
   {
     name: "Nida Naeem",
@@ -60,6 +53,13 @@ const cSuite = [
     experienceBadge: "8+ years' experience",
     blurb: "Secures partnerships, expands market reach, and drives revenue growth.",
     photo: "/images/leadership/NidaNaeemCMO.jpeg",
+  },
+  {
+    name: "Abu Sufian",
+    role: "Chief Marketing Officer (CMO)",
+    experienceBadge: "15+ years' experience",
+    blurb: "Manages brand strategy, marketing campaigns, and global visibility.",
+    photo: "/images/leadership/Abu-Sufian.jpg",
   },
 ];
 
@@ -308,12 +308,43 @@ const LeadershipSection = () => {
     setCurrentIndex((prev) => (prev - 1 + allLeadership.length) % allLeadership.length);
   };
 
-  // Auto-rotate (optional)
+  // Auto-rotate with intersection observer to prevent reset when section comes into view
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % allLeadership.length);
-    }, 20000);
-    return () => clearInterval(interval);
+    if (!sectionRef.current) return;
+
+    let interval = null;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Only start auto-rotate when section is visible
+            if (!interval) {
+              interval = setInterval(() => {
+                setCurrentIndex((prev) => (prev + 1) % allLeadership.length);
+              }, 5000); // Reduced from 20000ms to 5000ms (5 seconds)
+            }
+          } else {
+            // Stop auto-rotate when section is not visible
+            if (interval) {
+              clearInterval(interval);
+              interval = null;
+            }
+          }
+        });
+      },
+      { threshold: 0.3 } // Trigger when 30% of section is visible
+    );
+
+    observer.observe(sectionRef.current);
+
+    // Cleanup
+    return () => {
+      observer.disconnect();
+      if (interval) {
+        clearInterval(interval);
+      }
+    };
   }, []);
 
   return (

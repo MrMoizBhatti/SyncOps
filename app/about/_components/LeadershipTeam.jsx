@@ -1,44 +1,332 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { Linkedin, Twitter, Globe, Mail, ChevronLeft, ChevronRight } from "lucide-react";
 
-const LeadershipTeam = () => {
+const getInitials = (full) => {
+  const p = full.trim().split(/\s+/);
+  const f = p[0]?.[0] || "";
+  const l = p[p.length - 1]?.[0] || "";
+  return (f + l).toUpperCase();
+};
+
+// All leaders in hierarchy order: CEO, COO, CTO, CBDO, CMO
   const team = [
     {
       name: "Majid Ali",
-      role: "Founder & CEO",
-      initials: "MA",
-      bio: "Visionary leader with extensive experience in healthcare technology and AI innovation.",
+    role: "Founder & Chief Executive Officer (CEO)",
+    experienceBadge: "More than 10 years' experience",
+    blurb: "Overall visionary and leader of SyncOps, responsible for strategy, innovation, and company direction.",
+    photo: "/images/leadership/Majid-aliCEO.jpeg",
+    website: "#", 
+    linkedin: "#", 
+    twitter: "#", 
+    email: "majid@syncops.tech",
+    highlight: true
+  },
+  {
+    name: "Ahmer Mairaj",
+    role: "Chief Operating Officer (COO)",
+    experienceBadge: "10+ years' experience",
+    blurb: "Oversees daily operations, resource management, and execution of business strategies.",
+    photo: "/images/leadership/Ahmer-Mairaj.jpg",
+    website: "#",
       linkedin: "#",
       twitter: "#",
-      github: "#",
-      profileLink: "#"
+    email: "#",
     },
     {
       name: "Rimsha Imran",
-      role: "Chief Technology Officer",
-      initials: "RI",
-      bio: "Technology expert specializing in AI development and healthcare software architecture.",
+    role: "Chief Technology Officer (CTO)",
+    experienceBadge: "5+ years' experience",
+    blurb: "Leads product development, technology roadmap, and innovation strategy.",
+    photo: "/images/leadership/RimshaimranCTO.jpeg",
+    website: "#",
       linkedin: "#",
       twitter: "#",
-      github: "#",
-      profileLink: "#"
+    email: "#",
     },
     {
       name: "Nida Naeem",
-      role: "Chief Marketing Officer",
-      initials: "NN",
-      bio: "Marketing strategist focused on healthcare technology adoption and client success.",
+    role: "Chief Business Development Officer (CBDO) ",
+    experienceBadge: "8+ years' experience",
+    blurb: "Secures partnerships, expands market reach, and drives revenue growth.",
+    photo: "/images/leadership/NidaNaeemCMO.jpeg",
+    website: "#",
+    linkedin: "#",
+    twitter: "#",
+    email: "#",
+  },
+  {
+    name: "Abu Sufian",
+    role: "Chief Marketing Officer (CMO)",
+    experienceBadge: "15+ years' experience",
+    blurb: "Manages brand strategy, marketing campaigns, and global visibility.",
+    photo: "/images/leadership/Abu-Sufian.jpg",
+    website: "#",
       linkedin: "#",
       twitter: "#",
-      github: "#",
-      profileLink: "#"
+    email: "#",
+  },
+];
+
+// Coverflow Card Component
+const CoverflowCard = ({ person, index, currentIndex, total, onClick }) => {
+  const { 
+    name, 
+    role, 
+    experienceBadge, 
+    blurb, 
+    photo,
+    linkedin = "#", 
+    twitter = "#", 
+    website = "#", 
+    email = "#" 
+  } = person;
+
+  // Calculate position relative to center with circular wrapping
+  const rawOffset = index - currentIndex;
+  // Handle circular offset for smooth looping
+  let offset = rawOffset;
+  if (rawOffset > total / 2) {
+    offset = rawOffset - total;
+  } else if (rawOffset < -total / 2) {
+    offset = rawOffset + total;
+  }
+  const absOffset = Math.abs(offset);
+  
+  // Calculate 3D transform values
+  const getTransform = () => {
+    if (absOffset === 0) {
+      // Center card - no rotation, full scale
+      return {
+        rotateY: 0,
+        translateX: 0,
+        translateZ: 0,
+        scale: 1,
+        opacity: 1,
+        zIndex: 10
+      };
+    } else {
+      // Side cards - rotated and scaled (show up to 2 cards on each side)
+      if (absOffset > 2) {
+        // Hide cards that are too far away
+        return {
+          rotateY: 0,
+          translateX: 0,
+          translateZ: 0,
+          scale: 0,
+          opacity: 0,
+          zIndex: 0
+        };
+      }
+      
+      const direction = offset > 0 ? 1 : -1;
+      const rotateY = direction * 45;
+      const translateX = direction * (absOffset * 180 + 40);
+      const translateZ = -absOffset * 80;
+      const scale = Math.max(0.65, 1 - absOffset * 0.12);
+      const opacity = Math.max(0.4, 1 - absOffset * 0.25);
+      
+      return {
+        rotateY,
+        translateX,
+        translateZ,
+        scale,
+        opacity,
+        zIndex: 10 - absOffset
+      };
     }
-  ];
+  };
+
+  const transform = getTransform();
+  const isActive = absOffset === 0;
+
+  return (
+    <motion.div
+      className="absolute w-[360px] md:w-[380px] cursor-pointer"
+      style={{
+        left: '50%',
+        marginLeft: '-180px',
+        transformStyle: 'preserve-3d',
+        transformOrigin: 'center center',
+        zIndex: transform.zIndex,
+      }}
+      animate={{
+        x: transform.translateX,
+        rotateY: transform.rotateY,
+        scale: transform.scale,
+        opacity: transform.opacity,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 300,
+        damping: 30,
+      }}
+      onClick={() => onClick(index)}
+      whileHover={isActive ? { 
+        scale: transform.scale * 1.05,
+        y: -5,
+      } : {
+        scale: transform.scale * 1.02,
+      }}
+    >
+      <div className={`bg-[#1A1A2E]/90 backdrop-blur-xl rounded-2xl overflow-hidden border transition-all duration-300 flex flex-col ${
+        isActive 
+          ? 'h-[480px] md:h-[460px] lg:h-[440px] shadow-[0_25px_50px_rgba(0,196,255,0.15)] border-[#00C4FF]/30 ring-2 ring-[#00C4FF]/20' 
+          : 'h-[360px] md:h-[340px] lg:h-[320px] shadow-2xl border-white/10 hover:shadow-[0_25px_50px_rgba(0,0,0,0.15)]'
+      }`}>
+        {/* Image Section */}
+        <div className="relative h-[360px] md:h-[340px] lg:h-[320px] overflow-hidden bg-gradient-to-br from-gray-100 via-gray-50 to-white flex-shrink-0">
+          {photo ? (
+            <Image
+              src={photo}
+              alt={`${name} - ${role}`}
+              fill
+              className="object-cover"
+              style={{ objectPosition: 'center 10%' }}
+              priority={isActive}
+              unoptimized
+            />
+          ) : (
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#00F8B4] to-[#00C4FF] text-white font-bold text-5xl md:text-6xl">
+              {getInitials(name)}
+            </div>
+          )}
+          
+          {/* Gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+          
+          {/* Info overlay */}
+          <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 text-white">
+            <h3 className="text-lg md:text-xl font-bold mb-0.5">{name}</h3>
+            <div className="text-xs font-medium text-white/90 mb-1.5">{role}</div>
+            <div className="inline-flex items-center rounded-full bg-white/20 backdrop-blur-sm px-2.5 py-0.5 text-xs font-medium border border-white/30">
+              {experienceBadge}
+            </div>
+          </div>
+        </div>
+
+        {/* Content Section - Only show on active card */}
+        {isActive && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="flex flex-col p-3 md:p-4 bg-gradient-to-b from-[#1A1A2E] to-[#0B0A1C]"
+          >
+            <p className="text-gray-300 leading-relaxed text-xs md:text-sm mb-3">{blurb}</p>
+            
+            {/* Social Icons */}
+            <div className="flex items-center gap-2 text-gray-400">
+              <a 
+                aria-label="LinkedIn" 
+                href={linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[#00C4FF] hover:scale-125 transition-all duration-300 p-1.5 rounded-full hover:bg-white/10"
+              >
+                <Linkedin size={18} />
+              </a>
+              <a 
+                aria-label="Twitter" 
+                href={twitter} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[#00C4FF] hover:scale-125 transition-all duration-300 p-1.5 rounded-full hover:bg-white/10"
+              >
+                <Twitter size={18} />
+              </a>
+              <a 
+                aria-label="Website" 
+                href={website} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-[#00C4FF] hover:scale-125 transition-all duration-300 p-1.5 rounded-full hover:bg-white/10"
+              >
+                <Globe size={18} />
+              </a>
+              <a 
+                aria-label="Email" 
+                href={`mailto:${email}`}
+                className="hover:text-[#00C4FF] hover:scale-125 transition-all duration-300 p-1.5 rounded-full hover:bg-white/10"
+              >
+                <Mail size={18} />
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </div>
+    </motion.div>
+  );
+};
+
+const LeadershipTeam = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sectionRef = useRef(null);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % team.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + team.length) % team.length);
+  };
+
+  // Auto-rotate with intersection observer - continuous looping
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    let intervalId = null;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Start auto-rotate when section is visible
+            if (!intervalId) {
+              intervalId = setInterval(() => {
+                setCurrentIndex((prev) => {
+                  const next = (prev + 1) % team.length;
+                  return next;
+                });
+              }, 5000);
+            }
+          } else {
+            // Stop auto-rotate when section is not visible
+            if (intervalId) {
+              clearInterval(intervalId);
+              intervalId = null;
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(sectionRef.current);
+
+    // Cleanup on unmount
+    return () => {
+      observer.disconnect();
+      if (intervalId) {
+        clearInterval(intervalId);
+      }
+    };
+  }, [team.length]);
 
   return (
     <div className="max-w-7xl mx-auto px-6 lg:px-8">
       {/* Section Header */}
-      <div className="text-center mb-16">
+      <motion.div 
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.8 }}
+      >
         <h2 className="text-4xl lg:text-5xl font-bold mb-6">
           <span className="text-white">SyncOps</span>{" "}
           <span className="text-[#00C4FF]">Leadership Team</span>
@@ -46,79 +334,58 @@ const LeadershipTeam = () => {
         <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
           Meet the visionary leaders driving SyncOps Software House forward in healthcare AI innovation.
         </p>
-      </div>
+      </motion.div>
 
-      {/* Team Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {team.map((member, index) => (
-          <div
-            key={index}
-            className="group bg-[#1A1A2E]/80 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden"
-          >
-            {/* Glowing background effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 to-[#00C4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            
-            <div className="relative z-10 text-center">
-              {/* Avatar */}
-              <div className="mb-6">
-                <div className="w-24 h-24 bg-gradient-to-br from-[#00F8B4] to-[#00C4FF] rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110 relative">
-                  <span className="text-2xl font-bold text-white">{member.initials}</span>
-                  {/* Glowing ring */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00F8B4] to-[#00C4FF] opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-300"></div>
-                </div>
-              </div>
-
-              {/* Content */}
-              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#00F8B4] transition-colors duration-300">
-                {member.name}
-              </h3>
-              <p className="text-[#00C4FF] font-semibold mb-4">
-                {member.role}
-              </p>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
-                {member.bio}
-              </p>
-
-              {/* Social Icons */}
-              <div className="flex justify-center gap-4">
-                <a
-                  href={member.linkedin}
-                  className="w-10 h-10 bg-[#0077B5]/20 hover:bg-[#0077B5]/40 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 border border-[#0077B5]/30 hover:border-[#0077B5]/60"
-                  aria-label={`${member.name} LinkedIn`}
-                >
-                  <svg className="w-5 h-5 text-[#0077B5]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                  </svg>
-                </a>
-                
-                <a
-                  href={member.twitter}
-                  className="w-10 h-10 bg-[#1DA1F2]/20 hover:bg-[#1DA1F2]/40 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 border border-[#1DA1F2]/30 hover:border-[#1DA1F2]/60"
-                  aria-label={`${member.name} Twitter`}
-                >
-                  <svg className="w-5 h-5 text-[#1DA1F2]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                  </svg>
-                </a>
-                
-                <a
-                  href={member.github}
-                  className="w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 border border-white/20 hover:border-white/40"
-                  aria-label={`${member.name} GitHub`}
-                >
-                  <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-            {/* Floating accent elements */}
-            <div className="absolute top-4 right-4 w-2 h-2 bg-[#00F8B4] rounded-full animate-pulse opacity-60"></div>
-            <div className="absolute bottom-4 left-4 w-1.5 h-1.5 bg-[#00C4FF] rounded-full animate-bounce opacity-50"></div>
+      {/* Coverflow Container */}
+      <section ref={sectionRef} className="relative py-10">
+        <div className="relative h-[600px] md:h-[560px] lg:h-[540px] flex items-center justify-center overflow-visible w-full">
+          <div className="relative w-full h-full" style={{ perspective: '1200px' }}>
+            {team.map((person, index) => (
+              <CoverflowCard
+                key={`${person.name}-${index}`}
+                person={person}
+                index={index}
+                currentIndex={currentIndex}
+                total={team.length}
+                onClick={setCurrentIndex}
+              />
+            ))}
           </div>
-        ))}
+
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="hidden md:flex absolute left-1 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/95 backdrop-blur-sm shadow-lg hover:shadow-xl hover:shadow-[#00C4FF]/20 transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#00C4FF]/50 border border-gray-200 hover:border-[#00C4FF]/30 items-center justify-center"
+            aria-label="Previous"
+          >
+            <ChevronLeft size={24} className="text-slate-700 hover:text-[#00C4FF] transition-colors" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="hidden md:flex absolute right-1 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/95 backdrop-blur-sm shadow-lg hover:shadow-xl hover:shadow-[#00C4FF]/20 transition-all duration-300 hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-[#00C4FF]/50 border border-gray-200 hover:border-[#00C4FF]/30 items-center justify-center"
+            aria-label="Next"
+          >
+            <ChevronRight size={24} className="text-slate-700 hover:text-[#00C4FF] transition-colors" />
+          </button>
+
+          {/* Dots Indicator */}
+          <div className="absolute bottom-2 md:bottom-4 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+            {team.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'bg-[#00C4FF] w-8 shadow-lg shadow-[#00C4FF]/40' 
+                    : 'bg-gray-300 hover:bg-gray-400 w-2'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
       </div>
+      </section>
 
       {/* Bottom CTA */}
       <div className="mt-16 text-center">
