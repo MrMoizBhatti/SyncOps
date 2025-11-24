@@ -6,9 +6,7 @@ import LeadershipTeam from "./_components/LeadershipTeam";
 import JoinTeamCTA from "./_components/JoinTeamCTA";
 import HowWeWork from "./_components/HowWeWork";
 import WhatDrivesUs from "./_components/WhatDrivesUs";
-import ClientTestimonial from "./_components/ClientTestimonial";
 import TrustedMetrics from "./_components/TrustedMetrics";
-import FinalCTA from "./_components/FinalCTA";
 
 export const metadata = {
   title: "About SyncOps - Empowering the Future with Purpose-Driven Innovation",
@@ -65,19 +63,9 @@ const AboutPage = () => {
         <WhatDrivesUs />
       </section>
       
-      {/* 8. Client Testimonial - Light */}
-      <section className="bg-gradient-to-br from-[#FAFAFF] to-white py-20">
-        <ClientTestimonial />
-      </section>
-      
-      {/* 9. Trusted Metrics - Light */}
+      {/* 8.  Trusted Metrics - Light */}
       <section className="bg-gradient-to-br from-white to-[#FAFAFF] py-20">
         <TrustedMetrics />
-      </section>
-      
-      {/* 10. Final CTA - Dark */}
-      <section className="bg-[#0B0A1C] text-white">
-        <FinalCTA />
       </section>
       
     </main>

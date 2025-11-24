@@ -192,24 +192,6 @@ export default function Services() {
             </motion.div>
         ))}
       </div>
-      
-      {/* CTA Section */}
-      <div className="mt-20 text-center">
-        <div className="bg-gradient-to-r from-brand-aqua/5 to-brand-teal/5 rounded-2xl p-8 border border-brand-teal/20">
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">
-            Ready to Start Your Journey?
-          </h3>
-          <p className="text-body-lg text-gray-600 mb-6 max-w-2xl mx-auto">
-            Get a personalized roadmap and timeline for your project. Our experts will analyze your needs and provide a detailed implementation plan.
-          </p>
-          <SafeLink
-            href="/contact"
-            className="btn-primary inline-flex items-center justify-center"
-          >
-            Get Your Free Roadmap
-          </SafeLink>
-        </div>
-      </div>
     </div>
   );
 }
