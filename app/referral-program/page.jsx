@@ -27,7 +27,6 @@ export const generateMetadata = () => ({
 });
 
 import FAQ from "../components/FAQ";
-import CTA from "../components/CTA";
 import ReferralHero from "./_components/ReferralHero";
 import HowItWorks from "./_components/HowItWorks";
 import BenefitsSection from "./_components/BenefitsSection";
@@ -35,7 +34,7 @@ import ProgramTiers from "./_components/ProgramTiers";
 import RewardsSection from "./_components/RewardsSection";
 import EligibilityGuidelines from "./_components/EligibilityGuidelines";
 import ReferralSocialProof from "./_components/ReferralSocialProof";
-
+import FinalCTA from "../components/FinalCTA";
 export default function ReferralProgramPage() {
   return (
     <div className="py-0">
@@ -60,7 +59,7 @@ export default function ReferralProgramPage() {
 
       {/* CTA - site component */}
       <div className="mt-0">
-        <CTA />
+        <FinalCTA />
       </div>
 
       {/* JSON-LD Schema for Program */}

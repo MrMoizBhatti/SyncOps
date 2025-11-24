@@ -54,13 +54,6 @@ const ProvenMethodologyStrip = () => {
                   </div>
                 ))}
               </div>
-              
-              <div className="mt-8">
-                <button className="inline-flex items-center gap-3 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-semibold px-8 py-4 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
-                  <FaRocket className="w-5 h-5" />
-                  Start Your Project
-                </button>
-              </div>
             </div>
             
             {/* Right Content - Stats */}

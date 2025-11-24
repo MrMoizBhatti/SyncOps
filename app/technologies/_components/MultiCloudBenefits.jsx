@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { FaShieldAlt, FaChartLine, FaGlobe, FaCogs } from "react-icons/fa";
+import SafeLink from "../../components/ui/SafeLink";
 
 const MultiCloudBenefits = () => {
   const benefits = [
@@ -90,10 +91,13 @@ const MultiCloudBenefits = () => {
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
             Ready to experience the power of multi-cloud architecture? Let us help you build a resilient, scalable, and cost-effective cloud strategy.
           </p>
-          <button className="inline-flex items-center gap-3 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-semibold px-8 py-4 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
+          <SafeLink
+            href="/contact"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-semibold px-8 py-4 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+          >
             <FaCogs className="w-5 h-5" />
             Get Cloud Strategy Consultation
-          </button>
+          </SafeLink>
         </div>
       </div>
     </section>

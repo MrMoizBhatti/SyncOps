@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { FaReact, FaNodeJs, FaDatabase, FaCloud, FaShieldAlt, FaRocket, FaCode, FaServer, FaDatabase as FaPostgresql, FaLeaf, FaFire, FaPython, FaPhp, FaAws, FaMicrosoft, FaGoogle } from "react-icons/fa";
-import { SiNextdotjs, SiTypescript, SiTailwindcss, SiVuedotjs, SiAngular } from "react-icons/si";
+import { SiNextdotjs, SiTypescript, SiTailwindcss, SiVuedotjs, SiAngular, SiMysql } from "react-icons/si";
 
 const TechnologyStackCards = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -97,6 +97,13 @@ const TechnologyStackCards = () => {
       icon: <FaLeaf className="w-8 h-8" />,
       category: "database",
       color: "text-green-600"
+    },
+    {
+      name: "MySQL",
+      description: "Reliable relational database trusted for transactional workloads",
+      icon: <SiMysql className="w-8 h-8" />,
+      category: "database",
+      color: "text-sky-600"
     },
     {
       name: "Redis",

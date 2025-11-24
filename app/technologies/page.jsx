@@ -6,7 +6,6 @@ import CloudExpertise from "./_components/CloudExpertise";
 import MultiCloudBenefits from "./_components/MultiCloudBenefits";
 import DevelopmentApproach from "./_components/DevelopmentApproach";
 import ProvenMethodologyStrip from "./_components/ProvenMethodologyStrip";
-import TechnologiesCTA from "./_components/TechnologiesCTA";
 
 export const metadata = {
   title: "Technologies - Powering Innovation Through Advanced Technology Stack | SyncOps",
@@ -49,8 +48,7 @@ const TechnologiesPage = () => {
       {/* 7. Proven Methodology Strip - Light */}
       <ProvenMethodologyStrip />
       
-      {/* 8. Ready to Transform CTA - Dark */}
-      <TechnologiesCTA />
+    
     </main>
   );
 };

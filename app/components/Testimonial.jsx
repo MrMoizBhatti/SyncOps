@@ -65,18 +65,7 @@ const TestimonialCard = ({ text, name, position, imageUrl }) => (
     <p className="relative z-10 text-gray-800 italic text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 leading-relaxed font-medium">{text}</p>
     
     {/* Enhanced author info */}
-    <div className="relative z-10 flex items-center mt-auto">
-      <div className="relative">
-      <img
-        src={imageUrl}
-        alt={name}
-          className="rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 mr-3 sm:mr-4 border-2 sm:border-4 border-[#00F8B4] shadow-lg"
-        loading="lazy"
-      />
-        <div className="absolute -top-0.5 -right-0.5 sm:-top-1 sm:-right-1 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full flex items-center justify-center">
-          <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 md:w-3 md:h-3 bg-white rounded-full"></div>
-        </div>
-      </div>
+    <div className="relative z-10 flex items-start mt-auto">
       <div>
         <p className="text-gray-900 font-bold text-base sm:text-lg leading-tight">{name}</p>
         <p className="text-[#00C4FF] text-xs sm:text-sm font-semibold">{position}</p>

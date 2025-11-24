@@ -17,7 +17,7 @@ const metrics = [
     color: "from-[#00C4FF] to-[#00F8B4]"
   },
   {
-    value: "50+",
+    value: "25+",
     label: "Expert Team",
     description: "Senior developers and architects with proven track records",
     icon: Users,

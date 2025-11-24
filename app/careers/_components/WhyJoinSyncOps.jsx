@@ -42,7 +42,7 @@ const WhyJoinSyncOps = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div id="why-join-syncops" className="max-w-7xl mx-auto px-6 lg:px-8">
       {/* Section Header */}
       <div className="text-center mb-16">
         <h2 className="text-4xl lg:text-5xl font-bold text-[#1F3A56] mb-6">

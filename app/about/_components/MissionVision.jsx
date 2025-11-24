@@ -3,7 +3,7 @@ import React from "react";
 
 const MissionVision = () => {
   return (
-    <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div id="mission" className="max-w-7xl mx-auto px-6 lg:px-8">
       {/* Section Header */}
       <div className="text-center mb-20">
         <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-full px-6 py-2 mb-6">

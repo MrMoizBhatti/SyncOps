@@ -54,8 +54,8 @@ const MobileSidebar = ({ isOpen, onClose }) => {
     { href: "/products", label: "Products", icon: Briefcase },
     { href: "/careers", label: "Careers", icon: Users },
     { href: "/referral-programs", label: "Referral Program", icon: GraduationCap },
-    { href: "/blog", label: "Blog", icon: BookOpen },
-    { href: "/about", label: "About Us", icon: Users },
+    { href: "/blog", label: "Blogs", icon: BookOpen },
+    { href: "/about", label: "About", icon: Users },
   ];
 
   const sidebarVariants = {

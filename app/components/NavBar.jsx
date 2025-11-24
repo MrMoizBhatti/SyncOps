@@ -20,8 +20,8 @@ const navLinks = [
   { href: "/products", label: "Products" },
   { href: "/careers", label: "Careers" },
   { href: "/referral-program", label: "Referral Program" },
-  { href: "/blog", label: "Blog" },
-  { href: "/about", label: "About Us" },
+  { href: "/blog", label: "Blogs" },
+  { href: "/about", label: "About" },
 ];
 
 export default function NavBar() {

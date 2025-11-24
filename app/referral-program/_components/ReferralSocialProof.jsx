@@ -32,7 +32,7 @@ const testimonials = [
 
 const stats = [
   { label: "Active Referrers", value: "500+", icon: TrendingUp },
-  { label: "Total Rewards Paid", value: "$2M+", icon: DollarSign },
+  { label: "Total Rewards Paid", value: "$10K+", icon: DollarSign },
   { label: "Success Rate", value: "85%", icon: Star },
 ];
 

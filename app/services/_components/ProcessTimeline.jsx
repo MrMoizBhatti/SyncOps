@@ -8,109 +8,138 @@ const steps = [
     icon: FileSearch,
     title: "Discovery",
     description:
-      "We analyze your needs and objectives. Our team works closely with you to understand the core of your vision, ensuring we tailor the project to meet your exact requirements. This phase involves thorough research, stakeholder interviews, and competitive analysis to gather all necessary information.",
+      "We analyze your needs and objectives, align on success metrics, and conduct stakeholder workshops to surface critical insights.",
   },
   {
     icon: Coffee,
     title: "Planning",
     description:
-      "We create a detailed project roadmap. This phase involves outlining the project's milestones, setting clear expectations, and ensuring the plan aligns with your vision. We also allocate resources, define timelines, and establish communication protocols to keep everything on track.",
+      "We craft a milestone-driven roadmap, define team structure, and establish communication cadences to keep everyone synchronized.",
   },
   {
     icon: Code,
     title: "Development",
     description:
-      "Our team brings your vision to life. We code the project with attention to detail, ensuring the best technology stack and efficient processes to meet your goals. Throughout development, we maintain regular updates and feedback loops to ensure alignment with your expectations.",
+      "Cross-functional squads build iteratively with tight QA loops, transparent demos, and continuous feedback from your team.",
   },
   {
     icon: Zap,
     title: "Testing",
     description:
-      "Rigorous testing ensures top quality. We perform various tests to make sure everything functions as expected and meets the highest standards of performance and usability. This includes unit testing, integration testing, and user acceptance testing to identify and resolve any issues.",
+      "Automated and manual testing run in parallel to guarantee stability, performance, and delightful end-user experiences.",
   },
   {
     icon: Send,
     title: "Deployment",
     description:
-      "Your solution goes live. After final approvals, we deploy the project, ensuring a seamless launch that meets your needs and expectations. We handle all aspects of the deployment process, including server setup, configuration, and monitoring to ensure a smooth transition.",
+      "We orchestrate zero-downtime releases, infrastructure automation, and knowledge transfer to ensure a confident launch.",
   },
   {
     icon: CheckCircle,
     title: "Support",
     description:
-      "Ongoing maintenance and updates. Even after deployment, we offer continuous support to ensure your project runs smoothly and remains up-to-date with evolving technologies. Our support includes bug fixes, performance optimizations, and feature enhancements to keep your solution at its best.",
+      "Post-launch optimization, analytics reviews, and proactive support keep your product resilient and evolving.",
   },
 ];
+
+const StepCard = ({ step, index, align = "left" }) => {
+  const isLeft = align === "left";
+  return (
+    <motion.div
+      className={`relative max-w-xl w-full bg-white/85 backdrop-blur-xl border border-white rounded-3xl p-6 lg:p-8 shadow-[0_25px_70px_rgba(3,23,40,0.08)] ${
+        isLeft ? "lg:ml-auto" : "lg:mr-auto"
+      }`}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, amount: 0.2 }}
+    >
+      <div className="flex items-center justify-between mb-4">
+        <span className="text-xs font-semibold tracking-[0.3em] text-gray-400">
+          STEP {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-[#00F8B4] to-[#00C4FF]" />
+      </div>
+      <h3 className="text-2xl font-semibold text-[#031728] mb-3">{step.title}</h3>
+      <p className="text-gray-600 leading-relaxed text-sm">{step.description}</p>
+    </motion.div>
+  );
+};
 
 const ProcessTimeline = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section
-      ref={ref}
-      className="py-16 text-[#042638] relative overflow-hidden"
-    >
+    <section ref={ref} className="py-20 bg-gradient-to-b from-white to-[#F6FBFF] relative overflow-hidden">
       <motion.div
-        className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-[#0fbab1] rounded-full filter blur-3xl opacity-10"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.1, 0.15, 0.1],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(0,196,255,0.08),_transparent_60%)]"
+        animate={{ opacity: [0.4, 0.6, 0.4] }}
+        transition={{ duration: 12, repeat: Infinity }}
       />
-      <div className="container mx-auto px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
-          className="mx-auto"
+          className="text-center max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#00C4FF]/10 border border-[#00C4FF]/30 text-sm font-semibold text-[#0086B0] mb-6">
+            <span className="w-2 h-2 bg-[#00C4FF] rounded-full animate-pulse" />
+            Proven Delivery Framework
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#031728] mb-4">
             How We Work
           </h2>
-          <p className="text-xl text-gray-700 mb-16 text-center max-w-3xl mx-auto text-balance leading-relaxed">
-            Our process is designed to ensure a smooth and effective journey for
-            every project. We focus on transparency, collaboration, and quality
-            at every stage.
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+            Transparent collaboration keeps you close to the work while our teams drive velocity, quality, and measurable outcomes.
           </p>
-          <div className="relative">
-            <motion.div
-              className="absolute top-0 bottom-0 left-6 w-0.5 bg-[#0fbab1] -ml-0.5"
-              initial={{ height: 0 }}
-              animate={isInView ? { height: "100%" } : {}}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-            />
-            {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                className="flex items-center mb-8 last:mb-0"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              >
-                <motion.div
-                  className="flex-shrink-0 w-12 h-12 bg-white rounded-full flex items-center justify-center mr-4 relative z-10"
-                  initial={{ scale: 0 }}
-                  animate={isInView ? { scale: 1 } : {}}
-                  transition={{ duration: 0.3, delay: index * 0.2 + 0.2 }}
-                >
-                  <div className="w-12 h-12 bg-[#0fbab1] rounded-full flex items-center justify-center">
-                    <step.icon className="w-6 h-6 text-white" />
-                  </div>
-                </motion.div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                  <p className="text-gray-600">{step.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
+
+        <div className="mt-16 space-y-12 relative">
+          <span className="hidden lg:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-gradient-to-b from-[#00F8B4] via-[#00C4FF] to-[#00F8B4]" />
+          <motion.div
+            className="hidden lg:block absolute top-16 right-0 w-72 h-72 rounded-[60px] border border-[#00C4FF]/20 bg-gradient-to-br from-[#00F8B4]/12 to-transparent blur-2xl"
+            animate={{ opacity: [0.35, 0.55, 0.35], scale: [0.95, 1.05, 0.95] }}
+            transition={{ duration: 10, repeat: Infinity }}
+          />
+
+          {steps.map((step, index) => {
+            const align = index % 2 === 0 ? "left" : "right";
+            return (
+              <div
+                key={index}
+                className="relative grid lg:grid-cols-[minmax(0,1fr)_120px_minmax(0,1fr)] gap-6 lg:gap-10 items-center"
+              >
+                <div className={`hidden lg:flex ${align === "left" ? "justify-end" : "justify-start"}`}>
+                  {align === "left" ? <StepCard step={step} index={index} align="left" /> : <div className="w-full" />}
+                </div>
+
+                <div className="flex flex-col items-center gap-4 order-1 lg:order-none">
+                  <motion.div
+                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00F8B4] to-[#00C4FF] shadow-lg flex items-center justify-center ring-8 ring-white/70"
+                    initial={{ scale: 0 }}
+                    animate={isInView ? { scale: 1 } : {}}
+                    transition={{ duration: 0.4, delay: index * 0.15 + 0.1 }}
+                  >
+                    <step.icon className="w-7 h-7 text-white" />
+                  </motion.div>
+                  {index !== steps.length - 1 && (
+                    <div className="hidden lg:block w-[2px] h-24 bg-gradient-to-b from-[#00F8B4] via-[#00C4FF] to-[#00F8B4]" />
+                  )}
+                </div>
+
+                <div className={`hidden lg:flex ${align === "right" ? "justify-start" : "justify-end"}`}>
+                  {align === "right" ? <StepCard step={step} index={index} align="right" /> : <div className="w-full" />}
+                </div>
+
+                <div className="lg:hidden w-full">
+                  <StepCard step={step} index={index} align="mobile" />
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

@@ -84,7 +84,7 @@ const OpenPositions = () => {
       );
 
   return (
-    <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div id="open-positions" className="max-w-7xl mx-auto px-6 lg:px-8">
       {/* Section Header */}
       <div className="text-center mb-16">
         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -181,7 +181,7 @@ const OpenPositions = () => {
             </div>
 
             {/* Apply Button */}
-            <SafeLink href="#contact">
+            <SafeLink href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener noreferrer">
               <button className="group w-full bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-[#0B0A1C] font-semibold px-6 py-3 rounded-lg hover:shadow-[0_0_30px_rgba(0,248,180,0.5)] transition-all duration-300 hover:scale-105">
                 <span className="flex items-center justify-center gap-2">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

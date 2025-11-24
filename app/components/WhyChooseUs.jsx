@@ -1,6 +1,5 @@
 "use client";
 import { Users, Settings, Rocket, Handshake, CheckCircle, Clock, Shield, TrendingUp } from 'lucide-react';
-import SafeLink from './ui/SafeLink';
 import { motion } from 'framer-motion';
 import { stagger, fadeUp, viewport } from '../../lib/motionConfig';
 
@@ -104,24 +103,6 @@ export default function WhyChooseUs() {
             );
           })}
         </motion.div>
-
-        {/* Mid-Section CTA */}
-        <div className="text-center mb-16">
-          <div className="bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-2xl p-8 border border-[#00F8B4]/20 overflow-hidden">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Need a Custom Solution?
-            </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Get a tailored roadmap in 48 hours with our expert team. We'll analyze your needs and provide a detailed implementation plan.
-            </p>
-            <SafeLink
-              href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-2xl text-white font-semibold text-lg bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 focus-visible:ring-4 focus-visible:ring-[#00C4FF]/30 focus-visible:outline-none"
-            >
-              Get a Tailored Roadmap in 48h
-            </SafeLink>
-          </div>
-        </div>
 
         {/* Additional Benefits */}
         <motion.div className="grid grid-cols-2 md:grid-cols-4 gap-6" initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.06)}>

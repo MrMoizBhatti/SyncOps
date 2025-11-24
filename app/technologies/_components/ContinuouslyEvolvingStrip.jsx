@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { FaRocket, FaShieldAlt, FaSync, FaUsers } from "react-icons/fa";
+import SafeLink from "../../components/ui/SafeLink";
 
 const ContinuouslyEvolvingStrip = () => {
   const features = [
@@ -67,10 +68,13 @@ const ContinuouslyEvolvingStrip = () => {
             <p className="text-gray-600 mb-4">
               Ready to leverage our cutting-edge technology stack?
             </p>
-            <button className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300">
+            <SafeLink
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+            >
               <FaRocket className="w-4 h-4" />
               Start Your Project
-            </button>
+            </SafeLink>
           </div>
         </div>
       </div>

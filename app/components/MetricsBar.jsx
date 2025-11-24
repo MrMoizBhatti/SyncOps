@@ -15,7 +15,7 @@ const metrics = [
     color: "from-brand-teal to-brand-aqua"
   },
   {
-    value: "50+",
+    value: "25+",
     label: "Integrations",
     icon: Zap,
     color: "from-brand-aqua to-brand-teal"

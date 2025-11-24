@@ -41,7 +41,7 @@ const CareersHero = () => {
                 </button>
               </SafeLink>
               
-              <SafeLink href="#why-join">
+              <SafeLink href="#why-join-syncops">
                 <button className="group border-2 border-[#00F8B4] text-[#00F8B4] font-semibold px-8 py-4 rounded-lg hover:bg-[#00F8B4] hover:text-white transition-all duration-300 relative overflow-hidden">
                   <span className="relative z-10 flex items-center gap-2">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

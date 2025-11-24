@@ -66,25 +66,25 @@ const ContactHero = () => {
 
             {/* Contact Info Cards */}
             <motion.div
-              className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <div className="bg-[#1A1A2E]/90 backdrop-blur-xl rounded-xl p-3 sm:p-4 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300">
-                <Mail size={20} className="sm:w-6 sm:h-6 text-[#00C4FF] mb-2" />
+              <div className="bg-[#1A1A2E]/90 backdrop-blur-xl rounded-xl p-3 sm:p-4 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300 text-center sm:text-left h-full">
+                <Mail size={20} className="sm:w-6 sm:h-6 text-[#00C4FF] mb-2 mx-auto sm:mx-0" />
                 <p className="text-xs sm:text-sm text-gray-300">Email Us</p>
                 <p className="text-[10px] sm:text-xs text-gray-400 break-all">info@syncops.tech</p>
               </div>
               
-              <div className="bg-[#1A1A2E]/90 backdrop-blur-xl rounded-xl p-3 sm:p-4 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300">
-                <Phone size={20} className="sm:w-6 sm:h-6 text-[#00C4FF] mb-2" />
+              <div className="bg-[#1A1A2E]/90 backdrop-blur-xl rounded-xl p-3 sm:p-4 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300 text-center sm:text-left h-full">
+                <Phone size={20} className="sm:w-6 sm:h-6 text-[#00C4FF] mb-2 mx-auto sm:mx-0" />
                 <p className="text-xs sm:text-sm text-gray-300">Call Us</p>
                 <p className="text-[10px] sm:text-xs text-gray-400">+92-301-8678-319</p>
               </div>
               
-              <div className="bg-[#1A1A2E]/90 backdrop-blur-xl rounded-xl p-3 sm:p-4 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300">
-                <MapPin size={20} className="sm:w-6 sm:h-6 text-[#00C4FF] mb-2" />
+              <div className="bg-[#1A1A2E]/90 backdrop-blur-xl rounded-xl p-3 sm:p-4 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300 text-center sm:text-left h-full">
+                <MapPin size={20} className="sm:w-6 sm:h-6 text-[#00C4FF] mb-2 mx-auto sm:mx-0" />
                 <p className="text-xs sm:text-sm text-gray-300">Visit Us</p>
                 <p className="text-[10px] sm:text-xs text-gray-400">Mumtaz Market,Gujranwala</p>
               </div>

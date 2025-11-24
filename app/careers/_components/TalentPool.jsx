@@ -60,7 +60,7 @@ const TalentPool = () => {
           </div>
 
           {/* CTA Button */}
-          <SafeLink href="#contact">
+          <SafeLink href="/contact">
             <button className="group border-2 border-[#00F8B4] text-[#00F8B4] font-semibold px-8 py-4 rounded-lg hover:bg-[#00F8B4] hover:text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,248,180,0.4)]">
               <span className="flex items-center gap-2">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

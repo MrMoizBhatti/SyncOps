@@ -258,14 +258,6 @@ export default function Blog({ posts }) {
                             >
                               {category.charAt(0).toUpperCase() + category.slice(1)}
                             </motion.span>
-                            {selectedCategory === category && (
-                              <motion.div
-                                className="absolute left-0 w-1 h-6 bg-gradient-brand rounded-full"
-                                initial={{ scaleY: 0 }}
-                                animate={{ scaleY: 1 }}
-                                transition={{ duration: 0.3 }}
-                              />
-                            )}
                           </motion.label>
                         ))}
                       </div>
@@ -304,18 +296,10 @@ export default function Blog({ posts }) {
                     <motion.div 
                       className="text-sm text-gray-500"
                       initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
+                      animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6 }}
                     >
-                      <motion.span
-                        key={totalPosts}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.3 }}
-                        className="inline-block"
-                      >
-                        {totalPosts} articles found
-                      </motion.span>
+                      {totalPosts} articles found
                     </motion.div>
                   </div>
                 </motion.div>

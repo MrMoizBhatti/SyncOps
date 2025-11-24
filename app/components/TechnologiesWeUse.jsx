@@ -1,71 +1,210 @@
 "use client";
 import { useState } from 'react';
-import { 
-  FaReact, FaNodeJs, FaPython, FaJava, FaAws, FaDocker, 
-  FaDatabase, FaServer, FaBrain, FaCogs, FaGithub, FaFigma 
+import {
+  FaAws,
+  FaDatabase,
+  FaFire,
+  FaGoogle,
+  FaLeaf,
+  FaMicrosoft,
+  FaNodeJs,
+  FaPhp,
+  FaPython,
+  FaReact,
+  FaServer,
 } from 'react-icons/fa';
-import { SiTypescript, SiMongodb, SiPostgresql, SiRedis, SiKubernetes, SiTerraform } from 'react-icons/si';
+import {
+  SiAngular,
+  SiMysql,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiVuedotjs,
+} from 'react-icons/si';
 import SafeLink from './ui/SafeLink';
 import { motion } from 'framer-motion';
 import { viewport, stagger, fadeUp } from '../../lib/motionConfig';
 
-const techCategories = [
+const technologyData = [
   {
-    name: "Frontend",
-    icon: <FaReact size={24} />,
-    description: "Modern UI frameworks and design tools",
-    technologies: [
-      { name: "React", icon: <FaReact size={32} />, color: "text-blue-400", category: "Frontend", description: "Component-based UI library" },
-      { name: "TypeScript", icon: <SiTypescript size={32} />, color: "text-blue-600", category: "Frontend", description: "Typed JavaScript superset" },
-      { name: "Next.js", icon: <FaReact size={32} />, color: "text-gray-400", category: "Frontend", description: "React framework for production" },
-      { name: "Figma", icon: <FaFigma size={32} />, color: "text-purple-400", category: "Frontend", description: "Design and prototyping tool" }
-    ]
+    name: 'React',
+    description:
+      'Modern UI library for building interactive user interfaces with component-based architecture',
+    icon: <FaReact size={32} />,
+    color: 'text-blue-500',
+    category: 'frontend',
   },
   {
-    name: "Backend",
-    icon: <FaServer size={24} />,
-    description: "Server-side technologies and APIs",
-    technologies: [
-      { name: "Node.js", icon: <FaNodeJs size={32} />, color: "text-green-400", category: "Backend", description: "JavaScript runtime environment" },
-      { name: "Python", icon: <FaPython size={32} />, color: "text-yellow-400", category: "Backend", description: "High-level programming language" },
-      { name: "Java", icon: <FaJava size={32} />, color: "text-red-400", category: "Backend", description: "Enterprise-grade platform" },
-      { name: "Express", icon: <FaServer size={32} />, color: "text-gray-400", category: "Backend", description: "Web application framework" }
-    ]
+    name: 'Next.js',
+    description:
+      'Full-stack React framework for production applications with SSR and SSG',
+    icon: <SiNextdotjs size={32} />,
+    color: 'text-gray-900',
+    category: 'frontend',
   },
   {
-    name: "Database",
-    icon: <FaDatabase size={24} />,
-    description: "Data storage and management solutions",
-    technologies: [
-      { name: "MongoDB", icon: <SiMongodb size={32} />, color: "text-green-500", category: "Database", description: "NoSQL document database" },
-      { name: "PostgreSQL", icon: <SiPostgresql size={32} />, color: "text-blue-500", category: "Database", description: "Advanced open source database" },
-      { name: "Redis", icon: <SiRedis size={32} />, color: "text-red-500", category: "Database", description: "In-memory data structure store" },
-      { name: "MySQL", icon: <FaDatabase size={32} />, color: "text-blue-600", category: "Database", description: "Relational database management" }
-    ]
+    name: 'TypeScript',
+    description:
+      'Typed JavaScript for better development experience and code reliability',
+    icon: <SiTypescript size={32} />,
+    color: 'text-blue-600',
+    category: 'frontend',
   },
   {
-    name: "AI/ML",
-    icon: <FaBrain size={24} />,
-    description: "Artificial intelligence and machine learning",
-    technologies: [
-      { name: "TensorFlow", icon: <FaBrain size={32} />, color: "text-orange-400", category: "AI/ML", description: "Open source ML platform" },
-      { name: "PyTorch", icon: <FaBrain size={32} />, color: "text-red-400", category: "AI/ML", description: "Deep learning framework" },
-      { name: "OpenAI", icon: <FaBrain size={32} />, color: "text-green-400", category: "AI/ML", description: "Advanced AI models and APIs" },
-      { name: "Hugging Face", icon: <FaBrain size={32} />, color: "text-yellow-400", category: "AI/ML", description: "NLP and ML model hub" }
-    ]
+    name: 'Tailwind CSS',
+    description:
+      'Utility-first CSS framework for rapid UI development and consistent design',
+    icon: <SiTailwindcss size={32} />,
+    color: 'text-cyan-500',
+    category: 'frontend',
   },
   {
-    name: "Infrastructure",
-    icon: <FaCogs size={24} />,
-    description: "Cloud and DevOps technologies",
-    technologies: [
-      { name: "AWS", icon: <FaAws size={32} />, color: "text-orange-400", category: "Infrastructure", description: "Cloud computing platform" },
-      { name: "Docker", icon: <FaDocker size={32} />, color: "text-blue-400", category: "Infrastructure", description: "Containerization platform" },
-      { name: "Kubernetes", icon: <SiKubernetes size={32} />, color: "text-blue-500", category: "Infrastructure", description: "Container orchestration" },
-      { name: "Terraform", icon: <SiTerraform size={32} />, color: "text-purple-400", category: "Infrastructure", description: "Infrastructure as code" }
-    ]
-  }
+    name: 'Vue.js',
+    description:
+      'Progressive JavaScript framework for building user interfaces',
+    icon: <SiVuedotjs size={32} />,
+    color: 'text-green-500',
+    category: 'frontend',
+  },
+  {
+    name: 'Angular',
+    description:
+      'Platform for building mobile and desktop web applications',
+    icon: <SiAngular size={32} />,
+    color: 'text-red-500',
+    category: 'frontend',
+  },
+  {
+    name: 'Node.js',
+    description:
+      'JavaScript runtime for server-side development with event-driven architecture',
+    icon: <FaNodeJs size={32} />,
+    color: 'text-green-600',
+    category: 'backend',
+  },
+  {
+    name: 'Express.js',
+    description:
+      'Fast web application framework for Node.js with minimal overhead',
+    icon: <FaServer size={32} />,
+    color: 'text-gray-600',
+    category: 'backend',
+  },
+  {
+    name: 'Django',
+    description:
+      'High-level Python web framework for rapid development and clean design',
+    icon: <FaPython size={32} />,
+    color: 'text-green-700',
+    category: 'backend',
+  },
+  {
+    name: 'FastAPI',
+    description:
+      'Modern Python web framework for building APIs with automatic documentation',
+    icon: <FaPython size={32} />,
+    color: 'text-blue-500',
+    category: 'backend',
+  },
+  {
+    name: 'Laravel',
+    description:
+      'Elegant PHP web application framework with expressive syntax',
+    icon: <FaPhp size={32} />,
+    color: 'text-red-500',
+    category: 'backend',
+  },
+  {
+    name: 'PostgreSQL',
+    description:
+      'Advanced open-source relational database system with ACID compliance',
+    icon: <FaDatabase size={32} />,
+    color: 'text-blue-700',
+    category: 'database',
+  },
+  {
+    name: 'MongoDB',
+    description:
+      'NoSQL document database for modern applications with flexible schema',
+    icon: <FaLeaf size={32} />,
+    color: 'text-green-600',
+    category: 'database',
+  },
+  {
+    name: 'MySQL',
+    description:
+      'Reliable relational database trusted for transactional workloads',
+    icon: <SiMysql size={32} />,
+    color: 'text-sky-600',
+    category: 'database',
+  },
+  {
+    name: 'Redis',
+    description:
+      'In-memory data structure store for caching and real-time applications',
+    icon: <FaFire size={32} />,
+    color: 'text-red-600',
+    category: 'database',
+  },
+  {
+    name: 'AWS',
+    description:
+      'Comprehensive cloud computing platform with global infrastructure',
+    icon: <FaAws size={32} />,
+    color: 'text-orange-500',
+    category: 'cloud',
+  },
+  {
+    name: 'Azure',
+    description:
+      "Microsoft's cloud computing platform for building, testing, and deploying applications",
+    icon: <FaMicrosoft size={32} />,
+    color: 'text-blue-600',
+    category: 'cloud',
+  },
+  {
+    name: 'Google Cloud',
+    description:
+      "Google's cloud platform with advanced AI and machine learning capabilities",
+    icon: <FaGoogle size={32} />,
+    color: 'text-blue-500',
+    category: 'cloud',
+  },
 ];
+
+const categoryConfig = [
+  {
+    id: 'frontend',
+    name: 'Frontend',
+    icon: <FaReact size={24} />,
+    description: 'Modern UI frameworks and design tools',
+  },
+  {
+    id: 'backend',
+    name: 'Backend',
+    icon: <FaServer size={24} />,
+    description: 'Server-side technologies and APIs',
+  },
+  {
+    id: 'database',
+    name: 'Database',
+    icon: <FaDatabase size={24} />,
+    description: 'Data storage and management solutions',
+  },
+  {
+    id: 'cloud',
+    name: 'Cloud',
+    icon: <FaAws size={24} />,
+    description: 'Cloud platforms and DevOps tooling',
+  },
+];
+
+const techCategories = categoryConfig.map((category) => ({
+  ...category,
+  technologies: technologyData
+    .filter((tech) => tech.category === category.id)
+    .map((tech) => ({ ...tech, categoryLabel: category.name })),
+}));
 
 export default function TechnologiesWeUse() {
   const [activeCategory, setActiveCategory] = useState(0);
@@ -119,7 +258,7 @@ export default function TechnologiesWeUse() {
               {/* Category Badge */}
               <div className="absolute top-3 right-3">
                 <span className="px-2 py-1 bg-gradient-to-r from-[#00F8B4]/20 to-[#00C4FF]/20 text-[#00C4FF] text-xs font-medium rounded-full border border-[#00C4FF]/30">
-                  {tech.category}
+                  {tech.categoryLabel}
                 </span>
               </div>
               
