@@ -232,6 +232,22 @@ const ContactForm = () => {
                 </div>
               </div>
             </div>
+            
+            {/* Google Maps Embed */}
+            <div className="mt-6 sm:mt-8">
+              <div className="rounded-xl sm:rounded-2xl overflow-hidden shadow-lg border-2 border-gray-200">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6753.852538816107!2d74.1854261013275!3d32.17926288936181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391f290054635a0d%3A0x5d542bcba44e7b8e!2sSyncOps!5e0!3m2!1sen!2s!4v1764072692847!5m2!1sen!2s"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full"
+                />
+              </div>
+            </div>
           </motion.div>
           
           {/* Right Side - Enhanced Form */}
