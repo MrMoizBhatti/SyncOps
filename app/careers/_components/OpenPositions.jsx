@@ -1,9 +1,23 @@
 "use client";
-import React, { useState } from "react";
-import SafeLink from "../../components/ui/SafeLink";
+import React, { useState, useEffect } from "react";
+
+const initialFormState = {
+  fullName: "",
+  email: "",
+  phone: "",
+  linkedin: "",
+  portfolio: "",
+  resume: "",
+  coverLetter: "",
+};
 
 const OpenPositions = () => {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [selectedPosition, setSelectedPosition] = useState(null);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [formData, setFormData] = useState(initialFormState);
+  const [formMessage, setFormMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const positions = [
     {
@@ -82,6 +96,48 @@ const OpenPositions = () => {
         position.department === activeFilter || 
         position.location === activeFilter
       );
+
+  useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+    if (isDrawerOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = originalOverflow;
+    }
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
+  }, [isDrawerOpen]);
+
+  const handleApplyClick = (position) => {
+    setSelectedPosition(position);
+    setFormData(initialFormState);
+    setFormMessage("");
+    setIsDrawerOpen(true);
+  };
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormMessage("");
+
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setFormMessage("Your application has been submitted. Our team will reach out soon!");
+      setFormData(initialFormState);
+    }, 1200);
+  };
+
+  const closeDrawer = () => {
+    setIsDrawerOpen(false);
+    setSelectedPosition(null);
+    setFormMessage("");
+  };
 
   return (
     <div id="open-positions" className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -181,16 +237,17 @@ const OpenPositions = () => {
             </div>
 
             {/* Apply Button */}
-            <SafeLink href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener noreferrer">
-              <button className="group w-full bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-[#0B0A1C] font-semibold px-6 py-3 rounded-lg hover:shadow-[0_0_30px_rgba(0,184,148,0.5)] transition-all duration-300 hover:scale-105">
-                <span className="flex items-center justify-center gap-2">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                  </svg>
-                  Apply Now
-                </span>
-              </button>
-            </SafeLink>
+            <button
+              onClick={() => handleApplyClick(position)}
+              className="group w-full bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-semibold px-6 py-3 rounded-lg hover:shadow-[0_0_30px_rgba(0,184,148,0.5)] transition-all duration-300 hover:scale-105"
+            >
+              <span className="flex items-center justify-center gap-2">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                Apply Now
+              </span>
+            </button>
           </div>
         ))}
       </div>
@@ -205,6 +262,217 @@ const OpenPositions = () => {
           </div>
           <h3 className="text-2xl font-bold text-white mb-4">No positions found</h3>
           <p className="text-gray-300">Try adjusting your filters or check back later for new opportunities.</p>
+        </div>
+      )}
+
+      {/* Application Drawer */}
+      {isDrawerOpen && selectedPosition && (
+        <div className="fixed inset-0 z-50 flex">
+          <div
+            className="flex-1 bg-black/60 backdrop-blur-sm"
+            onClick={closeDrawer}
+          ></div>
+          <div className="w-full max-w-xl h-full bg-gradient-to-b from-white via-gray-50 to-white shadow-[0_10px_50px_rgba(0,0,0,0.25)] border-l border-gray-200 flex flex-col">
+            <div className="sticky top-0 z-10 bg-white/95 backdrop-blur border-b border-gray-200 px-6 py-5 flex items-center justify-between">
+              <div>
+                <p className="text-sm text-gray-500 uppercase tracking-wide">
+                  Apply for
+                </p>
+                <h3 className="text-2xl font-bold text-gray-900">
+                  {selectedPosition.title}
+                </h3>
+                <p className="text-sm text-gray-500">
+                  {selectedPosition.location} · {selectedPosition.type} ·{" "}
+                  {selectedPosition.experience}
+                </p>
+              </div>
+              <button
+                onClick={closeDrawer}
+                className="text-gray-500 hover:text-gray-700 transition-colors"
+                aria-label="Close application drawer"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto px-6 py-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+              <p className="text-gray-600 mb-6">
+                Tell us a little about yourself and why you'd be a great fit for{" "}
+                <span className="font-semibold text-gray-900">
+                  {selectedPosition.title}
+                </span>
+                . We'll follow up with next steps shortly.
+              </p>
+
+              <form className="space-y-5" onSubmit={handleFormSubmit}>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    name="fullName"
+                    value={formData.fullName}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                  />
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Email Address
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleFormChange}
+                      required
+                      className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleFormChange}
+                      className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                    />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      LinkedIn Profile
+                    </label>
+                    <input
+                      type="url"
+                      name="linkedin"
+                      value={formData.linkedin}
+                      onChange={handleFormChange}
+                      placeholder="https://linkedin.com/in/username"
+                      className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">
+                      Portfolio / GitHub
+                    </label>
+                    <input
+                      type="url"
+                      name="portfolio"
+                      value={formData.portfolio}
+                      onChange={handleFormChange}
+                      placeholder="https://github.com/username"
+                      className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Resume / CV (URL)
+                  </label>
+                  <input
+                    type="url"
+                    name="resume"
+                    value={formData.resume}
+                    onChange={handleFormChange}
+                    placeholder="Link to your resume"
+                    required
+                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">
+                    Cover Letter / Notes
+                  </label>
+                  <textarea
+                    name="coverLetter"
+                    value={formData.coverLetter}
+                    onChange={handleFormChange}
+                    rows="4"
+                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                    placeholder={`Tell us why you'd be a great ${selectedPosition.title}`}
+                  ></textarea>
+                </div>
+
+                {formMessage && (
+                  <div className="p-3 rounded-lg bg-green-50 text-green-700 text-sm border border-green-200">
+                    {formMessage}
+                  </div>
+                )}
+
+                <div className="flex items-center justify-between">
+                  <button
+                    type="button"
+                    onClick={closeDrawer}
+                    className="text-gray-500 hover:text-gray-700 transition-colors"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-60"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <svg
+                          className="w-4 h-4 animate-spin"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8v4l3.5-3.5L12 1v4a7 7 0 107 7h4a11 11 0 11-11-11v4l-3.5-3.5L12 1v4a8 8 0 00-8 8z"
+                          ></path>
+                        </svg>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        Submit Application
+                      </>
+                    )}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       )}
     </div>

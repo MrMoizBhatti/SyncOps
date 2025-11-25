@@ -265,7 +265,17 @@ const CoverflowCard = ({ person, index, currentIndex, total, onClick }) => {
 
 const LeadershipTeam = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % team.length);
@@ -338,6 +348,48 @@ const LeadershipTeam = () => {
 
       {/* Coverflow Container */}
       <section ref={sectionRef} className="relative py-10">
+        {isMobile ? (
+          <div className="space-y-6">
+            {team.map((person, index) => (
+              <motion.div
+                key={`${person.name}-mobile-${index}`}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="bg-[#1A1A2E] rounded-2xl overflow-hidden border border-white/10 shadow-xl"
+              >
+                <div className="relative h-72 bg-white">
+                  {person.photo ? (
+                    <Image
+                      src={person.photo}
+                      alt={person.name}
+                      fill
+                      className="object-contain"
+                      style={{ objectFit: "contain" }}
+                      unoptimized
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#00B894] to-[#00C4FF] text-white text-4xl font-bold">
+                      {getInitials(person.name)}
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <h3 className="text-2xl font-bold mb-1">{person.name}</h3>
+                    <p className="text-sm text-white/80 mb-2">{person.role}</p>
+                    <span className="inline-flex text-xs px-2 py-1 bg-white/20 rounded-full backdrop-blur">
+                      {person.experienceBadge}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-5 text-gray-300 text-sm leading-relaxed">
+                  {person.blurb}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
         <div className="relative h-[600px] md:h-[560px] lg:h-[540px] flex items-center justify-center overflow-visible w-full">
           <div className="relative w-full h-full" style={{ perspective: '1200px' }}>
             {team.map((person, index) => (
@@ -385,6 +437,7 @@ const LeadershipTeam = () => {
             ))}
           </div>
       </div>
+        )}
       </section>
 
       {/* Bottom CTA */}

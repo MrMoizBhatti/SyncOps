@@ -1,5 +1,5 @@
 "use client";
-import { CheckCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle, ArrowRight, ArrowRightCircle, ArrowDownCircle, TrendingUp, Zap, Rocket } from 'lucide-react';
 import SafeLink from './ui/SafeLink';
 import { motion } from 'framer-motion';
 import { stagger, fadeUp, springSoft, slideFromLeft, slideFromRight } from '../../lib/motionConfig';
@@ -8,7 +8,7 @@ const serviceGroups = [
   {
     step: "01",
     title: "Build",
-    description: "Custom software development from concept to deployment",
+    description: "Custom software development from concept to deployment with cutting-edge technologies",
     outcome: "Production-ready MVP in 4-6 weeks",
     badge: "2-4 Weeks",
     services: [
@@ -35,7 +35,7 @@ const serviceGroups = [
   {
     step: "02",
     title: "Automate",
-    description: "Streamline operations with intelligent automation",
+    description: "Streamline operations with intelligent automation and advanced AI solutions",
     outcome: "80% reduction in manual processes",
     badge: "SOC2 Ready",
     services: [
@@ -62,7 +62,7 @@ const serviceGroups = [
   {
     step: "03",
     title: "Scale",
-    description: "Grow your infrastructure and applications seamlessly",
+    description: "Grow your infrastructure and applications seamlessly with cloud-native solutions",
     outcome: "99.9% uptime with auto-scaling",
     badge: "99.9% Uptime",
     services: [
@@ -102,95 +102,169 @@ export default function Services() {
         </motion.p>
       </motion.div>
       
-      {/* Horizontal Timeline */}
-      <div className="space-y-16">
-        {serviceGroups.map((group, groupIndex) => (
-          <motion.div key={group.title} className="relative" initial="initial" whileInView="animate" viewport={mobileFirstViewport} variants={stagger.container(0.06)}>
-            {/* Timeline Connector */}
-            {groupIndex < serviceGroups.length - 1 && (
-              <div className="hidden lg:block absolute top-8 left-1/2 transform -translate-x-1/2 w-px h-16 bg-gradient-to-b from-brand-aqua to-brand-teal opacity-30"></div>
-            )}
+      {/* Graph/Diagram Style Flow */}
+      <div className="relative">
+        {/* Main Flow Diagram */}
+        <div className="relative">
+          {/* Desktop SVG connectors */}
+          <div className="hidden lg:block absolute inset-x-8 top-[240px] h-24 pointer-events-none z-0">
+            <svg viewBox="0 0 1000 120" className="w-full h-full" fill="none">
+              <defs>
+                <linearGradient id="flowLineA" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#00B894" stopOpacity="0.6" />
+                  <stop offset="50%" stopColor="#00C4FF" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#00B894" stopOpacity="0.6" />
+                </linearGradient>
+                <linearGradient id="flowLineB" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#00C4FF" stopOpacity="0.6" />
+                  <stop offset="50%" stopColor="#00B894" stopOpacity="0.8" />
+                  <stop offset="100%" stopColor="#00C4FF" stopOpacity="0.6" />
+                </linearGradient>
+              </defs>
+              <motion.line
+                x1="166"
+                y1="60"
+                x2="500"
+                y2="60"
+                stroke="url(#flowLineA)"
+                strokeWidth="8"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.3 }}
+              />
+              <motion.line
+                x1="500"
+                y1="60"
+                x2="834"
+                y2="60"
+                stroke="url(#flowLineB)"
+                strokeWidth="8"
+                strokeLinecap="round"
+                initial={{ pathLength: 0 }}
+                whileInView={{ pathLength: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, delay: 0.5 }}
+              />
             
-            <div className="grid lg:grid-cols-3 gap-8 items-center">
-              {/* Step Number and Badge */}
-              <motion.div className="text-center lg:text-left" variants={fadeUp(18)}>
-                <div className="inline-flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 bg-gradient-brand rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-soft">
-                    {group.step}
-                  </div>
-                  <div className="px-3 py-1 bg-gradient-to-r from-brand-aqua/10 to-brand-teal/10 rounded-full border border-brand-teal/20">
-                    <span className="text-sm font-semibold text-brand-teal">{group.badge}</span>
-                  </div>
-                </div>
-                
-                <h3 className="text-3xl font-bold text-gray-900 mb-4">{group.title}</h3>
-                <p className="text-body-lg text-gray-600 mb-4">{group.description}</p>
-                
-                {/* Outcome */}
-                <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full border border-green-200">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
-                  <span className="text-sm font-medium text-green-700">{group.outcome}</span>
-                </div>
-              </motion.div>
+            </svg>
+          </div>
+
+          {/* Flow Nodes */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 relative z-20">
+            {serviceGroups.map((group, groupIndex) => {
+              const icons = [Rocket, Zap, TrendingUp];
+              const IconComponent = icons[groupIndex];
               
-              {/* Services Grid */}
-              <div className="lg:col-span-2">
-                <div className="grid md:grid-cols-3 gap-6">
-                  {group.services.map((service, serviceIndex) => {
-                    const IconComponent = service.icon;
-                    // Alternate between left and right animations
-                    const isLeft = serviceIndex % 2 === 0;
-                    const baseVariant = isLeft ? slideFromLeft(40) : slideFromRight(40);
+              return (
+                <motion.div
+                  key={group.title}
+                  className="relative"
+                  initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{ duration: 0.6, delay: groupIndex * 0.2 }}
+                >
+                  {/* Node Circle */}
+                  <div className="relative mb-8">
+                    <motion.div
+                      className="mx-auto w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-[#00B894] to-[#00C4FF] rounded-full flex items-center justify-center shadow-2xl relative z-10"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      <div className="w-full h-full bg-gradient-to-br from-white/20 to-transparent rounded-full flex items-center justify-center">
+                        <IconComponent className="w-12 h-12 lg:w-16 lg:h-16 text-white" />
+                      </div>
+                    </motion.div>
                     
-                    // Create custom variant with delay
-                    const customVariant = {
-                      initial: baseVariant.initial,
-                      animate: {
-                        ...baseVariant.animate,
-                        transition: {
-                          ...baseVariant.animate.transition,
-                          delay: serviceIndex * 0.1
-                        }
-                      }
-                    };
+                    {/* Pulse Animation */}
+                    <motion.div
+                      className="absolute inset-0 mx-auto w-32 h-32 lg:w-40 lg:h-40 bg-gradient-to-br from-[#00B894] to-[#00C4FF] rounded-full opacity-20"
+                      animate={{
+                        scale: [1, 1.3, 1],
+                        opacity: [0.2, 0, 0.2],
+                      }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        delay: groupIndex * 0.3,
+                      }}
+                    />
+                  </div>
+
+                  {/* Node Content */}
+                  <div className="text-center">
+                    <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3">
+                      {group.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 text-sm lg:text-base">
+                      {group.description}
+                    </p>
                     
-                    return (
-                      <motion.div
-                        key={service.title}
-                        className="group card hover:shadow-glow transition-all duration-300"
-                        initial="initial"
-                        whileInView="animate"
-                        viewport={{ once: true, amount: 0.2 }}
-                        variants={customVariant}
-                      >
-                        <SafeLink href={service.href} className="block h-full">
-                          <div className="p-6 h-full">
-                            <div className="w-12 h-12 bg-gradient-brand rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                              <IconComponent className="w-6 h-6 text-white" />
+                    {/* Outcome Badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-50 rounded-full border border-green-200 mb-6">
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <span className="text-xs lg:text-sm font-medium text-green-700">{group.outcome}</span>
+                    </div>
+
+                    {/* Time Badge */}
+                    <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-[#00B894]/10 to-[#00C4FF]/10 rounded-full border border-[#00B894]/20 mb-6">
+                      <span className="text-xs lg:text-sm font-semibold text-[#00B894]">{group.badge}</span>
+                    </div>
+
+                    {/* Mobile vertical connector */}
+                    {groupIndex < serviceGroups.length - 1 && (
+                      <div className="lg:hidden flex flex-col items-center mb-6">
+                        <div className="w-1 h-10 bg-gradient-to-b from-[#00B894] to-transparent opacity-70"></div>
+                        <ArrowDownCircle className="w-8 h-8 text-[#00C4FF] bg-white rounded-full shadow-md" />
+                        <div className="w-1 h-10 bg-gradient-to-b from-transparent to-[#00C4FF] opacity-70"></div>
+                      </div>
+                    )}
+
+                    {/* Services List */}
+                    <div
+                      className={`space-y-3 ${
+                        groupIndex === 1 ? "mt-12 lg:mt-12" : "mt-8 lg:mt-12"
+                      }`}
+                    >
+                      {group.services.map((service, serviceIndex) => (
+                        <motion.div
+                          key={service.title}
+                          className="group"
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: groupIndex * 0.2 + serviceIndex * 0.1 }}
+                        >
+                          <SafeLink href={service.href}>
+                            <div className="p-4 bg-white/80 backdrop-blur-sm rounded-lg border border-gray-200 hover:border-[#00B894] hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                              <div className="flex items-start gap-3">
+                                <div className="w-8 h-8 bg-gradient-to-br from-[#00B894] to-[#00C4FF] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-300">
+                                  <CheckCircle className="w-4 h-4 text-white" />
+                                </div>
+                                <div className="flex-1 text-left">
+                                  <h4 className="text-sm font-semibold text-gray-900 mb-1 group-hover:text-[#00B894] transition-colors">
+                                    {service.title}
+                                  </h4>
+                                  <p className="text-xs text-gray-600 leading-relaxed">
+                                    {service.description}
+                                  </p>
+                                </div>
+                                <ArrowRight className="w-4 h-4 text-[#00B894] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 mt-1" />
+                              </div>
                             </div>
-                            
-                            <h4 className="text-lg font-semibold text-gray-900 mb-3 group-hover:text-brand-teal transition-colors duration-300">
-                              {service.title}
-                            </h4>
-                            
-                            <p className="text-gray-600 mb-4 leading-relaxed text-sm">
-                              {service.description}
-                            </p>
-                            
-                            <div className="flex items-center text-brand-teal font-semibold group-hover:text-brand-aqua transition-colors duration-300">
-                              Learn more
-                              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                            </div>
-                          </div>
-                        </SafeLink>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-            </motion.div>
-        ))}
+                          </SafeLink>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     </div>
   );
