@@ -166,7 +166,7 @@ const MobileSidebar = ({ isOpen, onClose }) => {
               {/* Header */}
               <div className="flex items-center justify-between p-6 border-b border-white/20">
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#00F8B4] to-[#00C4FF] flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#00B894] to-[#00C4FF] flex items-center justify-center">
                     <Sparkles size={16} className="text-white" />
                   </div>
                   <h2 className="text-xl font-bold text-white">SyncOps</h2>
@@ -180,7 +180,7 @@ const MobileSidebar = ({ isOpen, onClose }) => {
                   whileTap={{ scale: 0.95 }}
                   aria-label="Close menu"
                 >
-                  <X size={24} className="text-white group-hover:text-[#00F8B4] transition-colors duration-300" />
+                  <X size={24} className="text-white group-hover:text-[#00B894] transition-colors duration-300" />
                 </motion.button>
               </div>
 
@@ -202,10 +202,10 @@ const MobileSidebar = ({ isOpen, onClose }) => {
                       whileTap={{ scale: 0.98 }}
                     >
                       <div className="p-2 rounded-lg bg-white/10 group-hover:bg-white/20 transition-all duration-300">
-                        <Icon size={20} className="text-white group-hover:text-[#00F8B4] transition-colors duration-300" />
+                        <Icon size={20} className="text-white group-hover:text-[#00B894] transition-colors duration-300" />
                       </div>
                       <span className="flex-1">{item.label}</span>
-                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      <div className="w-2 h-2 rounded-full bg-gradient-to-r from-[#00B894] to-[#00C4FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </motion.a>
                   );
                 })}
@@ -221,11 +221,11 @@ const MobileSidebar = ({ isOpen, onClose }) => {
                 <motion.a
                   href="/contact"
                   onClick={onClose}
-                  className="group relative block w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-bold text-center shadow-lg hover:shadow-[0_0_30px_rgba(0,248,180,0.5)] transition-all duration-300 overflow-hidden"
+                  className="group relative block w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-bold text-center shadow-lg hover:shadow-[0_0_30px_rgba(0,184,148,0.5)] transition-all duration-300 overflow-hidden"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00B894] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="relative z-10 flex items-center justify-center gap-2">
                     <MessageCircle size={20} />
                     <span>Schedule a Call</span>
@@ -248,7 +248,7 @@ const MobileSidebar = ({ isOpen, onClose }) => {
           >
             <motion.a
               href="/contact"
-              className="group flex items-center gap-2 bg-gradient-to-b from-[#00F8B4] to-[#00C4FF] text-white font-bold py-3 px-4 rounded-xl shadow-lg hover:shadow-[0_0_25px_rgba(0,248,180,0.4)] transition-all duration-300 writing-mode-vertical-rl text-orientation-mixed"
+              className="group flex items-center gap-2 bg-gradient-to-b from-[#00B894] to-[#00C4FF] text-white font-bold py-3 px-4 rounded-xl shadow-lg hover:shadow-[0_0_25px_rgba(0,184,148,0.4)] transition-all duration-300 writing-mode-vertical-rl text-orientation-mixed"
               whileHover={{ scale: 1.05, x: -5 }}
               whileTap={{ scale: 0.95 }}
               style={{

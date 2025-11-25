@@ -8,7 +8,6 @@ import IndustriesWeServe from './components/IndustriesWeServe';
 import WhyChooseUs from './components/WhyChooseUs';
 import TrackRecord from './components/TrackRecord';
 import Testimonial from './components/Testimonial';
-import TechnologiesWeUse from './components/TechnologiesWeUse';
 import LeadershipSection from './components/LeadershipSection';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
@@ -16,6 +15,7 @@ import CaseStudies from './components/CaseStudies';
 import MobileStickyCTA from './components/MobileStickyCTA';
 import ScrollToTop from './components/ScrollToTop';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import TechnologyStackCards from './components/TechnologyStackCards';
 
 export default function Home() {
 	useEffect(() => {
@@ -154,7 +154,7 @@ export default function Home() {
 			
 				<section data-gsap-section className="bg-gray-50">
 					<div data-gsap-stagger>
-						<TechnologiesWeUse />
+					  <TechnologyStackCards />
 					</div>
 				</section>
 

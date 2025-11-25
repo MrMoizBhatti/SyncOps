@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { FaReact, FaNodeJs, FaDatabase, FaCloud, FaShieldAlt, FaRocket, FaCode, FaServer, FaDatabase as FaPostgresql, FaLeaf, FaFire, FaPython, FaPhp, FaAws, FaMicrosoft, FaGoogle } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDatabase, FaCloud, FaShieldAlt, FaRocket, FaServer, FaDatabase as FaPostgresql, FaLeaf, FaFire, FaPython, FaPhp, FaAws, FaMicrosoft, FaGoogle } from "react-icons/fa";
 import { SiNextdotjs, SiTypescript, SiTailwindcss, SiVuedotjs, SiAngular, SiMysql } from "react-icons/si";
 
 const TechnologyStackCards = () => {
@@ -152,9 +152,9 @@ const TechnologyStackCards = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-full px-6 py-2 mb-6">
-            <div className="w-2 h-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-[#00F8B4]">Our Technology Stack</span>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00B894]/10 to-[#00C4FF]/10 rounded-full px-6 py-2 mb-6">
+            <div className="w-2 h-2 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-[#00B894]">Our Technology Stack</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-[#2D2D2D] mb-6">
             Comprehensive Technology Suite
@@ -172,7 +172,7 @@ const TechnologyStackCards = () => {
               onClick={() => setActiveFilter(filter.id)}
               className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                 activeFilter === filter.id
-                  ? "bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white shadow-lg"
+                  ? "bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white shadow-lg"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               }`}
             >
@@ -189,16 +189,16 @@ const TechnologyStackCards = () => {
               className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 hover:scale-105 border border-gray-100 relative overflow-hidden"
             >
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/5 to-[#00C4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00B894]/5 to-[#00C4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
               
               <div className="relative z-10">
                 {/* Icon */}
-                <div className={`${tech.color} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`${tech.color} mb-4 origin-left transition-transform duration-300 group-hover:scale-105`}>
                   {tech.icon}
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-[#2D2D2D] mb-3 group-hover:text-[#00F8B4] transition-colors duration-300">
+                <h3 className="text-xl font-bold text-[#2D2D2D] mb-3 group-hover:text-[#00B894] transition-colors duration-300">
                   {tech.name}
                 </h3>
                 
@@ -214,7 +214,7 @@ const TechnologyStackCards = () => {
         {/* Bottom Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="text-center">
-            <div className="text-3xl font-bold text-[#00F8B4] mb-2">17+</div>
+            <div className="text-3xl font-bold text-[#00B894] mb-2">17+</div>
             <div className="text-gray-600">Technologies</div>
           </div>
           <div className="text-center">
@@ -222,7 +222,7 @@ const TechnologyStackCards = () => {
             <div className="text-gray-600">Uptime</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-[#00F8B4] mb-2">24/7</div>
+            <div className="text-3xl font-bold text-[#00B894] mb-2">24/7</div>
             <div className="text-gray-600">Support</div>
           </div>
           <div className="text-center">

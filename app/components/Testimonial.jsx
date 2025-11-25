@@ -48,15 +48,15 @@ const TestimonialCard = ({ text, name, position, imageUrl }) => (
     aria-label={`Testimonial from ${name}`}
   >
     {/* Enhanced gradient glow */}
-    <div className="pointer-events-none absolute -inset-4 sm:-inset-6 z-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#00F8B4]/20 via-[#00C4FF]/10 to-[#00F8B4]/20 blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
+    <div className="pointer-events-none absolute -inset-4 sm:-inset-6 z-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#00B894]/20 via-[#00C4FF]/10 to-[#00B894]/20 blur-3xl opacity-60 group-hover:opacity-90 transition-opacity duration-500" />
     
     {/* Floating accent elements - Hidden on mobile */}
-    <div className="hidden sm:block absolute top-4 right-4 w-2 h-2 bg-[#00F8B4] rounded-full animate-pulse opacity-60"></div>
+    <div className="hidden sm:block absolute top-4 right-4 w-2 h-2 bg-[#00B894] rounded-full animate-pulse opacity-60"></div>
     <div className="hidden sm:block absolute bottom-4 left-4 w-3 h-3 bg-[#00C4FF] rounded-full animate-bounce opacity-50"></div>
     
     {/* Quote icon with enhanced styling */}
     <div className="relative z-10 mb-4 sm:mb-6">
-      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
+      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg">
         <Quote className="text-white w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
       </div>
     </div>
@@ -97,14 +97,14 @@ const Testimonial = () => {
       className="relative py-12 sm:py-16 md:py-20 lg:py-24 px-2 sm:px-0 bg-gradient-to-br from-[#0B0A1C] via-[#0F1E2E] to-[#0B0A1C] overflow-hidden"
     >
       {/* Enhanced Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 via-transparent to-[#00C4FF]/5"></div>
-      <div className="hidden sm:block absolute top-20 left-5 sm:left-20 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
-      <div className="hidden sm:block absolute bottom-20 right-5 sm:right-20 w-56 h-56 sm:w-80 sm:h-80 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 via-transparent to-[#00C4FF]/5"></div>
+      <div className="hidden sm:block absolute top-20 left-5 sm:left-20 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
+      <div className="hidden sm:block absolute bottom-20 right-5 sm:right-20 w-56 h-56 sm:w-80 sm:h-80 bg-gradient-to-r from-[#00C4FF] to-[#00B894] rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
       
       {/* Floating Elements - Hidden on mobile */}
-      <div className="hidden sm:block absolute top-1/4 left-10 w-4 h-4 bg-[#00F8B4] rounded-full animate-bounce opacity-60"></div>
+      <div className="hidden sm:block absolute top-1/4 left-10 w-4 h-4 bg-[#00B894] rounded-full animate-bounce opacity-60"></div>
       <div className="hidden sm:block absolute top-1/2 right-20 w-3 h-3 bg-[#00C4FF] rounded-full animate-pulse opacity-50"></div>
-      <div className="hidden sm:block absolute bottom-1/4 left-20 w-2 h-2 bg-[#00F8B4] rounded-full animate-pulse delay-1000 opacity-40"></div>
+      <div className="hidden sm:block absolute bottom-1/4 left-20 w-2 h-2 bg-[#00B894] rounded-full animate-pulse delay-1000 opacity-40"></div>
       <div className="hidden sm:block absolute bottom-1/3 right-10 w-3 h-3 bg-[#00C4FF] rounded-full animate-bounce delay-500 opacity-50"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -116,9 +116,9 @@ const Testimonial = () => {
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">
             What Our
-            <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent"> Clients Say</span>
+            <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent"> Clients Say</span>
           </h2>
-          <div className="mx-auto w-24 sm:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-[#00F8B4] via-[#00C4FF] to-[#00F8B4] rounded-full mb-4 sm:mb-6" />
+          <div className="mx-auto w-24 sm:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-[#00B894] via-[#00C4FF] to-[#00B894] rounded-full mb-4 sm:mb-6" />
           <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Trusted by leading companies worldwide to deliver exceptional results
           </p>
@@ -140,7 +140,7 @@ const Testimonial = () => {
           <div className="flex justify-center items-center mt-8 sm:mt-12 space-x-4 sm:space-x-6">
             <motion.button
               onClick={prevPage}
-              className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/30"
+              className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00B894]/30"
               aria-label="Previous testimonials"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -155,7 +155,7 @@ const Testimonial = () => {
                   onClick={() => setCurrentPage(i)}
                   className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     i === currentPage
-                      ? "bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] scale-125"
+                      ? "bg-gradient-to-r from-[#00B894] to-[#00C4FF] scale-125"
                       : "bg-white/30 hover:bg-white/50"
                   }`}
                   aria-label={`Go to page ${i + 1}`}
@@ -165,7 +165,7 @@ const Testimonial = () => {
             
             <motion.button
               onClick={nextPage}
-              className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/30"
+              className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg text-white hover:bg-white/20 hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00B894]/30"
               aria-label="Next testimonials"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}

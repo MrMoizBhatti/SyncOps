@@ -41,7 +41,7 @@ const ClientTestimonials = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-[#222222] mb-6">
-            What Our <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">
+            What Our <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">
               Clients
             </span> Say
           </h2>
@@ -54,10 +54,10 @@ const ClientTestimonials = () => {
           {/* Testimonial Card */}
           <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-12 max-w-4xl mx-auto relative overflow-hidden">
             {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 to-[#00C4FF]/5"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 to-[#00C4FF]/5"></div>
             
             {/* Quote icon */}
-            <div className="absolute top-8 right-8 text-[#00F8B4]/20">
+            <div className="absolute top-8 right-8 text-[#00B894]/20">
               <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
               </svg>
@@ -80,7 +80,7 @@ const ClientTestimonials = () => {
               
               {/* Author */}
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full flex items-center justify-center">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full flex items-center justify-center">
                   <span className="text-white font-bold text-lg">
                     {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
                   </span>
@@ -119,7 +119,7 @@ const ClientTestimonials = () => {
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] scale-125'
+                      ? 'bg-gradient-to-r from-[#00B894] to-[#00C4FF] scale-125'
                       : 'bg-gray-300 hover:bg-gray-400'
                   }`}
                 />
@@ -128,7 +128,7 @@ const ClientTestimonials = () => {
             
             <button
               onClick={nextTestimonial}
-              className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-[#00F8B4] hover:bg-[#00F8B4] hover:text-white transition-all duration-300 hover:scale-110"
+              className="w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-[#00B894] hover:bg-[#00B894] hover:text-white transition-all duration-300 hover:scale-110"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>

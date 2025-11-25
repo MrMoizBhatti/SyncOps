@@ -17,12 +17,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00F8B4, #00C4FF);
+  background: linear-gradient(180deg, #00B894, #00C4FF);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00C4FF, #00F8B4);
+  background: linear-gradient(180deg, #00C4FF, #00B894);
 }
 
 /* Performance optimizations */
@@ -187,8 +187,12 @@ body {
     display: none;
   }
 
+  .bg-gradient-brand {
+    background-image: linear-gradient(to right, #00B894, #00C4FF);
+  }
+  
   .bg-gradient-brand-reverse {
-    background-image: linear-gradient(to right, #00C4FF, rgb(4, 216, 159));
+    background-image: linear-gradient(to right, #00C4FF, #00B894);
   }
   
   /* Animation Utilities */
@@ -269,12 +273,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #00F8B4, #00C4FF);
+  background: linear-gradient(135deg, #00B894, #00C4FF);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #00C4FF, #00F8B4);
+  background: linear-gradient(135deg, #00C4FF, #00B894);
 }
 
 /* Selection Styles */

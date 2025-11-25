@@ -29,13 +29,13 @@ const ProvenMethodologyStrip = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-full px-4 py-2 mb-6">
-                <div className="w-2 h-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full animate-pulse"></div>
-                <span className="text-sm font-medium text-[#00F8B4]">Proven Methodology</span>
+              <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00B894]/10 to-[#00C4FF]/10 rounded-full px-4 py-2 mb-6">
+                <div className="w-2 h-2 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full animate-pulse"></div>
+                <span className="text-sm font-medium text-[#00B894]">Proven Methodology</span>
               </div>
               
               <h3 className="text-3xl lg:text-4xl font-bold text-[#2D2D2D] mb-6 leading-tight">
-                Trusted by <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">500+</span> Companies Worldwide
+                Trusted by <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">500+</span> Companies Worldwide
               </h3>
               
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
@@ -45,7 +45,7 @@ const ProvenMethodologyStrip = () => {
               <div className="space-y-4">
                 {highlights.map((highlight, index) => (
                   <div key={index} className="flex items-center gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full flex items-center justify-center">
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full flex items-center justify-center">
                       <div className="text-white">
                         {highlight.icon}
                       </div>
@@ -58,19 +58,19 @@ const ProvenMethodologyStrip = () => {
             
             {/* Right Content - Stats */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-6 bg-gradient-to-br from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-xl border border-[#00F8B4]/20">
-                <div className="text-4xl font-bold text-[#00F8B4] mb-2">500+</div>
+              <div className="text-center p-6 bg-gradient-to-br from-[#00B894]/10 to-[#00C4FF]/10 rounded-xl border border-[#00B894]/20">
+                <div className="text-4xl font-bold text-[#00B894] mb-2">500+</div>
                 <div className="text-gray-600 font-medium">Projects Delivered</div>
               </div>
-              <div className="text-center p-6 bg-gradient-to-br from-[#00C4FF]/10 to-[#00F8B4]/10 rounded-xl border border-[#00C4FF]/20">
+              <div className="text-center p-6 bg-gradient-to-br from-[#00C4FF]/10 to-[#00B894]/10 rounded-xl border border-[#00C4FF]/20">
                 <div className="text-4xl font-bold text-[#00C4FF] mb-2">98%</div>
                 <div className="text-gray-600 font-medium">Client Satisfaction</div>
               </div>
-              <div className="text-center p-6 bg-gradient-to-br from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-xl border border-[#00F8B4]/20">
-                <div className="text-4xl font-bold text-[#00F8B4] mb-2">24/7</div>
+              <div className="text-center p-6 bg-gradient-to-br from-[#00B894]/10 to-[#00C4FF]/10 rounded-xl border border-[#00B894]/20">
+                <div className="text-4xl font-bold text-[#00B894] mb-2">24/7</div>
                 <div className="text-gray-600 font-medium">Support Available</div>
               </div>
-              <div className="text-center p-6 bg-gradient-to-br from-[#00C4FF]/10 to-[#00F8B4]/10 rounded-xl border border-[#00C4FF]/20">
+              <div className="text-center p-6 bg-gradient-to-br from-[#00C4FF]/10 to-[#00B894]/10 rounded-xl border border-[#00C4FF]/20">
                 <div className="text-4xl font-bold text-[#00C4FF] mb-2">5+</div>
                 <div className="text-gray-600 font-medium">Years Experience</div>
               </div>

@@ -6,7 +6,7 @@ export default function GlobalLeadership() {
     <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-6">
-          SyncOps <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Leadership & Management</span>
+          SyncOps <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Leadership & Management</span>
           </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Meet the visionary leaders driving innovation and excellence across our global operations, 

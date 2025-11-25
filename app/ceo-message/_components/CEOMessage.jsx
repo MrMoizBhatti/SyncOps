@@ -7,10 +7,10 @@ const CEOMessage = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-[#FAFAFF] to-white py-20">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/5 to-[#00C4FF]/5"></div>
-      <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full filter blur-3xl opacity-10"></div>
-      <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full filter blur-3xl opacity-10"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#00F8B4]/3 to-[#00C4FF]/3 rounded-full filter blur-3xl opacity-20"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#00B894]/5 to-[#00C4FF]/5"></div>
+      <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full filter blur-3xl opacity-10"></div>
+      <div className="absolute bottom-20 right-20 w-[500px] h-[500px] bg-gradient-to-r from-[#00C4FF] to-[#00B894] rounded-full filter blur-3xl opacity-10"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#00B894]/3 to-[#00C4FF]/3 rounded-full filter blur-3xl opacity-20"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
@@ -18,25 +18,25 @@ const CEOMessage = () => {
           <div className="text-center mb-16">
             <h1 className="text-4xl lg:text-6xl font-bold text-[#222222] mb-6 relative">
               A Message from Our CEO
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full shadow-[0_0_10px_rgba(0,248,180,0.5)]"></div>
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full"></div>
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full shadow-[0_0_10px_rgba(0,184,148,0.5)]"></div>
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full"></div>
             </h1>
           </div>
 
           {/* Main CEO Message Card */}
-          <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 border border-gray-100 hover:shadow-[0_0_40px_rgba(0,248,180,0.15)] transition-all duration-500 relative overflow-hidden">
+          <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-12 border border-gray-100 hover:shadow-[0_0_40px_rgba(0,184,148,0.15)] transition-all duration-500 relative overflow-hidden">
             {/* Background gradient on hover */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 to-[#00C4FF]/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 to-[#00C4FF]/5 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
             
             {/* Glowing border effect */}
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] opacity-0 hover:opacity-20 transition-opacity duration-500 blur-xl"></div>
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-[#00B894] to-[#00C4FF] opacity-0 hover:opacity-20 transition-opacity duration-500 blur-xl"></div>
             
             <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-start">
               {/* Left Side - CEO Profile */}
               <div className="text-center">
                 {/* CEO Image - Centered */}
                 <div className="relative mb-6">
-                  <div className="w-48 h-48 mx-auto bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full p-[6px] shadow-2xl">
+                  <div className="w-48 h-48 mx-auto bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full p-[6px] shadow-2xl">
                     <div className="w-full h-full bg-white rounded-full overflow-hidden border-2 border-white shadow-inner">
                       <Image
                         src="/images/leadership/Majid-aliCEO.jpeg"
@@ -50,27 +50,27 @@ const CEOMessage = () => {
                   </div>
                   
                   {/* Enhanced Glowing effect */}
-                  {/* <div className="absolute inset-0 w-48 h-48 mx-auto bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full opacity-20 blur-xl"></div> */}
+                  {/* <div className="absolute inset-0 w-48 h-48 mx-auto bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full opacity-20 blur-xl"></div> */}
                   
                   {/* Additional floating elements around image */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full opacity-60"></div>
-                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full opacity-70"></div>
-                  <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 w-3 h-3 bg-[#00F8B4] rounded-full"></div>
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full opacity-60"></div>
+                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r from-[#00C4FF] to-[#00B894] rounded-full opacity-70"></div>
+                  <div className="absolute top-1/2 -right-4 transform -translate-y-1/2 w-3 h-3 bg-[#00B894] rounded-full"></div>
                 </div>
 
                 {/* Badge - Centered under avatar */}
                 <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#E6F7F5] to-[#F0FDFA] rounded-full border border-[#007E7A]/20 mb-8 shadow-sm">
-                  <div className="w-2 h-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full mr-2"></div>
+                  <div className="w-2 h-2 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full mr-2"></div>
                   <span className="text-[#007E7A] font-bold text-sm">Vision & Leadership</span>
                 </div>
 
                 {/* CEO Info */}
                 <div className="mb-6 bg-white/80 backdrop-blur-sm rounded-2xl p-8 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden">
                   {/* Background gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 to-[#00C4FF]/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 to-[#00C4FF]/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
                   
                   {/* Glowing border effect */}
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] opacity-0 hover:opacity-10 transition-opacity duration-300 blur-sm"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#00B894] to-[#00C4FF] opacity-0 hover:opacity-10 transition-opacity duration-300 blur-sm"></div>
                   
                   <div className="relative z-10">
                     {/* Name */}
@@ -85,8 +85,8 @@ const CEOMessage = () => {
                     </p>
                     
                     {/* Badge */}
-                    <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#E6F7F5] to-[#F0FDFA] rounded-full border border-[#00F8B4]/20">
-                      <div className="w-2 h-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full mr-2"></div>
+                    <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#E6F7F5] to-[#F0FDFA] rounded-full border border-[#00B894]/20">
+                      <div className="w-2 h-2 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full mr-2"></div>
                       <span className="text-[#007E7A] font-semibold text-sm">Founder & Visionary</span>
                     </div>
                   </div>
@@ -144,9 +144,9 @@ const CEOMessage = () => {
                     SyncOps was founded with a vision to <span className="font-semibold text-[#009688]">empower organizations</span> through digital transformation. From our early days to our current growth, our commitment to <span className="font-semibold text-[#009688]">excellence</span> and <span className="font-semibold text-[#009688]">client success</span> has never wavered.
                   </p>
                   
-                  <div className="bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-xl p-6 border-l-4 border-[#00F8B4] backdrop-blur-sm relative">
+                  <div className="bg-gradient-to-r from-[#00B894]/10 to-[#00C4FF]/10 rounded-xl p-6 border-l-4 border-[#00B894] backdrop-blur-sm relative">
                     {/* Accent dot in top-left corner */}
-                    <div className="absolute -top-1 -left-1 w-3 h-3 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full"></div>
+                    <div className="absolute -top-1 -left-1 w-3 h-3 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full"></div>
                     <p className="text-lg font-semibold italic text-[#1F3A56] leading-relaxed drop-shadow-sm">
                       "Our mission is to <span className="text-[#009688] font-bold">lead with innovation</span>, integrity, and a relentless focus on delivering solutions that shape the future of business."
                     </p>
@@ -164,7 +164,7 @@ const CEOMessage = () => {
                 {/* Signature */}
                 <div className="mt-16 pt-8 border-t border-gray-200 relative">
                   {/* Floating accent dot near signature */}
-                  <div className="absolute -top-2 -left-2 w-3 h-3 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full opacity-70"></div>
+                  <div className="absolute -top-2 -left-2 w-3 h-3 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full opacity-70"></div>
                   <div className="flex items-center gap-4">
                     <div className="flex-1">
                       <div className="text-3xl font-bold text-[#0A3E4E] mb-2 drop-shadow-sm" style={{ fontFamily: 'cursive' }}>
@@ -172,23 +172,23 @@ const CEOMessage = () => {
                       </div>
                       <div className="text-sm text-gray-500">Founder & CEO, SyncOps</div>
                     </div>
-                    <div className="w-16 h-0.5 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full shadow-[0_0_5px_rgba(0,196,255,0.3)]"></div>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-[#00C4FF] to-[#00B894] rounded-full shadow-[0_0_5px_rgba(0,196,255,0.3)]"></div>
                   </div>
                 </div>
 
                 {/* CTA Button */}
                 <div className="mt-16 relative">
                   {/* Floating accent dot near CTA */}
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full opacity-60"></div>
+                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full opacity-60"></div>
                   <SafeLink href="/about#team">
-                    <button className="group bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-[0_0_30px_rgba(0,248,180,0.4)] hover:scale-105 transition-all duration-300 relative overflow-hidden">
+                    <button className="group bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-[0_0_30px_rgba(0,184,148,0.4)] hover:scale-105 transition-all duration-300 relative overflow-hidden">
                       <span className="relative z-10 flex items-center gap-3">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H17c-.8 0-1.54.37-2.01 1l-4.7 6.28c-.37.5-.58 1.11-.58 1.73V20c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2z"/>
                         </svg>
                         Meet Our Team
                       </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00B894] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </button>
                   </SafeLink>
                 </div>

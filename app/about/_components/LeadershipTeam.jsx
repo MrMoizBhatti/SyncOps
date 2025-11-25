@@ -190,7 +190,7 @@ const CoverflowCard = ({ person, index, currentIndex, total, onClick }) => {
               unoptimized
             />
           ) : (
-            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#00F8B4] to-[#00C4FF] text-white font-bold text-5xl md:text-6xl">
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#00B894] to-[#00C4FF] text-white font-bold text-5xl md:text-6xl">
               {getInitials(name)}
             </div>
           )}
@@ -389,7 +389,7 @@ const LeadershipTeam = () => {
 
       {/* Bottom CTA */}
       <div className="mt-16 text-center">
-        <div className="bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-3xl p-8 border border-[#00F8B4]/20">
+        <div className="bg-gradient-to-r from-[#00B894]/10 to-[#00C4FF]/10 rounded-3xl p-8 border border-[#00B894]/20">
           <h3 className="text-2xl font-bold text-white mb-4">
             Join Our Growing Team
           </h3>
@@ -398,7 +398,7 @@ const LeadershipTeam = () => {
           </p>
           <a
             href="/careers"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H17c-.8 0-1.54.37-2.01 1l-4.7 6.28c-.37.5-.58 1.11-.58 1.73V20c0 1.1.9 2 2 2h6c1.1 0 2-.9 2-2z"/>

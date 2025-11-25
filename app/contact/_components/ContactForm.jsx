@@ -149,9 +149,9 @@ const ContactForm = () => {
       )}
       
       {/* Enhanced Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 via-transparent to-[#00C4FF]/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 via-transparent to-[#00C4FF]/5"></div>
       <motion.div
-        className="hidden sm:block absolute top-20 left-5 sm:left-20 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full filter blur-3xl opacity-10"
+        className="hidden sm:block absolute top-20 left-5 sm:left-20 w-64 h-64 sm:w-96 sm:h-96 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full filter blur-3xl opacity-10"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.1, 0.15, 0.1],
@@ -163,7 +163,7 @@ const ContactForm = () => {
         }}
       />
       <motion.div
-        className="hidden sm:block absolute bottom-20 right-5 sm:right-20 w-56 h-56 sm:w-80 sm:h-80 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full filter blur-3xl opacity-10"
+        className="hidden sm:block absolute bottom-20 right-5 sm:right-20 w-56 h-56 sm:w-80 sm:h-80 bg-gradient-to-r from-[#00C4FF] to-[#00B894] rounded-full filter blur-3xl opacity-10"
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.15, 0.1, 0.15],
@@ -177,9 +177,9 @@ const ContactForm = () => {
       />
       
       {/* Floating Elements - Hidden on mobile */}
-      <div className="hidden sm:block absolute top-1/4 left-10 w-4 h-4 bg-[#00F8B4] rounded-full animate-bounce opacity-60"></div>
+      <div className="hidden sm:block absolute top-1/4 left-10 w-4 h-4 bg-[#00B894] rounded-full animate-bounce opacity-60"></div>
       <div className="hidden sm:block absolute top-1/2 right-20 w-3 h-3 bg-[#00C4FF] rounded-full animate-pulse opacity-50"></div>
-      <div className="hidden sm:block absolute bottom-1/4 left-20 w-2 h-2 bg-[#00F8B4] rounded-full animate-pulse delay-1000 opacity-40"></div>
+      <div className="hidden sm:block absolute bottom-1/4 left-20 w-2 h-2 bg-[#00B894] rounded-full animate-pulse delay-1000 opacity-40"></div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
@@ -193,7 +193,7 @@ const ContactForm = () => {
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 text-center lg:text-left">
                 Let's Start Your
-                <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent"> Project</span>
+                <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent"> Project</span>
               </h2>
               <p className="text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed mb-6 sm:mb-8 text-center lg:text-left">
                 Share your vision with us and let's transform your ideas into reality. We're here to help you succeed.
@@ -203,7 +203,7 @@ const ContactForm = () => {
             {/* Enhanced Features */}
             <div className="space-y-4 sm:space-y-6">
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-xl flex items-center justify-center flex-shrink-0">
                   <CheckCircle size={20} className="sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
@@ -213,7 +213,7 @@ const ContactForm = () => {
               </div>
               
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#00C4FF] to-[#00B894] rounded-xl flex items-center justify-center flex-shrink-0">
                   <Clock size={20} className="sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
@@ -223,7 +223,7 @@ const ContactForm = () => {
               </div>
               
               <div className="flex items-start gap-3 sm:gap-4">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-xl flex items-center justify-center flex-shrink-0">
                   <Shield size={20} className="sm:w-6 sm:h-6 text-white" />
                 </div>
                 <div>
@@ -242,7 +242,7 @@ const ContactForm = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="flex items-center gap-2 sm:gap-3 mb-6 sm:mb-8">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-xl flex items-center justify-center">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-xl flex items-center justify-center">
                 <Sparkles size={16} className="sm:w-5 sm:h-5 text-white" />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Send us a Message</h3>
@@ -266,7 +266,7 @@ const ContactForm = () => {
                       placeholder="Enter first name"
                       required
                       disabled={loading}
-                      className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/20 focus:border-[#00F8B4] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                      className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00B894]/20 focus:border-[#00B894] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                     />
                   </div>
                 </div>
@@ -285,7 +285,7 @@ const ContactForm = () => {
                       placeholder="Enter last name"
                       required
                       disabled={loading}
-                      className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/20 focus:border-[#00F8B4] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                      className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00B894]/20 focus:border-[#00B894] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                     />
                   </div>
                 </div>
@@ -307,7 +307,7 @@ const ContactForm = () => {
                     placeholder="Enter email address"
                     required
                     disabled={loading}
-                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/20 focus:border-[#00F8B4] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00B894]/20 focus:border-[#00B894] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                   />
                 </div>
                 <p className="text-xs text-gray-500 mt-1">We'll never share your contact info.</p>
@@ -328,7 +328,7 @@ const ContactForm = () => {
                     onChange={handleChange}
                     placeholder="Enter phone number"
                     disabled={loading}
-                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/20 focus:border-[#00F8B4] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
+                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00B894]/20 focus:border-[#00B894] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 placeholder-gray-500 text-sm sm:text-base"
                   />
                 </div>
               </div>
@@ -346,7 +346,7 @@ const ContactForm = () => {
                     value={formData.region}
                     onChange={handleChange}
                     disabled={loading}
-                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00F8B4]/20 focus:border-[#00F8B4] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 text-sm sm:text-base appearance-none"
+                    className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-white/90 backdrop-blur-sm border-2 border-gray-200 rounded-lg sm:rounded-xl focus:outline-none focus:ring-2 sm:focus:ring-4 focus:ring-[#00B894]/20 focus:border-[#00B894] transition-all duration-300 hover:border-[#00C4FF]/50 text-gray-900 text-sm sm:text-base appearance-none"
                   >
                     {regionOptions.map(option => (
                       <option key={option.value} value={option.value}>
@@ -371,7 +371,7 @@ const ContactForm = () => {
                         checked={formData.services.includes(service.value)}
                         onChange={() => handleServiceChange(service.value)}
                         disabled={loading}
-                        className="w-4 h-4 text-[#00F8B4] border-gray-300 rounded focus:ring-[#00F8B4]"
+                        className="w-4 h-4 text-[#00B894] border-gray-300 rounded focus:ring-[#00B894]"
                       />
                       <span className="text-xs sm:text-sm text-gray-700">{service.label}</span>
                     </label>
@@ -390,12 +390,12 @@ const ContactForm = () => {
               
               <motion.button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white py-3 sm:py-4 px-6 sm:px-8 rounded-lg sm:rounded-xl font-semibold flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+                className="w-full bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white py-3 sm:py-4 px-6 sm:px-8 rounded-lg sm:rounded-xl font-semibold flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 disabled={loading || !captchaVerified}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00B894] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {loading ? (
                   <>
                     <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2 sm:mr-3"></div>

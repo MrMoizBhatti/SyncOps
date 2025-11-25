@@ -194,7 +194,7 @@ export default function NavBar() {
             >
               {link.label}
               <span
-                className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] transition-all duration-200 ${isActive(link.href)
+                className={`absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#00B894] to-[#00C4FF] transition-all duration-200 ${isActive(link.href)
                   ? "opacity-100 scale-x-100"
                   : "opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100"
                   }`}
@@ -207,7 +207,7 @@ export default function NavBar() {
         <div className="hidden lg:flex items-center">
           <SafeLink
             href="/contact"
-            className="group bg-gradient-to-r from-[#04d89f] to-[#00C4FF] text-white font-semibold px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg shadow-lg hover:shadow-[0_0_20px_rgba(0,248,180,0.4)] hover:scale-105 transition-all duration-300 relative overflow-hidden whitespace-nowrap"
+            className="group bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-semibold px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg shadow-lg hover:shadow-[0_0_20px_rgba(0,184,148,0.4)] hover:scale-105 transition-all duration-300 relative overflow-hidden whitespace-nowrap"
             style={{ lineHeight: 1.25 }}
             aria-label="Schedule a Call"
           >
@@ -215,14 +215,14 @@ export default function NavBar() {
               <MessageCircle size={16} />
               Schedule a Call
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#04d89f] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00B894] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </SafeLink>
         </div>
 
         {/* Premium Hamburger with Animation */}
         <button
           onClick={() => setIsMenuOpen((s) => !s)}
-          className="lg:hidden text-gray-800 p-2 hover:bg-gradient-to-br hover:from-[#04d89f]/10 hover:to-[#00C4FF]/10 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00C4FF]/50 touch-manipulation min-h-[48px] min-w-[48px] flex items-center justify-center relative group shadow-sm hover:shadow-lg"
+          className="lg:hidden text-gray-800 p-2 hover:bg-gradient-to-br hover:from-[#00B894]/10 hover:to-[#00C4FF]/10 rounded-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#00C4FF]/50 touch-manipulation min-h-[48px] min-w-[48px] flex items-center justify-center relative group shadow-sm hover:shadow-lg"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
@@ -240,9 +240,9 @@ export default function NavBar() {
             <Menu size={26} className="group-hover:text-[#00C4FF] group-hover:scale-110 transition-all duration-300" />
           )}
           {/* Premium Pulse Indicator */}
-          <span className={`absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full shadow-lg ${isMenuOpen ? 'opacity-100 animate-pulse' : 'opacity-0 group-hover:opacity-100'} transition-all duration-300`} />
+          <span className={`absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full shadow-lg ${isMenuOpen ? 'opacity-100 animate-pulse' : 'opacity-0 group-hover:opacity-100'} transition-all duration-300`} />
           {/* Glow Effect */}
-          <div className={`absolute inset-0 bg-gradient-to-r from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-xl blur-sm ${isMenuOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-300`} />
+          <div className={`absolute inset-0 bg-gradient-to-r from-[#00B894]/20 to-[#00C4FF]/20 rounded-xl blur-sm ${isMenuOpen ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'} transition-opacity duration-300`} />
         </button>
       </div>
 
@@ -297,16 +297,16 @@ export default function NavBar() {
             >
               {/* Ambient Background Effects */}
               <div className="absolute inset-0 opacity-30">
-                <div className="absolute top-20 left-10 w-40 h-40 bg-[#00F8B4]/10 rounded-full blur-3xl" />
+                <div className="absolute top-20 left-10 w-40 h-40 bg-[#00B894]/10 rounded-full blur-3xl" />
                 <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#00C4FF]/10 rounded-full blur-3xl" />
               </div>
               {/* Ultra Premium Close Button - No Border */}
               <motion.button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute top-6 right-6 text-white hover:text-[#00F8B4] 
+                className="absolute top-6 right-6 text-white hover:text-[#00B894] 
                          p-3 hover:bg-white/5 rounded-full 
                          transition-all duration-300 
-                         focus:outline-none focus:ring-2 focus:ring-[#00F8B4]/50 
+                         focus:outline-none focus:ring-2 focus:ring-[#00B894]/50 
                          touch-manipulation min-h-[56px] min-w-[56px] 
                          flex items-center justify-center z-50"
                 aria-label="Close menu"
@@ -329,7 +329,7 @@ export default function NavBar() {
               >
                 {/* Gradient Accent */}
                 <motion.div
-                  className="absolute top-10 w-32 h-1 bg-gradient-to-r from-transparent via-[#00F8B4] to-transparent blur-sm"
+                  className="absolute top-10 w-32 h-1 bg-gradient-to-r from-transparent via-[#00B894] to-transparent blur-sm"
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: 1 }}
                   transition={{ delay: 0.5, duration: 0.6 }}
@@ -353,11 +353,11 @@ export default function NavBar() {
                       height={60}
                       alt="SyncOps Logo"
                       priority
-                      className="h-16 w-auto object-contain drop-shadow-2xl group-hover:drop-shadow-[0_0_20px_rgba(0,248,180,0.5)] transition-all duration-300"
+                      className="h-16 w-auto object-contain drop-shadow-2xl group-hover:drop-shadow-[0_0_20px_rgba(0,184,148,0.5)] transition-all duration-300"
                     />
                     {/* Premium Glow Effect */}
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/30 to-[#00C4FF]/30 blur-2xl opacity-0 group-hover:opacity-100"
+                      className="absolute inset-0 bg-gradient-to-r from-[#00B894]/30 to-[#00C4FF]/30 blur-2xl opacity-0 group-hover:opacity-100"
                       initial={{ opacity: 0 }}
                       whileHover={{ opacity: 1 }}
                       transition={{ duration: 0.3 }}
@@ -392,13 +392,13 @@ export default function NavBar() {
                                    transition-all duration-300 touch-manipulation 
                                    min-h-[80px] flex items-center px-6 py-6 
                                    rounded-3xl border-2
-                                   hover:border-[#00F8B4]/60 hover:scale-[1.02] hover:-translate-y-2
+                                   hover:border-[#00B894]/60 hover:scale-[1.02] hover:-translate-y-2
                                    hover:shadow-2xl
                                    active:scale-[0.98] active:translate-y-0
-                                   focus:outline-none focus:ring-4 focus:ring-[#00F8B4]/30
+                                   focus:outline-none focus:ring-4 focus:ring-[#00B894]/30
                                    backdrop-blur-md
                                    ${isActive(link.href)
-                            ? "bg-gradient-to-r from-[#00F8B4]/25 to-[#00C4FF]/25 text-[#00F8B4] border-[#00F8B4]/60 shadow-2xl shadow-[#00F8B4]/25 text-2xl font-extrabold"
+                            ? "bg-gradient-to-r from-[#00B894]/25 to-[#00C4FF]/25 text-[#00B894] border-[#00B894]/60 shadow-2xl shadow-[#00B894]/25 text-2xl font-extrabold"
                             : "hover:bg-gradient-to-r hover:from-white/8 hover:to-white/4 border-white/15 text-xl font-bold hover:shadow-xl"}`}
                         onClick={() => setIsMenuOpen(false)}
                         aria-current={isActive(link.href) ? "page" : undefined}
@@ -408,7 +408,7 @@ export default function NavBar() {
                         {/* Premium Active Indicator */}
                         {isActive(link.href) && (
                           <motion.div
-                            className="absolute right-6 w-4 h-4 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full shadow-lg shadow-[#00F8B4]/60"
+                            className="absolute right-6 w-4 h-4 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full shadow-lg shadow-[#00B894]/60"
                             initial={{ scale: 0, rotate: 0 }}
                             animate={{ scale: 1, rotate: 360 }}
                             transition={{ duration: 0.6, delay: 0.1, type: "spring" }}
@@ -417,7 +417,7 @@ export default function NavBar() {
 
                         {/* Glass Morphism Hover Effect */}
                         <motion.div
-                          className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/15 to-[#00C4FF]/15 rounded-3xl opacity-0 group-hover:opacity-100 border-2 border-[#00F8B4]/30"
+                          className="absolute inset-0 bg-gradient-to-r from-[#00B894]/15 to-[#00C4FF]/15 rounded-3xl opacity-0 group-hover:opacity-100 border-2 border-[#00B894]/30"
                           transition={{ duration: 0.3 }}
                         />
 
@@ -448,17 +448,17 @@ export default function NavBar() {
                   <SafeLink
                     href="/contact"
                     className="group relative bg-gradient-to-r from-white/10 to-white/5 backdrop-blur-xl border-2 border-white/20 text-white font-bold 
-                             text-lg px-6 py-5 rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-[#00F8B4]/20
-                             hover:border-[#00F8B4]/40 hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300 
+                             text-lg px-6 py-5 rounded-3xl shadow-xl hover:shadow-2xl hover:shadow-[#00B894]/20
+                             hover:border-[#00B894]/40 hover:scale-[1.03] hover:-translate-y-1 transition-all duration-300 
                              flex items-center justify-center gap-3 min-h-[64px]
-                             focus:outline-none focus:ring-4 focus:ring-[#00F8B4]/40 overflow-hidden"
+                             focus:outline-none focus:ring-4 focus:ring-[#00B894]/40 overflow-hidden"
                     onClick={() => setIsMenuOpen(false)}
                     aria-label="Schedule Strategy Consultation"
                   >
                     <MessageCircle size={22} className="relative z-10" />
                     <span className="relative z-10">Schedule Strategy Consultation</span>
                     <motion.div
-                      className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 opacity-0 group-hover:opacity-100"
+                      className="absolute inset-0 bg-gradient-to-r from-[#00B894]/10 to-[#00C4FF]/10 opacity-0 group-hover:opacity-100"
                       transition={{ duration: 0.3 }}
                     />
                   </SafeLink>

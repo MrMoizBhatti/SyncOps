@@ -14,8 +14,8 @@ const getInitials = (full) => {
 };
 
 // Reusable Tailwind classes
-const gradientRing = "bg-gradient-to-tr from-[#00F8B4] to-[#00C4FF]";
-const primaryBtn = "inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold text-white bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] shadow hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00C4FF]/60";
+const gradientRing = "bg-gradient-to-tr from-[#00B894] to-[#00C4FF]";
+const primaryBtn = "inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold text-white bg-gradient-to-r from-[#00B894] to-[#00C4FF] shadow hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00C4FF]/60";
 
 const founder = [
   {
@@ -291,7 +291,7 @@ const SectionTitle = ({ title, subtitle }) => (
         {subtitle}
       </p>
     )}
-    <div className="mx-auto h-1.5 w-32 rounded-full bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] shadow-lg shadow-[#00C4FF]/30" />
+    <div className="mx-auto h-1.5 w-32 rounded-full bg-gradient-to-r from-[#00B894] to-[#00C4FF] shadow-lg shadow-[#00C4FF]/30" />
   </motion.div>
  );
 
@@ -361,7 +361,7 @@ const LeadershipSection = () => {
         >
           <h1 className="text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 mb-6 leading-tight">
             SyncOps{" "}
-            <span className="bg-gradient-to-r from-[#00F8B4] via-[#00C4FF] to-[#00F8B4] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
+            <span className="bg-gradient-to-r from-[#00B894] via-[#00C4FF] to-[#00B894] bg-clip-text text-transparent bg-[length:200%_auto] animate-gradient">
               Leadership & Management
             </span>
           </h1>

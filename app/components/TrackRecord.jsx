@@ -7,28 +7,28 @@ const metrics = [
     label: "Projects Delivered",
     description: "Successfully completed projects across various industries",
     icon: TrendingUp,
-    color: "from-[#00F8B4] to-[#00C4FF]"
+    color: "from-[#00B894] to-[#00C4FF]"
   },
   {
     value: "99.5%",
     label: "Uptime Guarantee",
     description: "Reliable infrastructure with enterprise-grade SLA",
     icon: Clock,
-    color: "from-[#00C4FF] to-[#00F8B4]"
+    color: "from-[#00C4FF] to-[#00B894]"
   },
   {
     value: "25+",
     label: "Expert Team",
     description: "Senior developers and architects with proven track records",
     icon: Users,
-    color: "from-[#00F8B4] to-[#00C4FF]"
+    color: "from-[#00B894] to-[#00C4FF]"
   },
   {
     value: "9.8",
     label: "Average NPS",
     description: "Client satisfaction score from hundreds of projects",
     icon: Star,
-    color: "from-[#00C4FF] to-[#00F8B4]"
+    color: "from-[#00C4FF] to-[#00B894]"
   }
 ];
 
@@ -38,7 +38,7 @@ export default function TrackRecord() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1F2937] mb-6">
-            Proven <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">
+            Proven <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">
               Track Record
             </span>
           </h2>
@@ -80,7 +80,7 @@ export default function TrackRecord() {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-8 text-sm text-gray-500">
             <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#00F8B4] rounded-full"></div>
+              <div className="w-2 h-2 bg-[#00B894] rounded-full"></div>
               ISO 27001 Certified
             </span>
             <span className="flex items-center gap-2">
@@ -88,7 +88,7 @@ export default function TrackRecord() {
               SOC 2 Type II Compliant
             </span>
             <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#00F8B4] rounded-full"></div>
+              <div className="w-2 h-2 bg-[#00B894] rounded-full"></div>
               GDPR Ready
             </span>
           </div>

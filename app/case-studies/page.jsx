@@ -378,7 +378,7 @@ export default function CaseStudiesPage() {
       {/* Final Luxury CTA Section */}
       <section className="relative py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100 overflow-hidden" aria-labelledby="cta-heading">
         {/* Background Effects - Matching FinalCTA Component */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 via-transparent to-[#00C4FF]/5" aria-hidden="true"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 via-transparent to-[#00C4FF]/5" aria-hidden="true"></div>
         
         {/* Enhanced Animated Gradient Background */}
         <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-brand-aqua to-brand-teal rounded-full filter blur-3xl opacity-10 animate-pulse" aria-hidden="true"></div>
@@ -402,7 +402,7 @@ export default function CaseStudiesPage() {
             transition={{ duration: 0.8 }}
           >
             <h2 id="cta-heading" className="text-display-sm font-bold text-gray-900 mb-6">
-              Ready to <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Transform</span> Your Business?
+              Ready to <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Transform</span> Your Business?
             </h2>
             <p className="text-body-xl text-gray-500 mb-12 leading-relaxed">
               Join the ranks of successful companies that have revolutionized their operations 

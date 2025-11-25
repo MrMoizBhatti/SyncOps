@@ -254,7 +254,7 @@ export default function Blog({ posts }) {
                             />
                             <motion.span 
                               className="text-sm text-gray-600 group-hover:text-gray-900 transition-colors duration-200 relative z-10"
-                              whileHover={{ color: "#00F8B4" }}
+                              whileHover={{ color: "#00B894" }}
                             >
                               {category.charAt(0).toUpperCase() + category.slice(1)}
                             </motion.span>
@@ -352,7 +352,7 @@ export default function Blog({ posts }) {
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 + 0.3 }}
-                            whileHover={{ color: "#00F8B4" }}
+                            whileHover={{ color: "#00B894" }}
                           >
                             {post.title}
                           </motion.h2>
@@ -444,12 +444,12 @@ export default function Blog({ posts }) {
                     {/* No Results Message */}
                     <div className="text-center">
                       <motion.div 
-                        className="w-24 h-24 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-full flex items-center justify-center mx-auto mb-6 relative overflow-hidden"
+                        className="w-24 h-24 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-full flex items-center justify-center mx-auto mb-6 relative overflow-hidden"
                         animate={{ rotate: 360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-full blur-sm"></div>
-                        <FaBookOpen className="w-12 h-12 text-[#00F8B4] relative z-10" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#00B894]/10 to-[#00C4FF]/10 rounded-full blur-sm"></div>
+                        <FaBookOpen className="w-12 h-12 text-[#00B894] relative z-10" />
                       </motion.div>
                       
                       <h3 className="text-2xl font-bold text-white mb-4">No Articles Found</h3>
@@ -462,7 +462,7 @@ export default function Blog({ posts }) {
                           setSelectedCategory("all");
                           setSearchQuery("");
                         }}
-                        className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-semibold px-8 py-4 rounded-2xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00F8B4]/20 relative overflow-hidden group"
+                        className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-semibold px-8 py-4 rounded-2xl hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00B894]/20 relative overflow-hidden group"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -470,7 +470,7 @@ export default function Blog({ posts }) {
                           <FaBookOpen className="w-5 h-5" />
                           View All Articles
                         </span>
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-[#00C4FF] to-[#00B894] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </motion.button>
                     </div>
                   </motion.div>
@@ -488,7 +488,7 @@ export default function Blog({ posts }) {
                      {currentPage < totalPages && (
                        <button
                          onClick={loadMore}
-                         className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-semibold px-8 py-3 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00F8B4]/20 flex items-center gap-2 mx-auto"
+                         className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-semibold px-8 py-3 rounded-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-[#00B894]/20 flex items-center gap-2 mx-auto"
                        >
                          <span>Load More Articles</span>
                          <FaArrowRight className="w-4 h-4" />

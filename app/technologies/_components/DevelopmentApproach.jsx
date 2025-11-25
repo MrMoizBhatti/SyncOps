@@ -53,9 +53,9 @@ const DevelopmentApproach = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-full px-6 py-2 mb-6">
-            <div className="w-2 h-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-[#00F8B4]">Our Development Process</span>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00B894]/10 to-[#00C4FF]/10 rounded-full px-6 py-2 mb-6">
+            <div className="w-2 h-2 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full animate-pulse"></div>
+            <span className="text-sm font-medium text-[#00B894]">Our Development Process</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-[#2D2D2D] mb-6">
             Our Approach to Software Development
@@ -73,23 +73,23 @@ const DevelopmentApproach = () => {
               className="group bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-500 hover:scale-105 border border-gray-100 relative overflow-hidden"
             >
               {/* Hover Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/5 to-[#00C4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00B894]/5 to-[#00C4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               
               <div className="relative z-10">
                 {/* Step Number */}
-                <div className="text-6xl font-bold text-gray-100 mb-4 group-hover:text-[#00F8B4]/20 transition-colors duration-300">
+                <div className="text-6xl font-bold text-gray-100 mb-4 group-hover:text-[#00B894]/20 transition-colors duration-300">
                   {step.number}
                 </div>
                 
                 {/* Icon */}
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full mb-6 group-hover:scale-110 transition-transform duration-300">
                   <div className="text-white">
                     {step.icon}
                   </div>
                 </div>
                 
                 {/* Content */}
-                <h3 className="text-2xl font-bold text-[#2D2D2D] mb-4 group-hover:text-[#00F8B4] transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-[#2D2D2D] mb-4 group-hover:text-[#00B894] transition-colors duration-300">
                   {step.title}
                 </h3>
                 
@@ -101,7 +101,7 @@ const DevelopmentApproach = () => {
                 <ul className="space-y-2">
                   {step.details.map((detail, detailIndex) => (
                     <li key={detailIndex} className="flex items-center gap-2 text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full"></div>
+                      <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full"></div>
                       {detail}
                     </li>
                   ))}
@@ -114,7 +114,7 @@ const DevelopmentApproach = () => {
         {/* Bottom Stats */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-100">
           <div className="text-center">
-            <div className="text-3xl font-bold text-[#00F8B4] mb-2">6-Step</div>
+            <div className="text-3xl font-bold text-[#00B894] mb-2">6-Step</div>
             <div className="text-gray-600">Process</div>
           </div>
           <div className="text-center">
@@ -122,7 +122,7 @@ const DevelopmentApproach = () => {
             <div className="text-gray-600">Quality</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-[#00F8B4] mb-2">24/7</div>
+            <div className="text-3xl font-bold text-[#00B894] mb-2">24/7</div>
             <div className="text-gray-600">Support</div>
           </div>
           <div className="text-center">

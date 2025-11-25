@@ -53,14 +53,14 @@ export default function WhyChooseUs() {
   return (
     <div className="py-20 bg-[#0B0A1C] text-white relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/5 to-[#00C4FF]/5 pointer-events-none"></div>
-      <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full filter blur-3xl opacity-5 animate-pulse pointer-events-none will-change-transform"></div>
-      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full filter blur-3xl opacity-5 animate-pulse delay-1000 pointer-events-none will-change-transform"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#00B894]/5 to-[#00C4FF]/5 pointer-events-none"></div>
+      <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full filter blur-3xl opacity-5 animate-pulse pointer-events-none will-change-transform"></div>
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-[#00C4FF] to-[#00B894] rounded-full filter blur-3xl opacity-5 animate-pulse delay-1000 pointer-events-none will-change-transform"></div>
       
       <div className="max-w-7xl mx-auto px-6 relative z-10">
       <motion.div className="text-center mb-16" initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.06)}>
           <motion.h2 className="text-4xl md:text-5xl font-bold mb-6" variants={fadeUp(16)}>
-          Why <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">
+          Why <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">
               Choose
             </span> SyncOps?
         </motion.h2>
@@ -76,18 +76,18 @@ export default function WhyChooseUs() {
             return (
               <motion.div
                 key={benefit.title}
-                className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#00F8B4]/10 relative overflow-hidden"
+                className="group bg-white/5 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10 hover:border-[#00B894]/30 transition-all duration-300 hover:shadow-2xl hover:shadow-[#00B894]/10 relative overflow-hidden"
                 variants={fadeUp(18)}
           >
             {/* Background Gradient on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 to-[#00C4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 to-[#00C4FF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
             
             <div className="relative z-10">
-              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white shadow-lg mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-2xl bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white shadow-lg mx-auto mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                     {IconComponent && <IconComponent size={28} className="md:w-8 md:h-8" />}
               </div>
               
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 group-hover:text-[#00F8B4] transition-colors duration-300 text-center">
+                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4 group-hover:text-[#00B894] transition-colors duration-300 text-center">
                     {benefit.title}
               </h3>
               
@@ -95,7 +95,7 @@ export default function WhyChooseUs() {
                     {benefit.description}
               </p>
               
-                  <div className="text-[#00F8B4] font-bold text-base md:text-lg text-center">
+                  <div className="text-[#00B894] font-bold text-base md:text-lg text-center">
                     {benefit.stat}
               </div>
             </div>
@@ -114,8 +114,8 @@ export default function WhyChooseUs() {
                 className="text-center group"
                 variants={fadeUp(12)}
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                  {IconComponent && <IconComponent size={20} className="text-[#00F8B4]" />}
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                  {IconComponent && <IconComponent size={20} className="text-[#00B894]" />}
                 </div>
                 <p className="text-sm text-gray-300 group-hover:text-white transition-colors duration-300">
                   {benefit.text}

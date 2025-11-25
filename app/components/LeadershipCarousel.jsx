@@ -50,7 +50,7 @@ export default function LeadershipCarousel() {
               <div className="mt-2 mb-6 flex items-center justify-center">
                 <div className="relative w-32 h-32 flex items-center justify-center group/avatar">
                   {/* Animated thin gradient border */}
-                  <span className="absolute inset-0 rounded-full p-0.5 bg-[conic-gradient(from_0deg,_#00F8B4,_#00C4FF,_#00F8B4)] animate-spin-slow" style={{ filter: 'blur(0.5px)' }}></span>
+                  <span className="absolute inset-0 rounded-full p-0.5 bg-[conic-gradient(from_0deg,_#00B894,_#00C4FF,_#00B894)] animate-spin-slow" style={{ filter: 'blur(0.5px)' }}></span>
                   {/* Avatar image with drop-shadow, perfect circle, and hover float/glow */}
                   <div className="relative w-28 h-28 rounded-full overflow-hidden bg-[#0B0A1C] border-2 border-transparent group-hover/avatar:shadow-[0_4px_24px_0_rgba(0,244,200,0.25)] group-hover/-translate-y-1.5 transition-all duration-500" style={{ boxShadow: '0 2px 12px 0 rgba(0,244,200,0.10)' }}>
                     <Image
@@ -63,7 +63,7 @@ export default function LeadershipCarousel() {
                       blurDataURL="data:image/svg+xml,%3Csvg width='32' height='32' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' fill='%2300C4FF'/%3E%3C/svg%3E"
                     />
                     {/* Thin animated gradient border overlay */}
-                    <span className="absolute inset-0 rounded-full border-2 border-transparent" style={{ borderImage: 'linear-gradient(90deg, #00F8B4, #00C4FF) 1' }}></span>
+                    <span className="absolute inset-0 rounded-full border-2 border-transparent" style={{ borderImage: 'linear-gradient(90deg, #00B894, #00C4FF) 1' }}></span>
                   </div>
                 </div>
               </div>
@@ -71,7 +71,7 @@ export default function LeadershipCarousel() {
               <div className="flex flex-col items-center">
                 <h3 className="text-2xl font-bold text-white mb-1 tracking-tight">
                   <span>{firstName} </span>
-                  <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent font-extrabold">{lastName}</span>
+                  <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent font-extrabold">{lastName}</span>
                 </h3>
                 <p className="text-xs uppercase tracking-widest text-[#bbbbbb] mb-4 font-semibold">{member.role}</p>
               </div>
@@ -80,7 +80,7 @@ export default function LeadershipCarousel() {
                 href={member.linkedin || "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] shadow-lg hover:scale-105 transition-transform duration-200 group"
+                className="mt-2 inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r from-[#00B894] to-[#00C4FF] shadow-lg hover:scale-105 transition-transform duration-200 group"
                 aria-label={`Connect with ${member.name} on LinkedIn`}
               >
                 <Linkedin className="w-6 h-6 text-white group-hover:text-white transition-colors" />

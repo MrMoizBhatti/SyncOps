@@ -61,29 +61,29 @@ export default function TopBar() {
         <div className="flex items-center gap-3 md:gap-4 flex-wrap min-w-0">
           <a
             href="mailto:info@syncops.tech"
-            className="hidden lg:flex items-center gap-1 hover:text-[#00F8B4] hover:scale-105 transition-all duration-300 cursor-pointer group min-w-0"
+            className="hidden lg:flex items-center gap-1 hover:text-[#00B894] hover:scale-105 transition-all duration-300 cursor-pointer group min-w-0"
             aria-label="Email info@syncops.tech"
           >
-            <Mail size={12} className="text-[#00C4FF] group-hover:text-[#00F8B4] transition-colors duration-300 flex-shrink-0" />
+            <Mail size={12} className="text-[#00C4FF] group-hover:text-[#00B894] transition-colors duration-300 flex-shrink-0" />
             <span className="truncate">info@syncops.tech</span>
           </a>
 
           <a
             href="tel:+923018678319"
-            className="hidden sm:flex items-center gap-1 hover:text-[#00F8B4] hover:scale-105 transition-all duration-300 cursor-pointer group min-w-0"
+            className="hidden sm:flex items-center gap-1 hover:text-[#00B894] hover:scale-105 transition-all duration-300 cursor-pointer group min-w-0"
             aria-label="Call SyncOps"
           >
-            <Phone size={12} className="text-[#00C4FF] group-hover:text-[#00F8B4] transition-colors duration-300 flex-shrink-0" />
+            <Phone size={12} className="text-[#00C4FF] group-hover:text-[#00B894] transition-colors duration-300 flex-shrink-0" />
             <span className="truncate">+92-301-8678-319</span>
           </a>
 
           <button
-            className="hidden md:flex items-center gap-1 hover:text-[#00F8B4] hover:scale-105 transition-all duration-300 cursor-pointer group"
+            className="hidden md:flex items-center gap-1 hover:text-[#00B894] hover:scale-105 transition-all duration-300 cursor-pointer group"
             onClick={handleLocationClick}
             title="Open in Google Maps"
             aria-label="Open location in Google Maps"
           >
-            <MapPin size={12} className="text-[#00C4FF] group-hover:text-[#00F8B4] transition-colors duration-300" />
+            <MapPin size={12} className="text-[#00C4FF] group-hover:text-[#00B894] transition-colors duration-300" />
             <span>Mumtaz Market, Gujranwala, Pakistan</span>
             <ExternalLink size={10} className="opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
@@ -93,10 +93,10 @@ export default function TopBar() {
         <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
           <SafeLink
             href="/ceo-message"
-            className="hidden sm:flex items-center gap-1 text-gray-300 hover:text-[#00F8B4] hover:scale-105 transition-all duration-300 group"
+            className="hidden sm:flex items-center gap-1 text-gray-300 hover:text-[#00B894] hover:scale-105 transition-all duration-300 group"
             title="Read our CEO's message"
           >
-            <User size={12} className="text-[#00C4FF] group-hover:text-[#00F8B4] transition-colors duration-300" />
+            <User size={12} className="text-[#00C4FF] group-hover:text-[#00B894] transition-colors duration-300" />
             <span className="hidden lg:inline">Message from the CEO</span>
             <span className="lg:hidden">CEO Message</span>
           </SafeLink>
@@ -104,7 +104,7 @@ export default function TopBar() {
           {/* Mobile contact toggle */}
           <button
             onClick={() => setShowMobileContact((s) => !s)}
-            className="sm:hidden text-gray-300 hover:text-[#00F8B4] transition-colors duration-300 p-2 touch-manipulation min-h-[44px] min-w-[44px]"
+            className="sm:hidden text-gray-300 hover:text-[#00B894] transition-colors duration-300 p-2 touch-manipulation min-h-[44px] min-w-[44px]"
             title="Toggle contact info"
             aria-expanded={showMobileContact}
             aria-controls="mobile-contact"
@@ -121,7 +121,7 @@ export default function TopBar() {
                 href={href}
                 aria-label={label}
                 title={tooltip}
-                className="text-gray-300 hover:text-[#00F8B4] hover:scale-105 transition-all duration-300 p-1.5 rounded-full hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#00F8B4]/50 touch-manipulation min-h-[36px] min-w-[36px] flex items-center justify-center"
+                className="text-gray-300 hover:text-[#00B894] hover:scale-105 transition-all duration-300 p-1.5 rounded-full hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-[#00B894]/50 touch-manipulation min-h-[36px] min-w-[36px] flex items-center justify-center"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -148,7 +148,7 @@ export default function TopBar() {
               <span className="truncate">+92-301-8678-319</span>
             </a>
             <button
-              className="flex items-center gap-2 cursor-pointer hover:text-[#00F8B4] transition-colors duration-300 touch-manipulation"
+              className="flex items-center gap-2 cursor-pointer hover:text-[#00B894] transition-colors duration-300 touch-manipulation"
               onClick={handleLocationClick}
             >
               <MapPin size={14} className="text-[#00C4FF]" />

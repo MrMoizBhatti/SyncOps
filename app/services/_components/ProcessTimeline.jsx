@@ -58,7 +58,7 @@ const StepCard = ({ step, index, align = "left" }) => {
         <span className="text-xs font-semibold tracking-[0.3em] text-gray-400">
           STEP {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-[#00F8B4] to-[#00C4FF]" />
+        <span className="w-2.5 h-2.5 rounded-full bg-gradient-to-br from-[#00B894] to-[#00C4FF]" />
       </div>
       <h3 className="text-2xl font-semibold text-[#031728] mb-3">{step.title}</h3>
       <p className="text-gray-600 leading-relaxed text-sm">{step.description}</p>
@@ -97,9 +97,9 @@ const ProcessTimeline = () => {
         </motion.div>
 
         <div className="mt-16 space-y-12 relative">
-          <span className="hidden lg:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-gradient-to-b from-[#00F8B4] via-[#00C4FF] to-[#00F8B4]" />
+          <span className="hidden lg:block absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[2px] bg-gradient-to-b from-[#00B894] via-[#00C4FF] to-[#00B894]" />
           <motion.div
-            className="hidden lg:block absolute top-16 right-0 w-72 h-72 rounded-[60px] border border-[#00C4FF]/20 bg-gradient-to-br from-[#00F8B4]/12 to-transparent blur-2xl"
+            className="hidden lg:block absolute top-16 right-0 w-72 h-72 rounded-[60px] border border-[#00C4FF]/20 bg-gradient-to-br from-[#00B894]/12 to-transparent blur-2xl"
             animate={{ opacity: [0.35, 0.55, 0.35], scale: [0.95, 1.05, 0.95] }}
             transition={{ duration: 10, repeat: Infinity }}
           />
@@ -117,7 +117,7 @@ const ProcessTimeline = () => {
 
                 <div className="flex flex-col items-center gap-4 order-1 lg:order-none">
                   <motion.div
-                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00F8B4] to-[#00C4FF] shadow-lg flex items-center justify-center ring-8 ring-white/70"
+                    className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00B894] to-[#00C4FF] shadow-lg flex items-center justify-center ring-8 ring-white/70"
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : {}}
                     transition={{ duration: 0.4, delay: index * 0.15 + 0.1 }}
@@ -125,7 +125,7 @@ const ProcessTimeline = () => {
                     <step.icon className="w-7 h-7 text-white" />
                   </motion.div>
                   {index !== steps.length - 1 && (
-                    <div className="hidden lg:block w-[2px] h-24 bg-gradient-to-b from-[#00F8B4] via-[#00C4FF] to-[#00F8B4]" />
+                    <div className="hidden lg:block w-[2px] h-24 bg-gradient-to-b from-[#00B894] via-[#00C4FF] to-[#00B894]" />
                   )}
                 </div>
 

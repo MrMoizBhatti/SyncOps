@@ -103,7 +103,7 @@ const OpenPositions = () => {
             onClick={() => setActiveFilter(filter)}
             className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
               activeFilter === filter
-                ? "bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-[#0B0A1C] shadow-lg shadow-[#00F8B4]/25"
+                ? "bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-[#0B0A1C] shadow-lg shadow-[#00B894]/25"
                 : "bg-white/10 text-gray-300 hover:bg-white/20 hover:text-white border border-white/20"
             }`}
           >
@@ -117,14 +117,14 @@ const OpenPositions = () => {
         {filteredPositions.map((position) => (
           <div
             key={position.id}
-            className={`group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#00F8B4]/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,248,180,0.15)] relative overflow-hidden ${
-              position.featured ? 'ring-2 ring-[#00F8B4]/50' : ''
+            className={`group bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-[#00B894]/30 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,184,148,0.15)] relative overflow-hidden ${
+              position.featured ? 'ring-2 ring-[#00B894]/50' : ''
             }`}
           >
             {/* Featured Badge */}
             {position.featured && (
               <div className="absolute top-4 right-4">
-                <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-[#0B0A1C] px-3 py-1 rounded-full text-sm font-semibold">
+                <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-[#0B0A1C] px-3 py-1 rounded-full text-sm font-semibold">
                   🔥 Featured
                 </span>
               </div>
@@ -132,7 +132,7 @@ const OpenPositions = () => {
 
             {/* Position Header */}
             <div className="mb-6">
-              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#00F8B4] transition-colors duration-300">
+              <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-[#00B894] transition-colors duration-300">
                 {position.title}
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">
@@ -143,7 +143,7 @@ const OpenPositions = () => {
             {/* Position Details */}
             <div className="grid grid-cols-2 gap-4 mb-6">
               <div className="flex items-center gap-2 text-sm text-gray-300">
-                <svg className="w-4 h-4 text-[#00F8B4]" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#00B894]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
                 <span>{position.department}</span>
@@ -155,7 +155,7 @@ const OpenPositions = () => {
                 <span>{position.type}</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-300">
-                <svg className="w-4 h-4 text-[#00F8B4]" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#00B894]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
                 </svg>
                 <span>{position.location}</span>
@@ -182,7 +182,7 @@ const OpenPositions = () => {
 
             {/* Apply Button */}
             <SafeLink href="https://forms.gle/your-google-form-id" target="_blank" rel="noopener noreferrer">
-              <button className="group w-full bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-[#0B0A1C] font-semibold px-6 py-3 rounded-lg hover:shadow-[0_0_30px_rgba(0,248,180,0.5)] transition-all duration-300 hover:scale-105">
+              <button className="group w-full bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-[#0B0A1C] font-semibold px-6 py-3 rounded-lg hover:shadow-[0_0_30px_rgba(0,184,148,0.5)] transition-all duration-300 hover:scale-105">
                 <span className="flex items-center justify-center gap-2">
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -198,8 +198,8 @@ const OpenPositions = () => {
       {/* No Results Message */}
       {filteredPositions.length === 0 && (
         <div className="text-center py-16">
-          <div className="w-24 h-24 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg className="w-12 h-12 text-[#00F8B4]" fill="currentColor" viewBox="0 0 24 24">
+          <div className="w-24 h-24 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <svg className="w-12 h-12 text-[#00B894]" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
             </svg>
           </div>

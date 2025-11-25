@@ -1,6 +1,6 @@
 import React from "react";
 import TechnologiesHero from "./_components/TechnologiesHero";
-import TechnologyStackCards from "./_components/TechnologyStackCards";
+import TechnologyStackCards from "../components/TechnologyStackCards";
 import ContinuouslyEvolvingStrip from "./_components/ContinuouslyEvolvingStrip";
 import CloudExpertise from "./_components/CloudExpertise";
 import MultiCloudBenefits from "./_components/MultiCloudBenefits";

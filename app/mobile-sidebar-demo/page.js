@@ -20,7 +20,7 @@ export default function MobileSidebarDemo() {
         <div className="text-center space-y-8">
           <h1 className="text-6xl font-bold text-white mb-4">
             Ultra-Premium
-            <span className="block bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">
               Mobile Sidebar
             </span>
           </h1>
@@ -39,7 +39,7 @@ export default function MobileSidebarDemo() {
             
             <button
               onClick={toggleSidebar}
-              className="px-8 py-4 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-bold rounded-xl shadow-lg hover:shadow-[0_0_30px_rgba(0,248,180,0.5)] transition-all duration-300 hover:scale-105"
+              className="px-8 py-4 bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-bold rounded-xl shadow-lg hover:shadow-[0_0_30px_rgba(0,184,148,0.5)] transition-all duration-300 hover:scale-105"
             >
               Open Premium Sidebar
             </button>

@@ -7,7 +7,7 @@ const useCases = [
   {
     title: 'Operations Automation',
     icon: Zap,
-    color: 'from-[#00F8B4] to-[#00C4FF]',
+    color: 'from-[#00B894] to-[#00C4FF]',
     description: 'Streamline business processes and eliminate manual work',
     points: [
       { text: 'Reduce manual handoffs by 80%', icon: TrendingUp },
@@ -20,7 +20,7 @@ const useCases = [
   {
     title: 'Data Synchronization',
     icon: RefreshCw,
-    color: 'from-[#00C4FF] to-[#00F8B4]',
+    color: 'from-[#00C4FF] to-[#00B894]',
     description: 'Keep data consistent across all your systems',
     points: [
       { text: 'Multi-system consistency guaranteed', icon: CheckCircle2 },
@@ -33,7 +33,7 @@ const useCases = [
   {
     title: 'Cloud Security',
     icon: Shield,
-    color: 'from-[#00F8B4] to-[#00C4FF]',
+    color: 'from-[#00B894] to-[#00C4FF]',
     description: 'Protect your infrastructure with enterprise-grade security',
     points: [
       { text: 'Policy-as-code enforcement', icon: FileCheck },

@@ -9,9 +9,8 @@ import ProductIntegrations from './ProductIntegrations';
 import ProductComparison from './ProductComparison';
 import ProductSocialProof from './ProductSocialProof';
 import MetricsBar from '../../components/MetricsBar';
-import TechnologiesWeUse from '../../components/TechnologiesWeUse';
 import FinalCTA from '../../components/FinalCTA';
-
+import TechnologyStackCards from '../../components/TechnologyStackCards';
 export default function ProductsClient() {
   return (
     <ParallaxProvider>
@@ -68,9 +67,9 @@ export default function ProductsClient() {
         </section>
 
         {/* Technologies (light) */}
-        <section className="bg-gray-50 py-20">
+        <section>
           <motion.div initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.08)}>
-            <TechnologiesWeUse />
+            <TechnologyStackCards />
           </motion.div>
         </section>
 

@@ -61,7 +61,7 @@ export default function FinalCTA() {
   return (
     <section className="bg-gradient-to-br from-gray-50 via-white to-gray-100 py-20 px-6 text-center relative overflow-hidden">
       {/* Background Effects - Matching Homepage */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 via-transparent to-[#00C4FF]/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 via-transparent to-[#00C4FF]/5"></div>
       
       {/* Enhanced Animated Gradient Background */}
       <motion.div 
@@ -163,7 +163,7 @@ export default function FinalCTA() {
            viewport={{ once: true }}
          >
            Ready to <motion.span 
-             className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent"
+             className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent"
              animate={{
                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
              }}

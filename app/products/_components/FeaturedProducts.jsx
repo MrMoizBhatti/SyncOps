@@ -11,7 +11,7 @@ const products = [
     tagline: 'AI-powered workflow automation',
     description: 'Automate repetitive processes with intelligent triggers, approvals, and analytics.',
     href: '/products/syncflow',
-    color: 'from-[#00F8B4] to-[#00C4FF]',
+    color: 'from-[#00B894] to-[#00C4FF]',
     icon: Zap,
     features: [
       'AI-powered decision making',
@@ -32,7 +32,7 @@ const products = [
     tagline: 'Real-time data synchronization',
     description: 'Keep your data consistent across services with resilient, observable pipelines.',
     href: '/products/datasync-pro',
-    color: 'from-[#00C4FF] to-[#00F8B4]',
+    color: 'from-[#00C4FF] to-[#00B894]',
     icon: RefreshCw,
     features: [
       '<1ms sync latency',
@@ -53,7 +53,7 @@ const products = [
     tagline: 'Cloud security & compliance',
     description: 'Zero-trust security with policy-as-code, monitoring, and automated remediation.',
     href: '/products/cloudguard',
-    color: 'from-[#00F8B4] to-[#00C4FF]',
+    color: 'from-[#00B894] to-[#00C4FF]',
     icon: Shield,
     features: [
       'Zero-trust architecture',

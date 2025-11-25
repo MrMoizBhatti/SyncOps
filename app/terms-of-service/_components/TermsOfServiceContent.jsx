@@ -10,9 +10,9 @@ const TermsOfServiceContent = () => {
       {/* Hero Section - Dark */}
       <section className="relative overflow-hidden bg-[#0B0A1C] text-white py-20 lg:py-24 border-b border-white/5">
         {/* Background Effects */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 to-[#00C4FF]/5 opacity-30"></div>
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 to-[#00C4FF]/5 opacity-30"></div>
+        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-gradient-to-r from-[#00C4FF] to-[#00B894] rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
 
         <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
           <motion.div
@@ -22,13 +22,13 @@ const TermsOfServiceContent = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-full flex items-center justify-center border border-[#00F8B4]/30">
-                <Scale className="w-10 h-10 text-[#00F8B4]" />
+              <div className="w-20 h-20 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-full flex items-center justify-center border border-[#00B894]/30">
+                <Scale className="w-10 h-10 text-[#00B894]" />
               </div>
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold mb-4">
               <span className="text-white">Terms of </span>
-              <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Service</span>
+              <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Service</span>
             </h1>
           
           </motion.div>
@@ -43,7 +43,7 @@ const TermsOfServiceContent = () => {
             {...fadeUp(0)}
           >
             <p className="text-gray-700 leading-relaxed text-lg">
-              Welcome to <span className="font-semibold text-gray-900">SyncOps</span>. These Terms of Service ("Terms") govern your access to and use of our website located at <span className="text-[#00F8B4] font-semibold">syncops.tech</span> and our services. By accessing or using our website and services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.
+              Welcome to <span className="font-semibold text-gray-900">SyncOps</span>. These Terms of Service ("Terms") govern your access to and use of our website located at <span className="text-[#00B894] font-semibold">syncops.tech</span> and our services. By accessing or using our website and services, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our services.
             </p>
           </motion.div>
         </div>
@@ -59,12 +59,12 @@ const TermsOfServiceContent = () => {
               {...fadeUp(0)}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-lg flex items-center justify-center border border-[#00F8B4]/30">
-                  <FileText className="w-6 h-6 text-[#00F8B4]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-lg flex items-center justify-center border border-[#00B894]/30">
+                  <FileText className="w-6 h-6 text-[#00B894]" />
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold">
                   <span className="text-white">1. Acceptance of </span>
-                  <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Terms</span>
+                  <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Terms</span>
                 </h2>
               </div>
               <div className="text-gray-300 space-y-4">
@@ -84,12 +84,12 @@ const TermsOfServiceContent = () => {
               {...fadeUp(0)}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-lg flex items-center justify-center border border-[#00F8B4]/30">
-                  <Users className="w-6 h-6 text-[#00F8B4]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00B894]/10 to-[#00C4FF]/10 rounded-lg flex items-center justify-center border border-[#00B894]/30">
+                  <Users className="w-6 h-6 text-[#00B894]" />
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
                   <span>2. Description of </span>
-                  <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Services</span>
+                  <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Services</span>
                 </h2>
               </div>
               <div className="text-gray-700 space-y-4">
@@ -120,12 +120,12 @@ const TermsOfServiceContent = () => {
               {...fadeUp(0)}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-lg flex items-center justify-center border border-[#00F8B4]/30">
-                  <CheckCircle className="w-6 h-6 text-[#00F8B4]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-lg flex items-center justify-center border border-[#00B894]/30">
+                  <CheckCircle className="w-6 h-6 text-[#00B894]" />
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold">
                   <span className="text-white">3. User </span>
-                  <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Obligations</span>
+                  <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Obligations</span>
                 </h2>
               </div>
               <div className="text-gray-300 space-y-4">
@@ -155,12 +155,12 @@ const TermsOfServiceContent = () => {
               {...fadeUp(0)}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-lg flex items-center justify-center border border-[#00F8B4]/30">
-                  <Ban className="w-6 h-6 text-[#00F8B4]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00B894]/10 to-[#00C4FF]/10 rounded-lg flex items-center justify-center border border-[#00B894]/30">
+                  <Ban className="w-6 h-6 text-[#00B894]" />
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
                   <span>4. Prohibited </span>
-                  <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Activities</span>
+                  <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Activities</span>
                 </h2>
               </div>
               <div className="text-gray-700 space-y-4">
@@ -190,12 +190,12 @@ const TermsOfServiceContent = () => {
               {...fadeUp(0)}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-lg flex items-center justify-center border border-[#00F8B4]/30">
-                  <Shield className="w-6 h-6 text-[#00F8B4]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-lg flex items-center justify-center border border-[#00B894]/30">
+                  <Shield className="w-6 h-6 text-[#00B894]" />
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold">
                   <span className="text-white">5. Intellectual </span>
-                  <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Property</span>
+                  <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Property</span>
                 </h2>
               </div>
               <div className="text-gray-300 space-y-4">
@@ -221,12 +221,12 @@ const TermsOfServiceContent = () => {
               {...fadeUp(0)}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-lg flex items-center justify-center border border-[#00F8B4]/30">
-                  <AlertCircle className="w-6 h-6 text-[#00F8B4]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00B894]/10 to-[#00C4FF]/10 rounded-lg flex items-center justify-center border border-[#00B894]/30">
+                  <AlertCircle className="w-6 h-6 text-[#00B894]" />
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
                   <span>6. Disclaimer of </span>
-                  <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Warranties</span>
+                  <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Warranties</span>
                 </h2>
               </div>
               <div className="text-gray-700 space-y-4">
@@ -257,7 +257,7 @@ const TermsOfServiceContent = () => {
             >
               <h2 className="text-2xl lg:text-3xl font-bold mb-6">
                 <span className="text-white">7. Limitation of </span>
-                <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Liability</span>
+                <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Liability</span>
               </h2>
               <div className="text-gray-300 space-y-4">
                 <p className="leading-relaxed">
@@ -323,7 +323,7 @@ const TermsOfServiceContent = () => {
             >
               <h2 className="text-2xl font-bold mb-4">
                 <span className="text-white">10. Governing Law and </span>
-                <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Jurisdiction</span>
+                <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Jurisdiction</span>
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 These Terms shall be governed by and construed in accordance with the laws of Pakistan, without regard to its conflict of law provisions. Any disputes arising from or relating to these Terms or our services shall be subject to the exclusive jurisdiction of the courts located in Gujranwala, Pakistan.
@@ -336,7 +336,7 @@ const TermsOfServiceContent = () => {
             >
               <h2 className="text-2xl font-bold mb-4">
                 <span className="text-white">11. Changes to </span>
-                <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Terms</span>
+                <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Terms</span>
               </h2>
               <p className="text-gray-300 leading-relaxed">
                 We reserve the right to modify these Terms at any time. We will notify you of any material changes by posting the updated Terms on this page and updating the "Last Updated" date. Your continued use of our services after such changes constitutes acceptance of the updated Terms. If you do not agree to the modified Terms, you must stop using our services.
@@ -361,16 +361,16 @@ const TermsOfServiceContent = () => {
         <section className="bg-gradient-to-br from-white to-[#FAFAFF] py-16">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <motion.div
-              className="bg-gradient-to-br from-[#00F8B4]/10 to-[#00C4FF]/10 rounded-2xl p-8 border-2 border-[#00F8B4]/30 shadow-lg"
+              className="bg-gradient-to-br from-[#00B894]/10 to-[#00C4FF]/10 rounded-2xl p-8 border-2 border-[#00B894]/30 shadow-lg"
               {...fadeUp(0)}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-lg flex items-center justify-center border border-[#00F8B4]/30">
-                  <Mail className="w-6 h-6 text-[#00F8B4]" />
+                <div className="w-12 h-12 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-lg flex items-center justify-center border border-[#00B894]/30">
+                  <Mail className="w-6 h-6 text-[#00B894]" />
                 </div>
                 <h2 className="text-2xl lg:text-3xl font-bold text-gray-900">
                   <span>13. Contact </span>
-                  <span className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] bg-clip-text text-transparent">Us</span>
+                  <span className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] bg-clip-text text-transparent">Us</span>
                 </h2>
               </div>
               <div className="text-gray-700 space-y-4">
@@ -380,19 +380,19 @@ const TermsOfServiceContent = () => {
                 <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 space-y-3 border border-gray-200">
                   <p className="text-gray-900 font-semibold text-lg">SyncOps</p>
                   <p className="text-gray-700">
-                    <strong className="text-[#00F8B4]">Email:</strong>{" "}
-                    <a href="mailto:info@syncops.tech" className="text-[#00F8B4] hover:text-[#00C4FF] transition-colors font-medium">
+                    <strong className="text-[#00B894]">Email:</strong>{" "}
+                    <a href="mailto:info@syncops.tech" className="text-[#00B894] hover:text-[#00C4FF] transition-colors font-medium">
                       info@syncops.tech
                     </a>
                   </p>
                   <p className="text-gray-700">
-                    <strong className="text-[#00F8B4]">Phone:</strong>{" "}
-                    <a href="tel:+923018678319" className="text-[#00F8B4] hover:text-[#00C4FF] transition-colors font-medium">
+                    <strong className="text-[#00B894]">Phone:</strong>{" "}
+                    <a href="tel:+923018678319" className="text-[#00B894] hover:text-[#00C4FF] transition-colors font-medium">
                       +92-301-8678-319
                     </a>
                   </p>
                   <p className="text-gray-700">
-                    <strong className="text-[#00F8B4]">Address:</strong> Mumtaz Market, GT Rd, opposite Chaseup Shopping Mall, Civil Lines, Gujranwala, 52250
+                    <strong className="text-[#00B894]">Address:</strong> Mumtaz Market, GT Rd, opposite Chaseup Shopping Mall, Civil Lines, Gujranwala, 52250
                   </p>
                 </div>
               </div>

@@ -44,15 +44,15 @@ const ContinuouslyEvolvingStrip = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="group text-center p-6 rounded-xl hover:bg-gradient-to-br hover:from-[#00F8B4]/5 hover:to-[#00C4FF]/5 transition-all duration-300 hover:scale-105"
+                className="group text-center p-6 rounded-xl hover:bg-gradient-to-br hover:from-[#00B894]/5 hover:to-[#00C4FF]/5 transition-all duration-300 hover:scale-105"
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full mb-4 group-hover:scale-110 transition-transform duration-300">
                   <div className="text-white">
                     {feature.icon}
                   </div>
                 </div>
                 
-                <h4 className="text-lg font-semibold text-[#2D2D2D] mb-2 group-hover:text-[#00F8B4] transition-colors duration-300">
+                <h4 className="text-lg font-semibold text-[#2D2D2D] mb-2 group-hover:text-[#00B894] transition-colors duration-300">
                   {feature.title}
                 </h4>
                 
@@ -70,7 +70,7 @@ const ContinuouslyEvolvingStrip = () => {
             </p>
             <SafeLink
               href="/contact"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#00B894] to-[#00C4FF] text-white font-semibold px-8 py-3 rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               <FaRocket className="w-4 h-4" />
               Start Your Project

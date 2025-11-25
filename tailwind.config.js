@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          aqua: '#00F8B4',
+          aqua: '#00B894',
           teal: '#00C4FF',
           navy: '#0B1020',
           card: '#111A2A',
@@ -28,9 +28,9 @@ module.exports = {
         }
       },
       backgroundImage: {
-        'gradient-brand': 'linear-gradient(to right,rgb(4, 216, 159), #00C4FF)',
-        'gradient-brand-reverse': 'linear-gradient(to right, #00C4FF,rgb(4, 216, 159)',
-        'gradient-brand-vertical': 'linear-gradient(to bottom,rgb(4, 216, 159), #00C4FF)',
+        'gradient-brand': 'linear-gradient(to right, #00B894, #00C4FF)',
+        'gradient-brand-reverse': 'linear-gradient(to right, #00C4FF, #00B894)',
+        'gradient-brand-vertical': 'linear-gradient(to bottom, #00B894, #00C4FF)',
       },
       borderRadius: {
         '2xl': '1rem',

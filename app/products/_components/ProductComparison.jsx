@@ -73,17 +73,17 @@ const rows = [
 const productHighlights = {
   syncflow: {
     icon: Zap,
-    color: 'from-[#00F8B4] to-[#00C4FF]',
+    color: 'from-[#00B894] to-[#00C4FF]',
     strength: 'Best for workflow automation'
   },
   datasync: {
     icon: RefreshCw,
-    color: 'from-[#00C4FF] to-[#00F8B4]',
+    color: 'from-[#00C4FF] to-[#00B894]',
     strength: 'Best for data consistency'
   },
   cloudguard: {
     icon: Shield,
-    color: 'from-[#00F8B4] to-[#00C4FF]',
+    color: 'from-[#00B894] to-[#00C4FF]',
     strength: 'Best for security & compliance'
   }
 };

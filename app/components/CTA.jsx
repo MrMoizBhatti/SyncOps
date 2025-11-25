@@ -9,14 +9,14 @@ export default function CTA() {
       aria-label="Ready to Transform Your Business CTA"
     >
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#00F8B4]/5 to-[#00C4FF]/5"></div>
-      <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
-      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-[#00C4FF] to-[#00F8B4] rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#00B894]/5 to-[#00C4FF]/5"></div>
+      <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-[#00B894] to-[#00C4FF] rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
+      <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-[#00C4FF] to-[#00B894] rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
       
       {/* Floating Elements */}
-      <div className="absolute top-1/4 left-10 w-4 h-4 bg-[#00F8B4] rounded-full animate-bounce opacity-60"></div>
+      <div className="absolute top-1/4 left-10 w-4 h-4 bg-[#00B894] rounded-full animate-bounce opacity-60"></div>
       <div className="absolute top-1/2 right-20 w-3 h-3 bg-[#00C4FF] rounded-full animate-pulse opacity-50"></div>
-      <div className="absolute bottom-1/4 left-20 w-2 h-2 bg-[#00F8B4] rounded-full animate-pulse delay-1000 opacity-40"></div>
+      <div className="absolute bottom-1/4 left-20 w-2 h-2 bg-[#00B894] rounded-full animate-pulse delay-1000 opacity-40"></div>
       <div className="absolute bottom-1/3 right-10 w-3 h-3 bg-[#00C4FF] rounded-full animate-bounce delay-500 opacity-50"></div>
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -51,7 +51,7 @@ export default function CTA() {
       
       {/* Floating Vertical Button */}
       <button
-        className="fixed top-1/3 right-0 z-50 w-[48px] h-[160px] bg-gradient-to-b from-[#00F8B4] to-[#00C4FF] text-white font-semibold rounded-l-lg transform rotate-90 origin-bottom-right shadow-md text-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-cyan-500 hover:brightness-110 transition-all duration-200"
+        className="fixed top-1/3 right-0 z-50 w-[48px] h-[160px] bg-gradient-to-b from-[#00B894] to-[#00C4FF] text-white font-semibold rounded-l-lg transform rotate-90 origin-bottom-right shadow-md text-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-cyan-500 hover:brightness-110 transition-all duration-200"
         style={{ writingMode: "vertical-rl", textOrientation: "mixed" }}
         aria-label="Let's Talk Business"
       >

@@ -28,7 +28,7 @@ export default function MobileStickyCTA() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-      <div className="bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] shadow-lg border-t border-white/20">
+      <div className="bg-gradient-to-r from-[#00B894] to-[#00C4FF] shadow-lg border-t border-white/20">
         <div className="px-4 py-3 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">

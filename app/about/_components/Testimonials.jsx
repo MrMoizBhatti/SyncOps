@@ -76,12 +76,12 @@ const Testimonials = () => {
         {/* Main Testimonial */}
         <div className="bg-white rounded-3xl p-12 shadow-xl border border-gray-100 relative overflow-hidden">
           {/* Glowing background effect */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#00F8B4]/5 to-[#00C4FF]/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#00B894]/5 to-[#00C4FF]/5 opacity-0 hover:opacity-100 transition-opacity duration-300"></div>
           
           <div className="relative z-10">
             {/* Quote */}
             <div className="mb-8">
-              <svg className="w-12 h-12 text-[#00F8B4] mb-4" fill="currentColor" viewBox="0 0 24 24">
+              <svg className="w-12 h-12 text-[#00B894] mb-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
               </svg>
               <blockquote className="text-2xl lg:text-3xl font-semibold text-[#1F3A56] leading-relaxed italic">
@@ -93,7 +93,7 @@ const Testimonials = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 {/* Client Logo */}
-                <div className="w-16 h-16 bg-gradient-to-br from-[#00F8B4] to-[#00C4FF] rounded-2xl flex items-center justify-center shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#00B894] to-[#00C4FF] rounded-2xl flex items-center justify-center shadow-lg">
                   <span className="text-xl font-bold text-white">{testimonials[currentIndex].logo}</span>
                 </div>
                 
@@ -115,7 +115,7 @@ const Testimonials = () => {
           </div>
 
           {/* Floating accent elements */}
-          <div className="absolute top-6 right-6 w-3 h-3 bg-[#00F8B4] rounded-full animate-pulse opacity-60"></div>
+          <div className="absolute top-6 right-6 w-3 h-3 bg-[#00B894] rounded-full animate-pulse opacity-60"></div>
           <div className="absolute bottom-6 left-6 w-2 h-2 bg-[#00C4FF] rounded-full animate-bounce opacity-50"></div>
         </div>
 
@@ -149,7 +149,7 @@ const Testimonials = () => {
             onClick={() => goToTestimonial(index)}
             className={`w-3 h-3 rounded-full transition-all duration-300 ${
               index === currentIndex 
-                ? 'bg-gradient-to-r from-[#00F8B4] to-[#00C4FF] scale-125' 
+                ? 'bg-gradient-to-r from-[#00B894] to-[#00C4FF] scale-125' 
                 : 'bg-gray-300 hover:bg-gray-400'
             }`}
             aria-label={`Go to testimonial ${index + 1}`}
@@ -160,7 +160,7 @@ const Testimonials = () => {
       {/* Bottom Stats */}
       <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-bold text-[#1F3A56]">98%</span>
           </div>
           <h4 className="text-lg font-semibold text-[#1F3A56] mb-2">Client Satisfaction</h4>
@@ -168,7 +168,7 @@ const Testimonials = () => {
         </div>
         
         <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-[#00C4FF]/20 to-[#00F8B4]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-[#00C4FF]/20 to-[#00B894]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-bold text-[#1F3A56]">50+</span>
           </div>
           <h4 className="text-lg font-semibold text-[#1F3A56] mb-2">Happy Clients</h4>
@@ -176,7 +176,7 @@ const Testimonials = () => {
         </div>
         
         <div className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-[#00F8B4]/20 to-[#00C4FF]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+          <div className="w-16 h-16 bg-gradient-to-br from-[#00B894]/20 to-[#00C4FF]/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
             <span className="text-2xl font-bold text-[#1F3A56]">4.9/5</span>
           </div>
           <h4 className="text-lg font-semibold text-[#1F3A56] mb-2">Average Rating</h4>

@@ -4,9 +4,15 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 
-const KeyFeatures = ({ features, accentColor }) => {
+const fallbackColor = "#00B894";
+
+const KeyFeatures = ({ features = [], accentColor = fallbackColor }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
+
+  if (!Array.isArray(features) || features.length === 0) {
+    return null;
+  }
 
   return (
     <div
@@ -15,7 +21,7 @@ const KeyFeatures = ({ features, accentColor }) => {
     >
       {features.map((feature, index) => (
         <motion.div
-          key={index}
+          key={`${feature?.title ?? "feature"}-${index}`}
           className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -27,11 +33,11 @@ const KeyFeatures = ({ features, accentColor }) => {
               style={{ color: accentColor }}
             />
             <h3 className="text-xl font-semibold text-gray-800">
-              {feature.title}
+              {feature?.title}
             </h3>
           </div>
           <p className="text-gray-600 flex-grow text-balance leading-relaxed">
-            {feature.description}
+            {feature?.description}
           </p>
         </motion.div>
       ))}
@@ -40,3 +46,4 @@ const KeyFeatures = ({ features, accentColor }) => {
 };
 
 export default KeyFeatures;
+

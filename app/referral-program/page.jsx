@@ -49,7 +49,7 @@ export default function ReferralProgramPage() {
       {/* FAQs - Dark Background */}
       <section className="relative bg-gradient-to-br from-[#0B0A1C] via-[#0F1E2E] to-[#0B0A1C] py-16 overflow-hidden mt-0">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-[#00F8B4]/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-20 left-20 w-96 h-96 bg-[#00B894]/10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-20 w-80 h-80 bg-[#00C4FF]/10 rounded-full blur-3xl"></div>
         </div>
         <div className="relative z-10">
