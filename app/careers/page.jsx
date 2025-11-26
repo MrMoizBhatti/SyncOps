@@ -27,32 +27,46 @@ const CareersPage = () => {
   return (
     <main className="min-h-screen">
       {/* 1. Hero Section - Dark */}
-      <section className="bg-[#0B0A1C] text-white">
-        <CareersHero />
+      <section data-gsap-section className="bg-[#0B0A1C] text-white">
+        <div data-gsap-stagger>
+          <CareersHero />
+        </div>
       </section>
       
       {/* 2. Why Join SyncOps - Light */}
-      <section className="bg-gradient-to-br from-[#F9FCFE] to-white py-20">
-        <WhyJoinSyncOps />
+      <section data-gsap-section className="bg-gradient-to-br from-[#F9FCFE] to-white py-20">
+        <div data-gsap-stagger>
+          <WhyJoinSyncOps />
+        </div>
       </section>
       
       {/* 3. Open Positions - Dark */}
-      <section className="bg-gradient-to-br from-[#0B0A1C] to-[#1A1A2E] text-white py-20">
-        <OpenPositions />
+      <section data-gsap-section className="bg-gradient-to-br from-[#0B0A1C] to-[#1A1A2E] text-white py-20">
+        <div data-gsap-stagger>
+          <OpenPositions />
+        </div>
       </section>
       
       {/* 4. Talent Pool - Light */}
-      <section className="bg-gradient-to-br from-white to-[#F0FCFF] py-20">
-        <TalentPool />
+      <section data-gsap-section className="bg-gradient-to-br from-white to-[#F0FCFF] py-20">
+        <div data-gsap-stagger>
+          <TalentPool />
+        </div>
       </section>
       
       {/* 5. How We Hire - Dark */}
-      <section className="bg-[#0B0A1C] text-white py-20">
-        <HiringProcess />
+      <section data-gsap-section className="bg-[#0B0A1C] text-white py-20">
+        <div data-gsap-stagger>
+          <HiringProcess />
+        </div>
       </section>
       
       {/* 6. Final CTA - Dark with Glow */}
-      <FinalCTA />
+      <section data-gsap-section>
+        <div data-gsap-stagger>
+          <FinalCTA />
+        </div>
+      </section>
 
     </main>
   );

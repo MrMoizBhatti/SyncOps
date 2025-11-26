@@ -28,25 +28,53 @@ const TechnologiesPage = () => {
   return (
     <main className="min-h-screen">
       {/* 1. Hero Section - Dark */}
-      <TechnologiesHero />
+      <section data-gsap-section>
+        <div data-gsap-stagger>
+          <TechnologiesHero />
+        </div>
+      </section>
       
       {/* 2. Technology Stack Cards - Light */}
-      <TechnologyStackCards />
+      <section data-gsap-section>
+        <div data-gsap-stagger>
+          <TechnologyStackCards />
+        </div>
+      </section>
       
       {/* 3. Continuously Evolving Strip - Light */}
-      <ContinuouslyEvolvingStrip />
+      <section data-gsap-section>
+        <div data-gsap-stagger>
+          <ContinuouslyEvolvingStrip />
+        </div>
+      </section>
       
       {/* 4. Cloud Expertise - Dark */}
-      <CloudExpertise />
+      <section data-gsap-section>
+        <div data-gsap-stagger>
+          <CloudExpertise />
+        </div>
+      </section>
       
       {/* 5. Multi-Cloud Benefits - Dark */}
-      <MultiCloudBenefits />
+      <section data-gsap-section>
+        <div data-gsap-stagger>
+          <MultiCloudBenefits />
+        </div>
+      </section>
       
       {/* 6. Our Approach to Software Development - Light */}
-      <DevelopmentApproach />
+      <section data-gsap-section>
+        <div data-gsap-stagger>
+          <DevelopmentApproach />
+        </div>
+      </section>
       
       {/* 7. Proven Methodology Strip - Light */}
-      <ProvenMethodologyStrip />
+      <section data-gsap-section>
+        <div data-gsap-stagger>
+          <ProvenMethodologyStrip />
+        </div>
+      </section>
       
     
     </main>

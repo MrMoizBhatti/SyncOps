@@ -9,6 +9,7 @@ const initialFormState = {
   portfolio: "",
   resume: "",
   coverLetter: "",
+  resumeFile: null,
 };
 
 const OpenPositions = () => {
@@ -119,6 +120,11 @@ const OpenPositions = () => {
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files && e.target.files[0] ? e.target.files[0] : null;
+    setFormData((prev) => ({ ...prev, resumeFile: file }));
   };
 
   const handleFormSubmit = (e) => {
@@ -308,7 +314,7 @@ const OpenPositions = () => {
               </button>
             </div>
 
-            <div className="flex-1 overflow-y-auto px-6 py-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex-1 overflow-y-auto px-6 py-6 pb-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
               <p className="text-gray-600 mb-6">
                 Tell us a little about yourself and why you'd be a great fit for{" "}
                 <span className="font-semibold text-gray-900">
@@ -391,16 +397,15 @@ const OpenPositions = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Resume / CV (URL)
+                      Resume / CV (Upload)
                     </label>
                     <input
-                      type="url"
-                      name="resume"
-                      value={formData.resume}
-                      onChange={handleFormChange}
-                      placeholder="Link to your resume"
+                      type="file"
+                      name="resumeFile"
+                      accept=".pdf,.doc,.docx,.rtf,.txt,.odt"
+                      onChange={handleFileChange}
                       required
-                      className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                      className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894] bg-white"
                     />
                   </div>
 
