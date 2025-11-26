@@ -22,8 +22,19 @@ export default function Hero() {
         playsInline
         preload="auto"
         aria-hidden="true"
+        poster="https://res.cloudinary.com/dfdzl01qj/video/upload/q_auto,w_1200/vecteezy_ai-generative-beautiful-fantasy-human-reptile-eye-with-neon_28716522_2_ovsvbo.jpg"
       >
-        <source src="https://res.cloudinary.com/dfdzl01qj/video/upload/v1763395022/vecteezy_ai-generative-beautiful-fantasy-human-reptile-eye-with-neon_28716522_2_ovsvbo.mp4" type="video/mp4" />
+        {/* HLS Streaming – super fast */}
+        <source 
+          src="https://res.cloudinary.com/dfdzl01qj/video/upload/sp_hd/f_auto,q_auto,vc_auto,w_1920/vecteezy_ai-generative-beautiful-fantasy-human-reptile-eye-with-neon_28716522_2_ovsvbo.m3u8" 
+          type="application/x-mpegURL" 
+        />
+
+        {/* MP4 fallback */}
+        <source 
+          src="https://res.cloudinary.com/dfdzl01qj/video/upload/f_auto,q_auto:good,vc_auto,w_1920/vecteezy_ai-generative-beautiful-fantasy-human-reptile-eye-with-neon_28716522_2_ovsvbo.mp4" 
+          type="video/mp4" 
+        />
       </video>
 
       {/* Gradient Overlay */}

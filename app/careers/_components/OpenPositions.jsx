@@ -317,113 +317,115 @@ const OpenPositions = () => {
                 . We'll follow up with next steps shortly.
               </p>
 
-              <form className="space-y-5" onSubmit={handleFormSubmit}>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleFormChange}
-                    required
-                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
-                  />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <form className="space-y-5 flex flex-col min-h-full" onSubmit={handleFormSubmit}>
+                <div className="space-y-5 flex-1">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address
+                      Full Name
                     </label>
                     <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
+                      type="text"
+                      name="fullName"
+                      value={formData.fullName}
                       onChange={handleFormChange}
                       required
                       className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
                     />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleFormChange}
-                      className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleFormChange}
+                        required
+                        className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Phone Number
+                      </label>
+                      <input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleFormChange}
+                        className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        LinkedIn Profile
+                      </label>
+                      <input
+                        type="url"
+                        name="linkedin"
+                        value={formData.linkedin}
+                        onChange={handleFormChange}
+                        placeholder="https://linkedin.com/in/username"
+                        className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">
+                        Portfolio / GitHub
+                      </label>
+                      <input
+                        type="url"
+                        name="portfolio"
+                        value={formData.portfolio}
+                        onChange={handleFormChange}
+                        placeholder="https://github.com/username"
+                        className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
+                      />
+                    </div>
+                  </div>
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      LinkedIn Profile
+                      Resume / CV (URL)
                     </label>
                     <input
                       type="url"
-                      name="linkedin"
-                      value={formData.linkedin}
+                      name="resume"
+                      value={formData.resume}
                       onChange={handleFormChange}
-                      placeholder="https://linkedin.com/in/username"
+                      placeholder="Link to your resume"
+                      required
                       className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
                     />
                   </div>
+
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">
-                      Portfolio / GitHub
+                      Cover Letter / Notes
                     </label>
-                    <input
-                      type="url"
-                      name="portfolio"
-                      value={formData.portfolio}
+                    <textarea
+                      name="coverLetter"
+                      value={formData.coverLetter}
                       onChange={handleFormChange}
-                      placeholder="https://github.com/username"
+                      rows="4"
                       className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
-                    />
+                      placeholder={`Tell us why you'd be a great ${selectedPosition.title}`}
+                    ></textarea>
                   </div>
+
+                  {formMessage && (
+                    <div className="p-3 rounded-lg bg-green-50 text-green-700 text-sm border border-green-200">
+                      {formMessage}
+                    </div>
+                  )}
                 </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Resume / CV (URL)
-                  </label>
-                  <input
-                    type="url"
-                    name="resume"
-                    value={formData.resume}
-                    onChange={handleFormChange}
-                    placeholder="Link to your resume"
-                    required
-                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">
-                    Cover Letter / Notes
-                  </label>
-                  <textarea
-                    name="coverLetter"
-                    value={formData.coverLetter}
-                    onChange={handleFormChange}
-                    rows="4"
-                    className="w-full rounded-lg border border-gray-200 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#00B894]/30 focus:border-[#00B894]"
-                    placeholder={`Tell us why you'd be a great ${selectedPosition.title}`}
-                  ></textarea>
-                </div>
-
-                {formMessage && (
-                  <div className="p-3 rounded-lg bg-green-50 text-green-700 text-sm border border-green-200">
-                    {formMessage}
-                  </div>
-                )}
-
-                <div className="flex items-center justify-between">
+                <div className="sticky bottom-0 -mx-6 px-6 py-4 bg-white/95 backdrop-blur border-t border-gray-200 flex items-center justify-between">
                   <button
                     type="button"
                     onClick={closeDrawer}
