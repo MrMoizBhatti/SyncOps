@@ -26,7 +26,7 @@ export default function Footer() {
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-[#F3F4F6] hover:bg-[#00B894] hover:text-[#0B0A1C] transition-all duration-300">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-[#F3F4F6] hover:bg-[#00B894] hover:text-[#0B0A1C] transition-all duration-300">
+              <a href="https://github.com/syncopstech" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-[#F3F4F6] hover:bg-[#00B894] hover:text-[#0B0A1C] transition-all duration-300">
                 <Github className="w-5 h-5" />
               </a>
             </div>
@@ -89,8 +89,8 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="text-center pb-4">
-          <p className="text-[#F3F4F6]">
-            © 2024 SyncOps. All rights reserved. |
+          <p className="text-sm text-[#F3F4F6]/80">
+            © {new Date().getFullYear()} SyncOps Technologies. All rights reserved. |
             <a href="/privacy-policy" className="text-[#00B894] hover:text-[#00C4FF] transition-colors duration-300 ml-2">
               Privacy Policy
             </a> |

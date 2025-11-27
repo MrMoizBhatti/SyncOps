@@ -11,7 +11,7 @@ export default function ProgramTiers() {
       color: "brand-aqua",
       icon: TrendingUp,
       items: [
-        "Up to 3% of first invoice",
+        "Up to 10% of first invoice",
         "Talent bonus after onboarding",
       ]
     },
@@ -21,7 +21,7 @@ export default function ProgramTiers() {
       color: "brand-teal",
       icon: Star,
       items: [
-        "Up to 5% of first invoice",
+        "Up to 15% of first invoice",
         "Priority qualification",
         "Co‑marketing options",
       ],

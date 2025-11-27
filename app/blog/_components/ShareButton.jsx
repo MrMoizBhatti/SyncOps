@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Share2, CheckCircle } from "lucide-react";
 
-const ShareButton = () => {
+const ShareButton = ({ className = "", iconSize = 20 }) => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -22,10 +22,12 @@ const ShareButton = () => {
   return (
     <>
       <button
-        className="text-gray-600 hover:text-[#0fbab1] transition-colors"
+        className={`text-gray-600 hover:text-[#0fbab1] transition-colors ${className}`}
         onClick={handleCopy}
+        type="button"
+        aria-label="Copy link"
       >
-        <Share2 size={20} />
+        <Share2 size={iconSize} />
       </button>
 
       {copied && (

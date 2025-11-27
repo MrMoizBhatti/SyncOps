@@ -41,7 +41,7 @@ const CareersPage = () => {
       </section>
       
       {/* 3. Open Positions - Dark */}
-      <section data-gsap-section className="bg-gradient-to-br from-[#0B0A1C] to-[#1A1A2E] text-white py-20">
+      <section data-gsap-section className="bg-gradient-to-br from-[#0B0A1C] to-[#1A1A2E] text-white py-20 overflow-hidden">
         <div data-gsap-stagger>
           <OpenPositions />
         </div>

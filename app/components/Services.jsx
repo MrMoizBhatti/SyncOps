@@ -1,6 +1,5 @@
 "use client";
-import { CheckCircle, ArrowRight, ArrowRightCircle, ArrowDownCircle, TrendingUp, Zap, Rocket } from 'lucide-react';
-import SafeLink from './ui/SafeLink';
+import { CheckCircle, ArrowRight, ArrowDownCircle, TrendingUp, Zap, Rocket } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { stagger, fadeUp, springSoft, slideFromLeft, slideFromRight } from '../../lib/motionConfig';
 
@@ -15,20 +14,17 @@ const serviceGroups = [
       {
         title: "Custom Development",
         description: "Tailored software solutions built with modern technologies",
-        icon: CheckCircle,
-        href: "/services/custom-development"
+        icon: CheckCircle
       },
       {
         title: "MVP Development",
         description: "Rapid prototyping and minimum viable product creation",
-        icon: CheckCircle,
-        href: "/services/mvp-development"
+        icon: CheckCircle
       },
       {
         title: "API Development",
         description: "Robust backend APIs and microservices architecture",
-        icon: CheckCircle,
-        href: "/services/api-development"
+        icon: CheckCircle
       }
     ]
   },
@@ -42,20 +38,17 @@ const serviceGroups = [
       {
         title: "Process Automation",
         description: "Workflow automation and business process optimization",
-        icon: CheckCircle,
-        href: "/services/automation"
+        icon: CheckCircle
       },
       {
         title: "AI Integration",
         description: "Machine learning and AI-powered automation solutions",
-        icon: CheckCircle,
-        href: "/services/ai-integration"
+        icon: CheckCircle
       },
       {
         title: "DevOps Automation",
         description: "CI/CD pipelines and infrastructure automation",
-        icon: CheckCircle,
-        href: "/services/devops"
+        icon: CheckCircle
       }
     ]
   },
@@ -69,20 +62,17 @@ const serviceGroups = [
       {
         title: "Cloud Migration",
         description: "Seamless migration to cloud-native architectures",
-        icon: CheckCircle,
-        href: "/services/cloud-migration"
+        icon: CheckCircle
       },
       {
         title: "Performance Optimization",
         description: "Application and database performance tuning",
-        icon: CheckCircle,
-        href: "/services/optimization"
+        icon: CheckCircle
       },
       {
         title: "Monitoring & Analytics",
         description: "Real-time monitoring and actionable insights",
-        icon: CheckCircle,
-        href: "/services/monitoring"
+        icon: CheckCircle
       }
     ]
   }
@@ -237,24 +227,22 @@ export default function Services() {
                           viewport={{ once: true }}
                           transition={{ delay: groupIndex * 0.2 + serviceIndex * 0.1 }}
                         >
-                          <SafeLink href={service.href}>
-                            <div className="p-4 bg-white/80 backdrop-blur-sm rounded-lg border border-gray-200 hover:border-[#00B894] hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                              <div className="flex items-start gap-3">
-                                <div className="w-8 h-8 bg-gradient-to-br from-[#00B894] to-[#00C4FF] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-300">
-                                  <CheckCircle className="w-4 h-4 text-white" />
-                                </div>
-                                <div className="flex-1 text-left">
-                                  <h4 className="text-sm font-semibold text-gray-900 mb-1 group-hover:text-[#00B894] transition-colors">
-                                    {service.title}
-                                  </h4>
-                                  <p className="text-xs text-gray-600 leading-relaxed">
-                                    {service.description}
-                                  </p>
-                                </div>
-                                <ArrowRight className="w-4 h-4 text-[#00B894] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 mt-1" />
+                          <div className="p-4 bg-white/80 backdrop-blur-sm rounded-lg border border-gray-200 hover:border-[#00B894] hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                            <div className="flex items-start gap-3">
+                              <div className="w-8 h-8 bg-gradient-to-br from-[#00B894] to-[#00C4FF] rounded-lg flex items-center justify-center flex-shrink-0 group-hover:rotate-12 transition-transform duration-300">
+                                <CheckCircle className="w-4 h-4 text-white" />
                               </div>
+                              <div className="flex-1 text-left">
+                                <h4 className="text-sm font-semibold text-gray-900 mb-1 group-hover:text-[#00B894] transition-colors">
+                                  {service.title}
+                                </h4>
+                                <p className="text-xs text-gray-600 leading-relaxed">
+                                  {service.description}
+                                </p>
+                              </div>
+                              <ArrowRight className="w-4 h-4 text-[#00B894] opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 flex-shrink-0 mt-1" />
                             </div>
-                          </SafeLink>
+                          </div>
                         </motion.div>
                       ))}
                     </div>

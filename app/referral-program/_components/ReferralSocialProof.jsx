@@ -31,9 +31,9 @@ const testimonials = [
 ];
 
 const stats = [
-  { label: "Active Referrers", value: "500+", icon: TrendingUp },
-  { label: "Total Rewards Paid", value: "$10K+", icon: DollarSign },
-  { label: "Success Rate", value: "85%", icon: Star },
+  { label: "Active Referrers", value: "25+", icon: TrendingUp },
+  { label: "Total Rewards Paid", value: "$20K+", icon: DollarSign },
+  { label: "Success Rate", value: "98%", icon: Star },
 ];
 
 export default function ReferralSocialProof() {

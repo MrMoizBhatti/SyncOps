@@ -3,7 +3,6 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import { motion } from 'framer-motion';
 import { stagger, viewport } from '../../../lib/motionConfig';
 import ProductsHero from './ProductsHero';
-import FeaturedProducts from './FeaturedProducts';
 import ProductUseCases from './ProductUseCases';
 import ProductIntegrations from './ProductIntegrations';
 import ProductComparison from './ProductComparison';
@@ -27,15 +26,6 @@ export default function ProductsClient() {
           <motion.div initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.08)}>
             <MetricsBar />
           </motion.div>
-        </section>
-
-        {/* Featured Products (light gradient) */}
-        <section className="bg-gradient-to-br from-white via-gray-50 to-gray-100 py-20 relative">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-aqua/20 to-transparent"></div>
-          <motion.div initial="initial" whileInView="animate" viewport={viewport} variants={stagger.container(0.08)}>
-            <FeaturedProducts />
-          </motion.div>
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-teal/20 to-transparent"></div>
         </section>
 
         {/* Use Cases (light) */}

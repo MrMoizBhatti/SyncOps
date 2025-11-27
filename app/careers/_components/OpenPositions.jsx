@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 const initialFormState = {
   fullName: "",
@@ -19,6 +20,11 @@ const OpenPositions = () => {
   const [formData, setFormData] = useState(initialFormState);
   const [formMessage, setFormMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const positions = [
     {
@@ -146,7 +152,7 @@ const OpenPositions = () => {
   };
 
   return (
-    <div id="open-positions" className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div id="open-positions" className="w-full max-w-7xl mx-auto px-6 lg:px-8">
       {/* Section Header */}
       <div className="text-center mb-16">
         <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
@@ -175,7 +181,7 @@ const OpenPositions = () => {
       </div>
 
       {/* Positions Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
         {filteredPositions.map((position) => (
           <div
             key={position.id}
@@ -271,14 +277,14 @@ const OpenPositions = () => {
         </div>
       )}
 
-      {/* Application Drawer */}
-      {isDrawerOpen && selectedPosition && (
-        <div className="fixed inset-0 z-50 flex">
+      {/* Application Drawer - Rendered via Portal outside section */}
+      {mounted && isDrawerOpen && selectedPosition && createPortal(
+        <div className="fixed inset-0 z-[10001] flex overflow-hidden">
           <div
-            className="flex-1 bg-black/60 backdrop-blur-sm"
+            className="flex-1 bg-black/60 backdrop-blur-sm animate-fade-in"
             onClick={closeDrawer}
           ></div>
-          <div className="w-full max-w-xl h-full bg-gradient-to-b from-white via-gray-50 to-white shadow-[0_10px_50px_rgba(0,0,0,0.25)] border-l border-gray-200 flex flex-col">
+          <div className="w-full max-w-xl h-full bg-gradient-to-b from-white via-gray-50 to-white shadow-[0_10px_50px_rgba(0,0,0,0.25)] border-l border-gray-200 flex flex-col overflow-hidden animate-drawerSlideIn">
             <div className="sticky top-0 z-10 bg-white/95 backdrop-blur border-b border-gray-200 px-6 py-5 flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-500 uppercase tracking-wide">
@@ -480,7 +486,8 @@ const OpenPositions = () => {
               </form>
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
