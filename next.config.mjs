@@ -15,10 +15,16 @@ const nextConfig = {
       { protocol: 'https', hostname: 'i.pravatar.cc', pathname: '/**' },
       { protocol: 'https', hostname: 'randomuser.me', pathname: '/**' },
       { protocol: 'https', hostname: 'ui-avatars.com', pathname: '/**' },
+      // Common image hosting services
+      { protocol: 'https', hostname: 'cdn.jsdelivr.net', pathname: '/**' },
+      { protocol: 'https', hostname: 'cdn.cloudflare.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'res.cloudinary.com', pathname: '/**' },
+      { protocol: 'https', hostname: 'i.imgur.com', pathname: '/**' },
     ],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    formats: ['image/avif', 'image/webp'],
   },
 };
 

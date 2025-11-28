@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import SafeLink from "../../components/ui/SafeLink";
 import { FaSearch, FaBookmark, FaClock, FaFire, FaStar, FaFilter, FaSort, FaEye, FaBookOpen, FaArrowRight, FaMagic } from 'react-icons/fa';
 
@@ -312,34 +313,44 @@ export default function Blog({ posts }) {
                   {currentPosts.map((post, index) => (
                     <motion.article
                       key={post.slug}
-                      className="group card hover:shadow-glow transition-all duration-300 relative overflow-hidden"
+                      className="group bg-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden flex flex-col"
                       initial={{ opacity: 0, y: 30, scale: 0.95 }}
                       whileInView={{ opacity: 1, y: 0, scale: 1 }}
                       transition={{ duration: 0.6, delay: index * 0.1, ease: "easeOut" }}
                       viewport={{ once: true }}
                       whileHover={{ 
-                        y: -8,
-                        boxShadow: "0 25px 50px rgba(0, 248, 180, 0.15)"
+                        y: -4,
+                        boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)"
                       }}
                     >
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-br from-brand-aqua/5 to-brand-teal/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                        whileHover={{ scale: 1.05 }}
-                      />
-                      <SafeLink href={`/blog/${post.slug || "default"}`} className="block h-full relative z-10">
-                        <div className="p-6 h-full flex flex-col">
+                      <SafeLink href={`/blog/${post.slug || "default"}`} className="block h-full relative z-10 flex flex-col">
+                        {/* Cover Image */}
+                        {post.coverImage && (
+                          <div className="relative h-48 w-full overflow-hidden bg-gray-100 flex-shrink-0">
+                            <Image
+                              src={post.coverImage}
+                              alt={post.title}
+                              fill
+                              sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                              className="object-cover group-hover:scale-105 transition-transform duration-500"
+                              loading={index < 6 ? "eager" : "lazy"}
+                            />
+                          </div>
+                        )}
+                        
+                        <div className="p-5 sm:p-6 h-full flex flex-col flex-grow">
                           {/* Category Tag */}
                           <motion.div 
-                            className="mb-4"
+                            className="mb-3"
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ delay: index * 0.1 + 0.2 }}
                           >
                             <motion.span 
-                              className="inline-block bg-gradient-to-r from-brand-aqua/10 to-brand-teal/10 text-brand-aqua text-xs font-medium px-3 py-1 rounded-full border border-brand-aqua/20"
+                              className="inline-block bg-[#0fbab1]/10 text-[#0fbab1] text-xs font-semibold px-3 py-1 rounded-full border border-[#0fbab1]/20"
                               whileHover={{ 
                                 scale: 1.05,
-                                boxShadow: "0 5px 15px rgba(0, 248, 180, 0.2)"
+                                boxShadow: "0 5px 15px rgba(15, 186, 177, 0.2)"
                               }}
                             >
                               {post.category || "Technology"}
@@ -348,18 +359,17 @@ export default function Blog({ posts }) {
 
                           {/* Title */}
                           <motion.h2 
-                            className="text-xl font-bold text-gray-900 mb-3 group-hover:text-brand-aqua transition-colors duration-300 line-clamp-2 flex-grow"
+                            className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#0fbab1] transition-colors duration-300 line-clamp-2"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 + 0.3 }}
-                            whileHover={{ color: "#00B894" }}
                           >
                             {post.title}
                           </motion.h2>
                           
                           {/* Excerpt */}
                           <motion.p 
-                            className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4"
+                            className="text-gray-600 text-sm leading-relaxed line-clamp-3 mb-4 flex-grow"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 + 0.4 }}
@@ -376,33 +386,32 @@ export default function Blog({ posts }) {
                           >
                             <div className="flex items-center gap-4">
                               <motion.div 
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-1.5"
                                 whileHover={{ scale: 1.05 }}
                               >
-                                <FaClock className="w-3 h-3" />
+                                <FaClock className="w-3 h-3 text-gray-400" />
                                 <span>{calculateReadingTime(post.content || post.excerpt)} min read</span>
                               </motion.div>
                               <motion.div 
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-1.5"
                                 whileHover={{ scale: 1.05 }}
                               >
-                                <FaEye className="w-3 h-3" />
+                                <FaEye className="w-3 h-3 text-gray-400" />
                                 <span>{post.views || Math.floor((post.slug?.length || 0) * 50) + 100} views</span>
                               </motion.div>
                             </div>
-                            <span>{formatDate(post.date)}</span>
+                            <span className="text-gray-400">{formatDate(post.date)}</span>
                           </motion.div>
 
                           {/* Read More Button */}
                           <motion.div 
-                            className="flex items-center justify-between mt-auto"
+                            className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 + 0.6 }}
                           >
                             <motion.span 
-                              className="text-brand-aqua text-sm font-medium group-hover:text-brand-teal transition-colors duration-300"
-                              whileHover={{ color: "#00C4FF" }}
+                              className="text-[#0fbab1] text-sm font-medium group-hover:text-[#00C4FF] transition-colors duration-300"
                             >
                               Read Article
                             </motion.span>
@@ -410,7 +419,7 @@ export default function Blog({ posts }) {
                               whileHover={{ x: 5 }}
                               transition={{ duration: 0.3 }}
                             >
-                              <FaArrowRight className="w-4 h-4 text-brand-aqua group-hover:text-brand-teal transition-colors duration-300" />
+                              <FaArrowRight className="w-4 h-4 text-[#0fbab1] group-hover:text-[#00C4FF] transition-colors duration-300" />
                             </motion.div>
                           </motion.div>
                         </div>
