@@ -1,5 +1,6 @@
  "use client";
 import { ParallaxProvider } from 'react-scroll-parallax';
+import { useEffect } from 'react';
 import ClientFloatingCTA from './components/ClientFloatingCTA';
 import Hero from './components/Hero';
 import MetricsBar from './components/MetricsBar';
@@ -16,7 +17,134 @@ import MobileStickyCTA from './components/MobileStickyCTA';
 import ScrollToTop from './components/ScrollToTop';
 import TechnologyStackCards from './components/TechnologyStackCards';
 
+// Homepage structured data for SEO
+const homepageStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "SyncOps",
+  "alternateName": "SyncOps Technologies",
+  "url": "https://syncops.tech",
+  "description": "Enterprise-grade AI-powered software solutions, development, and consulting. 50+ launches, 99.5% uptime.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SyncOps",
+    "url": "https://syncops.tech",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://syncops.tech/images/logo.png"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Majid Ali",
+      "jobTitle": "Chief Executive Officer",
+      "url": "https://majidali.tech",
+      "sameAs": [
+        "https://www.linkedin.com/in/majidali-syncops/",
+        "https://majidali.tech"
+      ]
+    },
+    "employee": [
+      {
+        "@type": "Person",
+        "name": "Majid Ali",
+        "jobTitle": "Chief Executive Officer",
+        "url": "https://majidali.tech",
+        "sameAs": [
+          "https://www.linkedin.com/in/majidali-syncops/",
+          "https://majidali.tech"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Rimsha Imran",
+        "jobTitle": "Chief Technology Officer",
+        "url": "https://rimshaimran.tech",
+        "sameAs": [
+          "https://www.linkedin.com/in/rimshaimran-syncops/",
+          "https://rimshaimran.tech"
+        ]
+      },
+      {
+        "@type": "Person",
+        "name": "Nida Naeem",
+        "jobTitle": "Chief Business Development Officer",
+        "sameAs": [
+          "https://www.linkedin.com/in/nidanaeem-syncops/"
+        ]
+      }
+    ]
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://syncops.tech/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "name": "SyncOps Projects & Case Studies",
+    "description": "Our portfolio of successful AI-powered software solutions and case studies",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "GeoPulse: Community Data Intelligence Platform",
+          "url": "https://syncops.tech/case-studies/geopulse"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "SyncPeople: AI-Powered HR Management Platform",
+          "url": "https://syncops.tech/case-studies/syncpeople"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "MediMind AI: AI-Powered Medical Assistant",
+          "url": "https://syncops.tech/case-studies/medimind"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "CreativeWork",
+          "name": "SyncIQ: AI-Powered Operational Intelligence",
+          "url": "https://syncops.tech/case-studies/synciq"
+        }
+      }
+    ]
+  }
+};
+
 export default function Home() {
+  useEffect(() => {
+    // Add structured data to page
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(homepageStructuredData);
+    script.id = 'homepage-structured-data';
+    
+    if (!document.getElementById('homepage-structured-data')) {
+      document.head.appendChild(script);
+    }
+    
+    return () => {
+      const existing = document.getElementById('homepage-structured-data');
+      if (existing) existing.remove();
+    };
+  }, []);
+
   return (
     <ParallaxProvider>
       <>

@@ -71,7 +71,8 @@ const CEOMessagePage = () => {
     "description": "CEO of SyncOps, leading the company's vision to empower businesses with AI-powered software solutions.",
     "url": "https://syncops.tech/ceo-message",
     "sameAs": [
-      "https://linkedin.com/in/majidali",
+      "https://www.linkedin.com/in/majidali-syncops/",
+      "https://majidali.tech",
       "https://twitter.com/majidali",
       "https://github.com/majidali"
     ],

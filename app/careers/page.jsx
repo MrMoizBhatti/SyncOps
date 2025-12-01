@@ -8,18 +8,59 @@ import FinalCTA from "./_components/FinalCTA";
 
 export const metadata = {
   title: "Careers at SyncOps - Join the Minds Behind Tomorrow's AI-Powered Innovations",
-  description: "Join SyncOps and be part of a team that's shaping the future of AI-powered software solutions. Explore challenging projects, inclusive culture, and continuous learning opportunities.",
-  keywords: "careers, jobs, employment, SyncOps, AI, software development, technology, remote work, on-site positions",
+  description: "Join SyncOps and be part of a team that's shaping the future of AI-powered software solutions. Explore challenging projects, inclusive culture, and continuous learning opportunities. Open positions for developers, designers, and tech professionals.",
+  keywords: [
+    "SyncOps careers",
+    "software development jobs",
+    "AI jobs Pakistan",
+    "tech careers",
+    "software engineer jobs",
+    "developer positions",
+    "remote work",
+    "on-site positions",
+    "technology jobs",
+    "IT careers"
+  ],
+  authors: [{ name: "SyncOps Team" }],
+  creator: "SyncOps Technologies",
+  publisher: "SyncOps Technologies",
+  metadataBase: new URL("https://syncops.tech"),
+  alternates: {
+    canonical: "https://syncops.tech/careers",
+  },
   openGraph: {
     title: "Careers at SyncOps - Join the Minds Behind Tomorrow's AI-Powered Innovations",
     description: "Join SyncOps and be part of a team that's shaping the future of AI-powered software solutions. Explore challenging projects, inclusive culture, and continuous learning opportunities.",
     type: "website",
-    url: "https://syncops.com/careers",
+    url: "https://syncops.tech/careers",
+    siteName: "SyncOps",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Careers at SyncOps",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Careers at SyncOps - Join the Minds Behind Tomorrow's AI-Powered Innovations",
     description: "Join SyncOps and be part of a team that's shaping the future of AI-powered software solutions.",
+    images: ["/images/logo.png"],
+    creator: "@SyncOps",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

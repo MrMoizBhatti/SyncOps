@@ -9,18 +9,60 @@ import ProvenMethodologyStrip from "./_components/ProvenMethodologyStrip";
 
 export const metadata = {
   title: "Technologies - Powering Innovation Through Advanced Technology Stack | SyncOps",
-  description: "Explore SyncOps' comprehensive technology stack including frontend, backend, database, and cloud expertise. Discover how we power modern software solutions.",
-  keywords: "technology stack, frontend, backend, database, cloud, AWS, Azure, GCP, software development, SyncOps",
+  description: "Explore SyncOps' comprehensive technology stack including React, Node.js, Python, AWS, Azure, GCP, and more. Discover our expertise in frontend, backend, database, cloud, AI/ML, and DevOps technologies.",
+  keywords: [
+    "technology stack",
+    "frontend technologies",
+    "backend technologies",
+    "cloud technologies",
+    "AWS Azure GCP",
+    "React Node.js Python",
+    "database technologies",
+    "AI ML technologies",
+    "DevOps tools",
+    "software development stack",
+    "SyncOps technologies"
+  ],
+  authors: [{ name: "SyncOps Team" }],
+  creator: "SyncOps Technologies",
+  publisher: "SyncOps Technologies",
+  metadataBase: new URL("https://syncops.tech"),
+  alternates: {
+    canonical: "https://syncops.tech/technologies",
+  },
   openGraph: {
     title: "Technologies - Powering Innovation Through Advanced Technology Stack | SyncOps",
-    description: "Explore SyncOps' comprehensive technology stack including frontend, backend, database, and cloud expertise.",
+    description: "Explore SyncOps' comprehensive technology stack including frontend, backend, database, and cloud expertise. React, Node.js, Python, AWS, Azure, GCP and more.",
     type: "website",
-    url: "https://syncops.com/technologies",
+    url: "https://syncops.tech/technologies",
+    siteName: "SyncOps",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "SyncOps Technology Stack",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Technologies - Powering Innovation Through Advanced Technology Stack | SyncOps",
     description: "Explore SyncOps' comprehensive technology stack including frontend, backend, database, and cloud expertise.",
+    images: ["/images/logo.png"],
+    creator: "@SyncOps",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

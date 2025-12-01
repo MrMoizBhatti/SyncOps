@@ -9,18 +9,60 @@ import TrustedMetrics from "./_components/TrustedMetrics";
 
 export const metadata = {
   title: "About SyncOps - Empowering the Future with Purpose-Driven Innovation",
-  description: "Discover SyncOps' mission to transform businesses through technology, people, and purpose. Meet our team of innovators and learn about our values.",
-  keywords: "about us, mission, vision, team, values, SyncOps, innovation, technology, leadership",
+  description: "Discover SyncOps' mission to transform businesses through technology, people, and purpose. Meet our team of innovators including CEO Majid Ali, CTO Rimsha Imran, and learn about our values, culture, and 50+ successful projects.",
+  keywords: [
+    "about SyncOps",
+    "SyncOps team",
+    "Majid Ali CEO",
+    "Rimsha Imran CTO",
+    "software development company",
+    "AI company Pakistan",
+    "mission vision",
+    "team values",
+    "innovation technology",
+    "leadership team",
+    "company culture"
+  ],
+  authors: [{ name: "SyncOps Team" }],
+  creator: "SyncOps Technologies",
+  publisher: "SyncOps Technologies",
+  metadataBase: new URL("https://syncops.tech"),
+  alternates: {
+    canonical: "https://syncops.tech/about",
+  },
   openGraph: {
     title: "About SyncOps - Empowering the Future with Purpose-Driven Innovation",
-    description: "Discover SyncOps' mission to transform businesses through technology, people, and purpose.",
+    description: "Discover SyncOps' mission to transform businesses through technology, people, and purpose. Meet our leadership team and learn about our values.",
     type: "website",
-    url: "https://syncops.com/about",
+    url: "https://syncops.tech/about",
+    siteName: "SyncOps",
+    locale: "en_US",
+    images: [
+      {
+        url: "/images/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "About SyncOps - Leadership Team",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "About SyncOps - Empowering the Future with Purpose-Driven Innovation",
     description: "Discover SyncOps' mission to transform businesses through technology, people, and purpose.",
+    images: ["/images/logo.png"],
+    creator: "@SyncOps",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 

@@ -70,12 +70,12 @@ export default function Hero() {
             </motion.p>
 
             <motion.h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-4" variants={fadeUp(22)}>
-              Building Secure,<br className="hidden sm:block" />
-              <span className="gradient-text">Scalable Products</span>
+              Building Secure, Scalable,<br className="hidden sm:block" />
+              <span className="gradient-text">Intelligent Products</span>
             </motion.h1>
 
             <motion.p className="text-sm sm:text-base text-gray-300 mb-6 max-w-2xl leading-relaxed" variants={fadeUp(23)}>
-              Pakistan-based engineers delivering enterprise-grade software, AI-powered automation, and cloud platforms for regulated teams.
+              A global engineering powerhouse delivering enterprise software, AI-powered automation, advanced AI Agents, and cloud platforms built for scale.
             </motion.p>
 
             {/* Primary + secondary CTAs */}

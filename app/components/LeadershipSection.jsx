@@ -24,8 +24,8 @@ const founder = [
     experienceBadge: "More than 10 years' experience",
     blurb: "Overall visionary and leader of SyncOps, responsible for strategy, innovation, and company direction.",
     photo: "/images/leadership/Majid-aliCEO.jpeg",
-    website: "#", 
-    linkedin: "#", 
+    website: "https://majidali.tech", 
+    linkedin: "https://www.linkedin.com/in/majidali-syncops/", 
     twitter: "#", 
     email: "majid@syncops.tech",
     highlight: true
@@ -46,6 +46,10 @@ const cSuite = [
     experienceBadge: "5+ years' experience",
     blurb: "Leads product development, technology roadmap, and innovation strategy.",
     photo: "/images/leadership/RimshaimranCTO.jpeg",
+    website: "https://rimshaimran.tech",
+    linkedin: "https://www.linkedin.com/in/rimshaimran-syncops/",
+    twitter: "#",
+    email: "#",
   },
   {
     name: "Nida Naeem",
@@ -53,6 +57,10 @@ const cSuite = [
     experienceBadge: "8+ years' experience",
     blurb: "Secures partnerships, expands market reach, and drives revenue growth.",
     photo: "/images/leadership/NidaNaeemCMO.jpeg",
+    website: "#",
+    linkedin: "https://www.linkedin.com/in/nidanaeem-syncops/",
+    twitter: "#",
+    email: "#",
   },
   {
     name: "Abu Sufian",

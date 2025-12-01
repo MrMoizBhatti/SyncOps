@@ -95,7 +95,7 @@ const CEOMessage = () => {
                 {/* Social Icons - Centered with platform-specific colors */}
                 <div className="flex items-center justify-center gap-4">
                   <a
-                    href="https://linkedin.com/in/majidali"
+                    href="https://www.linkedin.com/in/majidali-syncops/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Connect with Majid Ali on LinkedIn"

@@ -1,8 +1,9 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { motionEasing, motionDurations } from '../../lib/motionConfig';
+import { generateFAQSchema } from '../utils/seoUtils';
 
 const faqs = [
   {
@@ -45,6 +46,24 @@ export default function FAQ() {
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
   };
+
+  // Add FAQ structured data for SEO
+  useEffect(() => {
+    const faqSchema = generateFAQSchema(faqs);
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify(faqSchema);
+    script.id = 'faq-structured-data';
+    
+    if (!document.getElementById('faq-structured-data')) {
+      document.head.appendChild(script);
+    }
+    
+    return () => {
+      const existing = document.getElementById('faq-structured-data');
+      if (existing) existing.remove();
+    };
+  }, []);
 
   return (
     <div className="max-w-4xl mx-auto px-6">
