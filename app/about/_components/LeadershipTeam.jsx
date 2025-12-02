@@ -187,7 +187,7 @@ const CoverflowCard = ({ person, index, currentIndex, total, onClick }) => {
               className="object-cover"
               style={{ objectPosition: 'center 10%' }}
               priority={isActive}
-              unoptimized
+              sizes="(max-width: 768px) 100vw, 380px"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-[#00B894] to-[#00C4FF] text-white font-bold text-5xl md:text-6xl">
@@ -367,7 +367,7 @@ const LeadershipTeam = () => {
                       fill
                       className="object-contain"
                       style={{ objectFit: "contain" }}
-                      unoptimized
+                      sizes="(max-width: 768px) 100vw, 288px"
                     />
                   ) : (
                     <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#00B894] to-[#00C4FF] text-white text-4xl font-bold">

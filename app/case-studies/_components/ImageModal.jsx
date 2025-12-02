@@ -101,7 +101,7 @@ const ImageModal = ({ isOpen, onClose, imageSrc, imageAlt, title }) => {
                 height={900}
                 className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
                 style={{ objectPosition: 'center 20%' }}
-                unoptimized
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1400px"
               />
             </div>
           </motion.div>

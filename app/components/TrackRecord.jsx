@@ -168,23 +168,6 @@ export default function TrackRecord() {
           </div>
         </div>
 
-        {/* Additional Trust Indicators */}
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-8 text-sm text-gray-500">
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#00B894] rounded-full"></div>
-              ISO 27001 Certified
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#00C4FF] rounded-full"></div>
-              SOC 2 Type II Compliant
-            </span>
-            <span className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-[#00B894] rounded-full"></div>
-              GDPR Ready
-            </span>
-          </div>
-        </div>
       </div>
     </section>
   );

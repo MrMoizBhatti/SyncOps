@@ -101,8 +101,8 @@ const CaseStudyHero = ({ title, subtitle, image, industry, duration, team }) => 
                   height={400}
                   className="w-full h-[450px] lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-110"
                   style={{ objectPosition: 'center 20%' }}
-                  unoptimized
                   priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
                 />
                 {/* Enhanced overlay on hover */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-6">

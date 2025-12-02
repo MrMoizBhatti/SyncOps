@@ -20,7 +20,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         aria-hidden="true"
         poster="https://res.cloudinary.com/dfdzl01qj/video/upload/q_auto,w_1200/vecteezy_ai-generative-beautiful-fantasy-human-reptile-eye-with-neon_28716522_2_ovsvbo.jpg"
       >

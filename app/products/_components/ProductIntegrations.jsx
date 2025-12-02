@@ -5,12 +5,12 @@ import {
   FaAws, FaDocker, FaSlack, FaSalesforce
 } from 'react-icons/fa';
 import { 
-  SiGooglecloud, SiMicrosoftazure, SiCloudflare, SiPostgresql, SiRedis,
+  SiGooglecloud, SiCloudflare, SiPostgresql, SiRedis,
   SiSnowflake, SiHubspot, SiNotion, SiKubernetes, SiTerraform,
   SiGithub, SiMongodb, SiMysql
 } from 'react-icons/si';
 import { useState } from 'react';
-import { CheckCircle2, Plug2, Database } from 'lucide-react';
+import { CheckCircle2, Plug2, Database, Cloud } from 'lucide-react';
 
 const stacks = [
   { 
@@ -20,7 +20,7 @@ const stacks = [
     items: [
       { name: 'AWS', icon: FaAws, color: 'text-orange-500', description: 'Amazon Web Services' },
       { name: 'GCP', icon: SiGooglecloud, color: 'text-blue-500', description: 'Google Cloud Platform' },
-      { name: 'Azure', icon: SiMicrosoftazure, color: 'text-blue-600', description: 'Microsoft Azure' },
+      { name: 'Azure', icon: Cloud, color: 'text-blue-600', description: 'Microsoft Azure' },
       { name: 'Cloudflare', icon: SiCloudflare, color: 'text-orange-400', description: 'Cloudflare CDN & Security' }
     ]
   },

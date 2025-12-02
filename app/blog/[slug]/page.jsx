@@ -8,7 +8,6 @@ import SocialShare from "../_components/SocialShare";
 import InteractiveButtons from "../_components/InteractiveButtons";
 import ReadingProgress from "../_components/ReadingProgress";
 import TableOfContents from "../_components/TableOfContents";
-import Breadcrumbs from "../_components/Breadcrumbs";
 
 // MDX Components for custom rendering
 const mdxComponents = {
@@ -152,9 +151,6 @@ export default function BlogPost({ params }) {
         {/* Hero Section */}
         <section className="bg-white border-b border-gray-100">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 md:pt-12 pb-8 sm:pb-10 md:pb-12">
-            {/* Breadcrumbs */}
-            <Breadcrumbs title={post.title} />
-
             {/* Title */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight tracking-tight mb-6 sm:mb-8 mt-4">
               {post.title}

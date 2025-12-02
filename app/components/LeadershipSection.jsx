@@ -206,7 +206,7 @@ const CoverflowCard = ({ person, index, currentIndex, total, onClick }) => {
               className="object-cover"
               style={{ objectPosition: 'center 10%' }}
               priority={isActive}
-              unoptimized
+              sizes="(max-width: 768px) 100vw, 380px"
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-slate-700 font-bold text-5xl md:text-6xl">

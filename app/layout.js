@@ -2,7 +2,7 @@ import './globals.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import GsapScrollProvider from './components/GsapScrollProvider';
-import Breadcrumbs from './components/Breadcrumbs';
+import { inter, sora } from './fonts';
 
 export const metadata = {
   title: 'SyncOps | AI-Powered Software Solutions & Enterprise Development',
@@ -130,7 +130,7 @@ const organizationSchema = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${sora.variable}`}>
       <head>
         {/* Organization Structured Data */}
         <script
@@ -138,10 +138,9 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body suppressHydrationWarning={true}>
+      <body suppressHydrationWarning={true} className={inter.className}>
         <GsapScrollProvider />
         <Header />
-        <Breadcrumbs />
         <main className="min-h-screen">
           {children}
         </main>
