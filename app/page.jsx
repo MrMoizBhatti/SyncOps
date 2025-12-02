@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import ClientFloatingCTA from './components/ClientFloatingCTA';
 import Hero from './components/Hero';
 import MetricsBar from './components/MetricsBar';
+import PartnerLogos from './components/PartnerLogos';
 import Services from './components/Services';
 import IndustriesWeServe from './components/IndustriesWeServe';
 import WhyChooseUs from './components/WhyChooseUs';
@@ -29,6 +30,14 @@ const homepageStructuredData = {
     "@type": "Organization",
     "name": "SyncOps",
     "url": "https://syncops.tech",
+    "sameAs": [
+      "https://clutch.co/profile/syncops",
+      "https://techbehemoths.com/company/syncops",
+      "https://rocketreach.co/syncops-profile_b6e4db2fc708a182",
+      "https://www.trustpilot.com/review/syncops.tech",
+      "https://tracxn.com/d/companies/syncops/__vXEaZ6f2kBDQ2cqCCZmYfSCy6Wqxpu2TXiTaJmWn-IA",
+      "https://www.crunchbase.com/organization/syncops"
+    ],
     "logo": {
       "@type": "ImageObject",
       "url": "https://syncops.tech/images/logo.png"
@@ -153,12 +162,22 @@ export default function Home() {
           <Hero />
         </section>
 
+        {/* Partners / Logos strip */}
+
+        <section data-gsap-section>
+          <div data-gsap-stagger>
+            <PartnerLogos />
+          </div>
+        </section>
+
+
         <section data-gsap-section className="bg-white py-8">
           <div data-gsap-stagger className="max-w-6xl mx-auto">
             <MetricsBar />
           </div>
         </section>
 
+        
         <section data-gsap-section className="bg-gradient-to-br from-white via-gray-50 to-gray-100 py-12 relative">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-aqua/20 to-transparent"></div>
           <div data-gsap-stagger className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
