@@ -2,7 +2,7 @@
 title: "Cybersecurity in Software Development: Protecting Your Business"
 date: "2024-11-30"
 excerpt: "Discover how to safeguard your business by integrating cybersecurity into every stage of software development."
-coverImage: "https://pub-6381ddf08d4a4ba18125866a4932b87e.r2.dev/cybersecurity.webp"
+coverImage: "/images/cybersecurity.jpg"
 ---
 
 In the modern digital age, cybersecurity has become one of the most critical aspects of software development. With cyber threats evolving constantly, businesses must ensure that their software is resilient to attacks and data breaches. For developers and organizations, protecting software systems from security vulnerabilities isn't just about avoiding financial loss or reputational damage; it’s about safeguarding user data, maintaining trust, and complying with regulatory standards. In this blog post, we’ll explore the significance of cybersecurity in software development and how you can protect your business from cyber threats.

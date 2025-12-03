@@ -2,7 +2,7 @@
 title: "Mastering Next.js App Router: A Deep Dive"
 date: "2024-05-25"
 excerpt: "Learn how to leverage the power of Next.js App Router to create more efficient and maintainable web applications."
-coverImage: "https://pub-6381ddf08d4a4ba18125866a4932b87e.r2.dev/nextjs.webp"
+coverImage: "/images/Nextjsapp.jpg"
 ---
 
 Next.js 13 introduced a revolutionary feature: the **App Router**. Built to enhance performance, scalability, and developer experience, it simplifies the routing system while adding flexibility for modern web development.

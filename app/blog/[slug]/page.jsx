@@ -36,8 +36,10 @@ const coverPlaceholder =
   "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1600&q=80";
 
 export async function generateMetadata({ params }) {
-  const post = getPostBySlug(params.slug);
-  const url = `https://syncops.tech/blog/${params.slug}`;
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
+  const post = getPostBySlug(slug);
+  const url = `https://syncops.tech/blog/${slug}`;
   const coverImage = post.coverImage || coverPlaceholder;
   const publishedTime = post.date ? new Date(post.date).toISOString() : new Date().toISOString();
 
@@ -93,8 +95,10 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogPost({ params }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost({ params }) {
+  const resolvedParams = await params;
+  const slug = resolvedParams.slug;
+  const post = getPostBySlug(slug);
   const readTime = Math.ceil(post.content.split(" ").length / 200);
   const publishedOn = post.date ? new Date(post.date) : new Date();
   const formattedDate = publishedOn.toLocaleDateString("en-US", {
@@ -106,7 +110,8 @@ export default function BlogPost({ params }) {
   const excerptHighlight =
     post.excerpt ||
     "Explore expert-backed strategies, frameworks, and insights designed to keep your engineering team ahead.";
-  const currentUrl = typeof window !== "undefined" ? window.location.href : `https://syncops.tech/blog/${params.slug}`;
+  const currentUrl =
+    typeof window !== "undefined" ? window.location.href : `https://syncops.tech/blog/${slug}`;
 
   // Generate JSON-LD structured data
   const jsonLd = {
@@ -133,7 +138,7 @@ export default function BlogPost({ params }) {
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://syncops.tech/blog/${params.slug}`,
+      "@id": `https://syncops.tech/blog/${slug}`,
     },
     articleSection: post.category || "Technology",
     keywords: post.tags?.join(", ") || "software development, technology",
@@ -177,10 +182,10 @@ export default function BlogPost({ params }) {
 
             {/* Interactive Buttons Row */}
             <div className="flex items-center gap-3 mb-6 sm:mb-8">
-              <InteractiveButtons slug={params.slug} />
+              <InteractiveButtons slug={slug} />
               <SocialShare
                 title={post.title}
-                url={`https://syncops.tech/blog/${params.slug}`}
+                url={`https://syncops.tech/blog/${slug}`}
                 description={post.excerpt}
               />
             </div>
@@ -223,7 +228,7 @@ export default function BlogPost({ params }) {
               </div>
 
               {/* Related Posts */}
-              <RelatedPosts currentSlug={params.slug} />
+              <RelatedPosts currentSlug={slug} />
 
               {/* Comments Section */}
               <div id="comments-section" className="mt-12 sm:mt-16">

@@ -2,7 +2,7 @@
 title: "The Role of UI/UX in Software Development"
 date: "2024-11-16"
 excerpt: "Discover how UI/UX design is essential for creating successful, user-friendly software. Learn the key aspects and best practices to enhance user satisfaction and retention."
-coverImage: "https://pub-6381ddf08d4a4ba18125866a4932b87e.r2.dev/ui-ux.webp"
+coverImage: "/images/UiUx.jpg"
 ---
 
 In the rapidly evolving world of software development, user interface (UI) and user experience (UX) have become critical components of creating successful applications. The seamless integration of both UI and UX design is essential for creating software that is not only functional but also enjoyable to use. While often used interchangeably, UI and UX refer to different aspects of the design process, and understanding their roles in software development can significantly impact the overall success of a project.

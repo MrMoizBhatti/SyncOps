@@ -2,7 +2,7 @@
 title: "The Role of Data in Software Development"
 date: "2024-11-10"
 excerpt: "Explore the crucial role of data in software development, from guiding design and improving performance to enabling AI integration and ensuring security."
-coverImage: "https://pub-6381ddf08d4a4ba18125866a4932b87e.r2.dev/role-of-data.webp"
+coverImage: "/images/Roledata.jpg"
 ---
 
 In today's digital world, data is the lifeblood of every software application. Whether you're building a mobile app, a web platform, or a desktop program, data drives functionality, user experience, and performance. From the way we design user interfaces to how we make data-driven decisions, data is central to the success of software development. In this blog post, we'll explore the crucial role of data in software development and how it shapes various aspects of the process.
